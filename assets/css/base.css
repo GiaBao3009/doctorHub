@@ -1,0 +1,953 @@
+/* ====================== Base ======================*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #21b0bd;
+  --ter--color: #00bfff;
+  --text-white: #fff;
+  --text-dark: #000;
+  --bg-white: #fff;
+  --bg-gray: #f8f9fa;
+  --bg-primary: #016599;
+  --bg-secondary: #46a49e;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Chỉ dành cho hiển thị active */
+.navbar-nav .nav-item.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease-in;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.footer__item a {
+  transition: 0.3s ease-in-out;
+}
+
+.footer__item a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* From Uiverse.io by adamgiebl */
+.cssbuttons-io-button {
+  background: var(--primary-color);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+/* From Uiverse.io by barisdogansutcu */
+.btn-shop {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: hsl(255deg 50% 40%);
+  /* border: solid 4px hsl(50deg 100% 50%); */
+  font-family: inherit;
+  border: 0;
+}
+
+.default-btn,
+.hover-btn {
+  background-color: hsl(255deg 50% 40%);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(255deg 50% 49%);
+  transform: translate(0%, 100%);
+}
+
+.default-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+.hover-btn span {
+  color: hsl(50deg 100% 50%);
+}
+
+.btn-shop:hover .default-btn {
+  transform: translate(0%, -100%);
+}
+
+.btn-shop:hover .hover-btn {
+  transform: translate(0%, 0%);
+}
+.default-btn,
+.hover-btn {
+  background-color: var(--primary-color);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* padding: 15px 20px;
+  border-radius: 50px; */
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: hsl(255deg 50% 49%);
+  transform: translate(0%, 100%);
+}
+
+.default-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+.hover-btn span {
+  color: hsl(50deg 100% 50%);
+}
+
+.btn-shop:hover .default-btn {
+  transform: translate(0%, -100%);
+}
+
+.btn-shop:hover .hover-btn {
+  transform: translate(0%, 0%);
+}
+
+/* From Uiverse.io by cssbuttons-io */
+.buy-now {
+  --color: #560bad;
+  font-family: inherit;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 15px;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+}
+
+.buy-now:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.buy-now:hover {
+  color: #fff;
+}
+
+.buy-now:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.buy-now:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.buy-now:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}
+
+/* From Uiverse.io by Peary74 */
+.btn-addCart {
+  font-family: inherit;
+  font-size: 20px;
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+}
+
+.btn-addCart span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-addCart i {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-addCart:hover {
+  background: #000;
+  color: #fff;
+}
+
+.btn-addCart:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+.btn-addCart:hover i {
+  transform: translateX(2.5em) scale(1.1);
+  fill: #fff;
+}
+
+.btn-addCart:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+.btn-addCart:active {
+  transform: scale(0.95);
+}
+
+/* From Uiverse.io by Nawsome */
+.continue-application {
+  --color: #fff;
+  --background: #404660;
+  --background-hover: #3a4059;
+  --background-left: #2b3044;
+  --folder: #f3e9cb;
+  --folder-inner: #beb393;
+  --paper: #ffffff;
+  --paper-lines: #bbc1e1;
+  --paper-behind: #e1e6f9;
+  --pencil-cap: #fff;
+  --pencil-top: #275efe;
+  --pencil-middle: #fff;
+  --pencil-bottom: #5c86ff;
+  --shadow: rgba(13, 15, 25, 0.2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 19px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 17px 29px 17px 69px;
+  transition: background 0.3s;
+  color: var(--color);
+  background: var(--bg, var(--background));
+}
+
+.continue-application > div {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 53px;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 5px 0 0 5px;
+  background: var(--background-left);
+}
+
+.continue-application > div .folder {
+  width: 23px;
+  height: 27px;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+}
+
+.continue-application > div .folder .top {
+  left: 0;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateX(var(--fx, 0));
+  transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.continue-application > div .folder .top svg {
+  width: 24px;
+  height: 27px;
+  display: block;
+  fill: var(--folder);
+  transform-origin: 0 50%;
+  transition: transform 0.3s ease var(--fds, 0.45s);
+  transform: perspective(120px) rotateY(var(--fr, 0deg));
+}
+
+.continue-application > div .folder:before,
+.continue-application > div .folder:after,
+.continue-application > div .folder .paper {
+  content: "";
+  position: absolute;
+  left: var(--l, 0);
+  top: var(--t, 0);
+  width: var(--w, 100%);
+  height: var(--h, 100%);
+  border-radius: 1px;
+  background: var(--b, var(--folder-inner));
+}
+
+.continue-application > div .folder:before {
+  box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow),
+    0 3.5px 7px var(--shadow);
+  transform: translateX(var(--fx, 0));
+  transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.continue-application > div .folder:after,
+.continue-application > div .folder .paper {
+  --l: 1px;
+  --t: 1px;
+  --w: 21px;
+  --h: 25px;
+  --b: var(--paper-behind);
+}
+
+.continue-application > div .folder:after {
+  transform: translate(var(--pbx, 0), var(--pby, 0));
+  transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.continue-application > div .folder .paper {
+  z-index: 1;
+  --b: var(--paper);
+}
+
+.continue-application > div .folder .paper:before,
+.continue-application > div .folder .paper:after {
+  content: "";
+  width: var(--wp, 14px);
+  height: 2px;
+  border-radius: 1px;
+  transform: scaleY(0.5);
+  left: 3px;
+  top: var(--tp, 3px);
+  position: absolute;
+  background: var(--paper-lines);
+  box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
+}
+
+.continue-application > div .folder .paper:after {
+  --tp: 6px;
+  --wp: 10px;
+}
+
+.continue-application > div .pencil {
+  height: 2px;
+  width: 3px;
+  border-radius: 1px 1px 0 0;
+  top: 8px;
+  left: 105%;
+  position: absolute;
+  z-index: 3;
+  transform-origin: 50% 19px;
+  background: var(--pencil-cap);
+  transform: translateX(var(--pex, 0)) rotate(35deg);
+  transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.continue-application > div .pencil:before,
+.continue-application > div .pencil:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: var(
+    --b,
+    linear-gradient(
+      var(--pencil-top) 55%,
+      var(--pencil-middle) 55.1%,
+      var(--pencil-middle) 60%,
+      var(--pencil-bottom) 60.1%
+    )
+  );
+  width: var(--w, 5px);
+  height: var(--h, 20px);
+  border-radius: var(--br, 2px 2px 0 0);
+  top: var(--t, 2px);
+  left: var(--l, -1px);
+}
+
+.continue-application > div .pencil:before {
+  -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+  clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+}
+
+.continue-application > div .pencil:after {
+  --b: none;
+  --w: 3px;
+  --h: 6px;
+  --br: 0 2px 1px 0;
+  --t: 3px;
+  --l: 3px;
+  border-top: 1px solid var(--pencil-top);
+  border-right: 1px solid var(--pencil-top);
+}
+
+.continue-application:before,
+.continue-application:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color);
+  transform-origin: 9px 1px;
+  transform: translateX(var(--cx, 0)) scale(0.5) rotate(var(--r, -45deg));
+  top: 26px;
+  right: 16px;
+  transition: transform 0.3s;
+}
+
+.continue-application:after {
+  --r: 45deg;
+}
+
+.continue-application:hover {
+  --cx: 2px;
+  --bg: var(--background-hover);
+  --fx: -40px;
+  --fr: -60deg;
+  --fd: 0.15s;
+  --fds: 0s;
+  --pbx: 3px;
+  --pby: -3px;
+  --pbd: 0.15s;
+  --pex: -24px;
+}
+
+/* From Uiverse.io by Cornerstone-04 */
+.box {
+  width: 100%;
+  height: auto;
+  float: left;
+  transition: 0.5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 5px;
+  text-align: center;
+  background: #5168cd;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 17px;
+  border: 2px solid transparent;
+
+  color: #fff;
+}
+
+.box:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  color: #fff;
+}
+
+.box:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.box:hover:before {
+  /* border-color: var(--primary-color); */
+  height: 100%;
+  transform: translateX(0);
+  transition: 0.3s transform linear, 0.3s height linear 0.3s;
+}
+
+.box:hover:after {
+  /* border-color: var(--primary-color); */
+  height: 100%;
+  transform: translateX(0);
+  transition: 0.3s transform linear, 0.3s height linear 0.5s;
+}
+
+.btn-discount {
+  /* color: var(--primary-color); */
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+/* From Uiverse.io by Randdose */
+.btn__search {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 0.25em;
+  color: var(--text-white);
+  font-size: 17px;
+  padding: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+  background-color: var(--primary-color);
+}
+
+.btn__search p {
+  z-index: 1;
+  margin: 0;
+}
+
+.btn__search:hover {
+  color: #fff;
+}
+
+.btn__search::after,
+.btn__search::before {
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: var(--primary-color);
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
+}
+
+.btn__search::before {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.btn__search::after {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.btn__search:hover:before {
+  transform: translateX(-1em);
+}
+
+.btn__search:hover:after {
+  transform: translateX(1em);
+}
+
+.btn__search:active:before,
+.btn__search:active:after {
+  background: teal;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  position: relative;
+}
+
+.timeline__event {
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  margin: 20px 0;
+  border-radius: 6px;
+  align-self: center;
+  width: 50vw;
+}
+
+.timeline__event:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__date {
+  border-radius: 0 6px 6px 0;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__content {
+  border-radius: 6px 0 0 6px;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6a4ec;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  right: auto;
+  z-index: -1;
+  transform: translateX(-50%);
+  animation: fillTop 2s forwards 4s ease-in-out;
+}
+
+.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f6a4ec;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+  animation: fillLeft 2s forwards 4s ease-in-out;
+}
+
+.timeline__event__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #9251ac;
+  letter-spacing: 1.5px;
+}
+
+.timeline__event__content {
+  padding: 20px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  background: #fff;
+  width: calc(40vw - 84px);
+  border-radius: 0 6px 6px 0;
+}
+
+.timeline__event__date {
+  color: #f6a4ec;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: #9251ac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0 20px;
+  border-radius: 6px 0 0 6px;
+}
+
+.timeline__event__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9251ac;
+  padding: 20px;
+  align-self: center;
+  margin: 0 20px;
+  background: #f6a4ec;
+  border-radius: 100%;
+  width: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  padding: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.timeline__event__icon i {
+  font-size: 32px;
+}
+
+.timeline__event__icon:before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #f6a4ec;
+  position: absolute;
+  top: 0%;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fillTop 2s forwards 4s ease-in-out;
+}
+
+.timeline__event__icon:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #f6a4ec;
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fillLeftOdd 2s forwards 4s ease-in-out;
+}
+
+.timeline__event__description {
+  flex-basis: 60%;
+}
+
+.timeline__event--type2:after {
+  background: #555ac0;
+}
+
+.timeline__event--type2 .timeline__event__date {
+  color: #87bbfe;
+  background: #555ac0;
+}
+
+.timeline__event--type2:nth-child(2n + 1) .timeline__event__icon:before,
+.timeline__event--type2:nth-child(2n + 1) .timeline__event__icon:after {
+  background: #87bbfe;
+}
+
+.timeline__event--type2 .timeline__event__icon {
+  background: #87bbfe;
+  color: #555ac0;
+}
+
+.timeline__event--type2 .timeline__event__icon:before,
+.timeline__event--type2 .timeline__event__icon:after {
+  background: #87bbfe;
+}
+
+.timeline__event--type2 .timeline__event__title {
+  color: #555ac0;
+}
+
+.timeline__event--type3:after {
+  background: #24b47e;
+}
+
+.timeline__event--type3 .timeline__event__date {
+  color: #aff1b6;
+  background-color: #24b47e;
+}
+
+.timeline__event--type3:nth-child(2n + 1) .timeline__event__icon:before,
+.timeline__event--type3:nth-child(2n + 1) .timeline__event__icon:after {
+  background: #aff1b6;
+}
+
+.timeline__event--type3 .timeline__event__icon {
+  background: #aff1b6;
+  color: #24b47e;
+}
+
+.timeline__event--type3 .timeline__event__icon:before,
+.timeline__event--type3 .timeline__event__icon:after {
+  background: #aff1b6;
+}
+
+.timeline__event--type3 .timeline__event__title {
+  color: #24b47e;
+}
+
+.timeline__event:last-child .timeline__event__icon:before {
+  content: none;
+}
+/* From Uiverse.io by cssbuttons-io */
+.button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+.button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+.button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+.button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+.button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button:hover .circle {
+  width: 100%;
+}
+
+.button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+.button:hover .button-text {
+  color: #fff;
+}
