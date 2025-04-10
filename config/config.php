@@ -1,7 +1,7 @@
 <?php
 class Database {
 private $host = "localhost";
-private $db_name = "my_store";
+private $db_name = "doctorhub";
 private $username = "root";
 private $password = "";
 public $conn;

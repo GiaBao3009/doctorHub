@@ -1,5 +1,7 @@
 {
     "require": {
-        "firebase/php-jwt": "^6.11"
+        "firebase/php-jwt": "^6.11",
+        "google/apiclient": "^2.18",
+        "facebook/graph-sdk": "^5.1"
     }
 }

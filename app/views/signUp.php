@@ -36,18 +36,43 @@
         height: 80px;
     }
     </style>
+    <style>
+    .container.container-login {
+        width: 500px;
+    }
+
+    .form-container {
+        width: 100%;
+        position: unset;
+    }
+
+    .control__group {
+        color: #fff;
+        height: 42px;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .container .form-container .social-login .control__group--google {
+        background-color: #db4437;
+    }
+
+    .container .form-container .social-login .control__group--facebook {
+        background-color: #1877f2;
+    }
+    </style>
 </head>
 
 <body>
-    <div class="container container-login active" id="container">
-        <div class="form-container sign-up">
+
+    <div class="container container-login" id="container">
+        <div class="form-container">
             <form action="" method="post" id="form">
-                <h1 class="text-capitalize mb-0">Đăng Ký</h1>
-                <p id="error-message" class="small mb-0"></p>
-                <div class="input-group d-flex align-items-center flex-nowrap form-group" id="incorrect">
-                    <label for="input__name"><i class="fa-regular fa-user"></i></label>
-                    <input type="text" placeholder="FirstName" class="input__name" id="input__name" name="firstName" />
-                </div>
+                <h1 class="text-capitalize mb-3 text-center">Đăng Ký</h1>
 
                 <div class="input-group d-flex align-items-center flex-nowrap form-group">
                     <label for="input__mail"><i class="fa-solid fa-envelope"></i></label>
@@ -68,96 +93,138 @@
                 <button type="submit " class="btn signUp">Đăng ký</button>
 
                 <div class="line"><span>hoặc đăng ký bằng</span></div>
-                <div class="d-flex mb-3" style="gap: 6px">
-                    <div class="form-group control__group control__group--google">
-                        <a href="#" class="icon text-white fw-bolder">Google</a>
+
+                <div class="social-login mb-3 row gx-2">
+                    <!-- Google -->
+                    <div class="col-6">
+                        <button id="googleBtn" type="button"
+                            class="btn d-flex align-items-center justify-content-center gap-2 w-100 control__group control__group--google">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+
                     </div>
-                    <div class="form-group control__group control__group--facebook">
-                        <a href="#" class="icon text-white fw-bolder">Facebook</a>
+
+                    <!-- Facebook -->
+                    <div class="col-6">
+                        <button id="facebookBtn" type="button"
+                            class="btn d-flex align-items-center justify-content-center gap-2 w-100 control__group control__group--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </button>
                     </div>
                 </div>
 
-                <p>
-                    Bạn đã có tài khoản?
-                    <a href="./signIn.php" class="form__desc">Đăng nhập</a>
-                </p>
-            </form>
-        </div>
-        <div class="form-container sign-in">
-            <form action="" method="post" id="form">
-                <h1 class="text-capitalize mb-3">Đăng Nhập</h1>
-                <div class="input-group d-flex align-items-center flex-nowrap form-group">
-                    <label for="input__mail"><i class="fa-solid fa-envelope"></i></label>
-                    <input type="email" placeholder="Email" class="input__mail" id="input__mail" name="email" />
-                </div>
-
-                <div class="input-group d-flex align-items-center flex-nowrap form-group">
-                    <label for="input__pass"><i class="ri-lock-line"></i></label>
-                    <input type="password" placeholder="Password" class="input__pass" id="input__pass"
-                        name="password" />
-                </div>
-
-                <button type="submit " class="btn signUp">Đăng Nhập</button>
-                <div class="line">
-                    <span>hoặc đăng nhập bằng</span>
-                </div>
-
-                <div class="d-flex mb-3" style="gap: 6px">
-                    <div class="form-group control__group control__group--google">
-                        <a href="#" class="icon text-white fw-bolder"><svg width="36" height="36" viewBox="0 0 36 36"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.96 16.5599V20.0159H18.648C18.432 21.5279 16.92 24.3359 12.96 24.3359C9.504 24.3359 6.69601 21.4559 6.69601 17.9999C6.69601 14.5439 9.504 11.6639 12.96 11.6639C14.904 11.6639 16.2 12.5279 16.992 13.2479L19.728 10.5839C17.928 8.92792 15.696 7.91992 12.96 7.91992C7.41601 7.91992 2.88 12.4559 2.88 17.9999C2.88 23.5439 7.41601 28.0799 12.96 28.0799C18.792 28.0799 22.608 23.9759 22.608 18.2159C22.608 17.5679 22.536 17.0639 22.464 16.5599H12.96ZM34.56 16.5599H31.68V13.6799H28.8V16.5599H25.92V19.4399H28.8V22.3199H31.68V19.4399H34.56V16.5599Z"
-                                    fill="white"></path>
-                            </svg>
-                            Google</a>
-                    </div>
-                    <div class="form-group control__group control__group--facebook">
-                        <a href="#" class="icon text-white fw-bolder"><svg width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9.198 21.5H13.198V13.49H16.802L17.198 9.51H13.198V7.5C13.198 7.23478 13.3034 6.98043 13.4909 6.79289C13.6784 6.60536 13.9328 6.5 14.198 6.5H17.198V2.5H14.198C12.8719 2.5 11.6002 3.02678 10.6625 3.96447C9.72479 4.90215 9.198 6.17392 9.198 7.5V9.51H7.198L6.802 13.49H9.198V21.5Z"
-                                    fill="white"></path>
-                            </svg>
-                            Facebook</a>
-                    </div>
-                </div>
                 <p class="mt-0 text-center">
-                    Tạo mới?
-                    <a href="./signUp.php" class="form__desc" id="createAccount">Tạo mới tài khoản?</a>
+                    Bạn đã có tài khoản?
+                    <a href="./signIn.php" class="form__desc" id="createAccount">Đăng nhập</a>
                 </p>
-
             </form>
-        </div>
-        <div id="profile" style="display: none">
-            <p id="userName"></p>
-            <p id="userEmail"></p>
-            <img id="userImage" src="" alt="User Image" />
-            <button onclick="logout()">Đăng xuất</button>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <!-- <h1>Welcome Back!</h1>
-            <p>Manchester City</p> -->
-                    <button class="hidden" id="login">Đăng Nhập</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <!-- <h1>Hello, Friend!</h1>
-            <p>Hello The Cityzen</p> -->
-                    <button class="hidden" id="register">Đăng Ký</button>
-                </div>
+
+            <div id="profile" style="display:none;">
+                <h3>Chào, <span id="userName"></span>!</h3>
+                <img id="userImage" src="" alt="User Image" />
+                <p>Email: <span id="userEmail"></span></p>
+                <button onclick="logout()" class="btn btn-danger">Đăng Xuất</button>
             </div>
         </div>
     </div>
-
 </body>
 
 <!-- *Bootstrap* -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
-<script src="../../services/handleLogin.js"></script>
+<script src="../../services/handleLogin.js"></script> <!-- SDK Google -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<!-- SDK Facebook -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<script>
+// Google Login
+window.onload = function() {
+    google.accounts.id.initialize({
+        client_id: "16769569373-33ss6o0l2c3s75urp2trlq4nbahdvapf.apps.googleusercontent.com", // 🔁 THAY bằng Client ID thực của bạn
+        callback: handleGoogleResponse,
+    });
+
+    document.getElementById("googleBtn").addEventListener("click", function() {
+        const clientId = "16769569373-33ss6o0l2c3s75urp2trlq4nbahdvapf.apps.googleusercontent.com";
+        const redirectUri =
+            "http://localhost:3000/auth/google/callback"; // 🔁 sửa thành URL backend của bạn
+
+        const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?` +
+            `client_id=${clientId}&` +
+            `redirect_uri=${redirectUri}&` +
+            `response_type=token&` +
+            `scope=email%20profile`;
+
+        window.location.href = authUrl;
+    });
+
+
+
+
+    document.getElementById("facebookBtn").addEventListener("click", function() {
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                const token = response.authResponse.accessToken;
+                fetch("/auth/facebook", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            token: token
+                        })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            window.location.href = "/index";
+                        } else {
+                            alert("Đăng nhập Facebook thất bại");
+                        }
+                    });
+            }
+        }, {
+            scope: 'public_profile,email'
+        });
+    });
+};
+
+function handleGoogleResponse(response) {
+    fetch("/auth/google", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: response.credential
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = "/index";
+            } else {
+                alert("Đăng nhập Google thất bại");
+            }
+        });
+}
+
+// Facebook SDK init
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: '1728886988022684',
+        cookie: true,
+        xfbml: true,
+        version: 'v18.0'
+    });
+};
+</script>
+
 <!-- <script>
     /**
      * Xử lý phản hồi từ Google sau khi đăng nhập
@@ -233,7 +300,7 @@
 
     window.onload = checkLoginStatus;
   </script> -->
-<script>
+<!-- <script>
 function handleCredentialResponse(response) {
     if (!response || !response.credential) {
         console.error("Lỗi: Không nhận được JWT Token từ Google");
@@ -276,7 +343,7 @@ window.onload = function() {
             google.accounts.id.prompt(); // Hiển thị hộp thoại đăng nhập
         });
 };
-</script>
+</script> -->
 <!-- <script>
     function fakeLogin() {
       const userData = {

@@ -775,3 +775,505 @@ footer ul li:hover {
   color: #fff;
   transform: translateY(-5px);
 }
+
+
+/* ====================== 
+          
+====================== */
+/* lớp hero(text img) */
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url('/webp-1280.png') no-repeat center center;
+    background-size: cover;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.search-box {
+    position: relative;
+    top: -50px;
+    z-index: 10;
+}
+
+.services img {
+    margin-top: 20px;
+    width: 100%;
+    height: 340px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin: auto;
+    
+}
+
+
+
+/* Search form styles */
+.search-form {
+    max-width: 400px; /* Adjust as needed */
+    align-items: center;
+}
+
+.search-input {
+    border-radius: 25px 0 0 25px; /* Rounded left side */
+    border: 2px solid #e0e0e0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: none; /* Remove default Bootstrap shadow if unwanted */
+}
+
+.search-input:focus {
+    border-color: #45aded; 
+    outline: none;
+    box-shadow: 0 0 5px rgba(39, 108, 152, 0.3);
+}
+
+.btn-search {
+    border-radius: 0 25px 25px 0;
+    background-color: #45aded;;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #45aded;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: #1e5a7e;
+    border-color: #1e5a7e;
+    color: #fff;
+}
+
+.btn-text {
+    display: inline; /* Show text by default */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .search-form {
+        max-width: 100%;
+    }
+    .search-input {
+        padding: 8px 15px;
+    }
+    .btn-search {
+        padding: 8px 15px;
+    }
+    .btn-text {
+        display: none; /* Hide text on small screens, keep icon */
+    }
+}
+
+/* may cai the dich vu */
+.card {
+    transition: all 0.3s ease;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1e5a7e !important; /* Slightly darker shade of #276c98 */
+}
+
+.img-fluid {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* thẻ liên hệ thông tin liên lạc */
+.card {
+    height: 100%;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.contact-title {
+    color: #0f766e;
+    font-weight: bold;
+}
+.contact-text {
+    color: #6c757d;
+}
+.contact-link {
+    color: #28a745;
+}
+
+
+/* danh mục nổi bật */
+.category-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-card span {
+    transition: color 0.3s ease;
+}
+
+.category-card:hover span {
+    color: #007bff;
+}
+
+
+/* blog */
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.blog-card img {
+    height: 200px;
+    object-fit: cover;
+}
+.blog-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.blog-card .btn {
+    align-self: flex-start;
+    margin-top: auto;
+    
+}
+
+/* 
+//mấy cái thẻ tra cuu benh */
+
+.card-img {
+    width: 100px;
+    height: 180px;
+}
+.card-button {
+    background-color: #0f766e; /* Màu primary của Bootstrap */
+    color: white;
+    width: 40px;
+    height: 40px;
+    padding: 0; /* Xóa padding mặc định để dùng flex */
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(7, 67, 69, 0.3);
+}
+
+/* Tận dụng class hover của Bootstrap */
+.card-button:hover {
+    background-color: #0c8b92; /* Màu primary đậm hơn */
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(9, 153, 158, 0.5);
+}
+
+/* Hiệu ứng active */
+.card-button:active {
+    transform: translateX(2px);
+    box-shadow: 0 1px 3px rgba(1, 55, 58, 0.3);
+}
+
+/* Tinh chỉnh icon Font Awesome */
+.card-button .fas {
+    transition: transform 0.3s ease;
+}
+
+.card-button:hover .fas {
+    transform: translateX(3px);
+}   
+
+
+/* chuyenkhoa */
+.custom-button {
+    background-color: #e0f7fa;
+    padding: 8px 16px; 
+    border-radius: 25px; 
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500; 
+    transition: all 0.3s ease; 
+}
+
+.custom-button:hover {
+    background-color: #b3ecf5; 
+    color: #0056b3; 
+    transform: translateX(5px);
+}
+
+/* Nút mũi tên chuyển slide */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Giảm padding và tối ưu card-body */
+.card-body {
+    padding: 1rem; 
+}
+
+/* Đảm bảo card không kéo dài quá mức */
+.card {
+    transition: transform 0.3s ease; 
+}
+
+/* Hiệu ứng hover cho card (tùy chọn) */
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background-color: #007bff; 
+    border: none;
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white; 
+    font-size: 1.2rem; 
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3); 
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho mũi tên */
+.arrow-button:hover {
+    background-color: #0056b3; 
+    transform: translateY(-50%) scale(1.1); 
+    box-shadow: 0 5px 12px rgba(0, 123, 255, 0.5); 
+}
+
+/* Hiệu ứng khi click */
+.arrow-button:active {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); 
+}
+
+/* Hiệu ứng cho icon mũi tên */
+.arrow-button i {
+    transition: transform 0.3s ease; 
+}
+
+.arrow-button:hover i {
+    transform: translateX(4px); 
+}
+
+/* dịch vụ toàn diện */
+.service-card {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    height: 80px;
+    transition: all 0.3s ease; /* Thêm hiệu ứng mượt */
+    text-decoration: none; /* Xóa gạch chân mặc định của thẻ <a> */
+    color: inherit;
+}
+
+/* Hiệu ứng khi hover */
+.service-card:hover {
+    transform: translateY(-5px); /* Nâng card lên */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tăng bóng */
+    background-color: #f8fafc; /* Đổi màu nền nhẹ */
+}
+
+/* Hiệu ứng khi click */
+.service-card:active {
+    transform: translateY(0); /* Trở về vị trí ban đầu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Giảm bóng */
+}
+
+.service-card img {
+    width: 60px;
+    height: 60px;
+    margin-right: 1.5rem;
+}
+
+.service-card span {
+    font-size: 1.25rem;
+    text-align: center; /* Căn giữa chữ nếu cần */
+    flex-grow: 1; /* Cho phép span chiếm không gian còn lại để căn giữa */
+}
+
+
+/* CHUYEN KHOA */
+.card-img-top {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.card:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card-body {
+    padding: 1rem;
+    background-color: #fff;
+}
+.card-title {
+    font-size: 1.25rem;
+    color: #0f766e;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.h5.font-weight-bold {
+    color: #0f766e;
+}
+.fas.fa-home {
+    font-size: 1.5rem;
+ }
+
+/* Co xuong khop */
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 85px;
+    height: 100%;
+    transition: .3s;
+    scrollbar-width: none;
+    overflow: hidden scroll;
+    background: #0b5ada12;
+    -ms-overflow-style: none;
+    padding: 20px 20px 20px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 8px 0px 9px 0px #0b5ada12;
+}
+
+.menu:hover {
+    width: 260px;
+}
+
+.menu:hover li span:nth-child(2) {
+    display: block;
+}
+
+.menu-content li {
+    list-style: none;
+    border-radius: 0px 50px 50px 0;
+    transition: .3s;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.menu-content li:hover {
+    background: #3408c2;
+}
+
+.menu-content li span:nth-child(2) {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-family: 'calibri';
+}
+
+.material-symbols-outlined {
+    padding: 10px;
+    font-size: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #3408c2;
+}

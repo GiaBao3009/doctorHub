@@ -53,9 +53,9 @@ Author: **@Vinhdev04**<br>
 2. Mở file `index.html` trong trình duyệt web để xem dự án.
 
 ```bash
-git clone https://github.com/Vinhdev04/DoctorHub.git
+git clone https://github.com/Vinhdev04/DoctorHubs.git
 cd DOCTORHUB
-open index.html
+open index.php
 ```
 ---
 ## Tài Nguyên Và Công Nghệ Sư Dụng:
@@ -63,3 +63,6 @@ open index.html
 **API Vietnam Open Data** `để tự động tải tỉnh/thành, quận/huyện và phường/xã`
 <br>
 **Uiverse use UI** `https://uiverse.io/ ->  tận dụng một số components UI sẵn`
+---
+## Link Demo:
+`https://doctorhubs.onrender.com/`

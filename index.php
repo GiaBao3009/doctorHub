@@ -1,19 +1,45 @@
 <?php
-if (!empty($_GET['q'])) {
-    $query = htmlspecialchars($_GET['q'], ENT_QUOTES, 'UTF-8'); 
+// session_start();
 
-    switch ($query) {
-        case 'info':
-            phpinfo();
-            exit;
-        default:
-            header("HTTP/1.0 404 Not Found");
-            echo "Invalid query parameter.";
-            exit;
-    }
-}
+// // Autoload hoặc require các file cần thiết
+// require_once './app/controllers/AuthController.php';
+
+// // Lấy controller và action từ URL
+// $controller = $_GET['controller'] ?? 'auth';
+// $action = $_GET['action'] ?? 'index';
+
+// switch ($controller) {
+//     case 'auth':
+//         $authController = new AuthController();
+
+//         switch ($action) {
+//             case 'loginWithGoogle':
+//                 $authController->loginWithGoogle();
+//                 break;
+
+//             case 'loginWithFacebook':
+//                 $authController->loginWithFacebook();
+//                 break;
+
+//             case 'facebookCallback':
+//                 $authController->facebookCallback();
+//                 break;
+
+//             case 'index':
+//                 echo "Trang index hoặc login"; // có thể chuyển hướng về view login
+//                 break;
+
+//             default:
+//                 echo "Không tìm thấy action: $action";
+//         }
+//         break;
+
+//     default:
+//         echo "Không tìm thấy controller: $controller";
+//         break;
+// }
 ?>
-<!-- *Sidebar* -->
+
 <?php include_once 'partials/sidebar.php'; ?>
 
 <!DOCTYPE html>
@@ -100,7 +126,7 @@ if (!empty($_GET['q'])) {
                         bạn chăm sóc sức khỏe một cách dễ dàng và nhanh chóng.
                     </p>
                     <!-- Nút Call-to-Action -->
-                    <a class="text-decoration-none btn cssbuttons-io-button" href="/pages/book.html">
+                    <a class="text-decoration-none btn cssbuttons-io-button" href="./app/views/test.php">
                         Đặt Lịch Ngay
                         <div class="icon">
                             <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -346,7 +372,82 @@ if (!empty($_GET['q'])) {
         </div>
     </section>
 
-
+    <!-- ** -->
+    <div class="container">
+        <h1 class="h1" style="color: #0f766e; margin-bottom: 20px;">Dịch vụ toàn diện</h1>
+        <div class="row">
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="./app/views/chuyenkhoa.php" class="service-card">
+                    <img data-src="./assets/images/Icon/iconkham-chuyen-khoa.png" alt="Icon of a hospital building"
+                        class="lazyload">
+                    <span>Khám Chuyên khoa</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/iconkham-tu-xa.png"
+                        alt="Icon of a mobile phone with a medical cross" class="lazyload">
+                    <span>Khám từ xa</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/iconkham-tong-quan.png"
+                        alt="Icon of a clipboard with a medical cross" class="lazyload">
+                    <span>Khám tổng quát</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/iconxet-nghiem-y-hoc.png"
+                        alt="Icon of a test tube with a drop of liquid" class="lazyload">
+                    <span>Xét nghiệm y học</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/iconsuc-khoe-tinh-than.png"
+                        alt="Icon of a head with a medical cross" class="lazyload">
+                    <span>Sức khỏe tinh thần</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/iconkham-nha-khoa.png"
+                        alt="Icon of a tooth with a medical cross" class="lazyload">
+                    <span>Khám nha khoa</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/icongoi-phau-thuat.png" alt="Icon of a microscope"
+                        class="lazyload">
+                    <span>Gói Phẫu thuật</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/icons-tieu-duong.png" alt="Icon of a glucose meter"
+                        class="lazyload">
+                    <span>Sống khỏe Tiểu đường</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/iconbai-test-suc-khoe2.png" alt="Icon of a health test"
+                        class="lazyload">
+                    <span>Bài Test Sức khỏe</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 mb-4">
+                <a href="" class="service-card">
+                    <img data-src="./assets/images/Icon/near-home-01.png" alt="Icon of a shield with a medical cross"
+                        class="lazyload">
+                    <span>Y tế gần bạn</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- *Timeline-home* -->
     <section class="home__booking py-5 border-bottom">

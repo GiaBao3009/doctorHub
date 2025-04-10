@@ -138,15 +138,42 @@
                             <a class="nav-link" href="./app/views/shop.php">Shop</a>
                         </li>
                         <!-- Search Form -->
-                        <form class="d-flex ms-md-3 ms-0" role="search">
-                            <div class="me-2">
-                                <input class="form-control me-2 w-100" type="search" placeholder="Search"
-                                    aria-label="Search" />
-                            </div>
-                            <button class="btn btn-outline-success" type="submit">
-                                Search
-                            </button>
-                        </form>
+                        <?php if (isset($_SESSION['user'])): ?>
+                        <!-- Icon giỏ hàng -->
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="./app/views/cart.php">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- Avatar người dùng + Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                data-bs-toggle="dropdown">
+                                <img src="<?= $_SESSION['user']['avatar'] ?>" alt="Avatar" class="rounded-circle"
+                                    width="30" height="30">
+                                <span class="ms-2"><?= $_SESSION['user']['name'] ?></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Tài khoản</a></li>
+                                <li><a class="dropdown-item"
+                                        href="./app/controllers/AuthController.php?action=logout">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                        <?php else: ?>
+                        <!-- Nếu chưa login -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="./app/views/signIn.php">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./app/views/signUp.php">Đăng ký</a>
+                        </li>
+                        <?php endif; ?>
+
                     </ul>
                 </div>
             </nav>
