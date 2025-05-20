@@ -51,95 +51,113 @@
     <!-- *Navbar* -->
     <header class="header">
         <div class="container">
+            <!-- Top Bar -->
             <div class="topbar py-3 border-bottom bg-white">
                 <div class="container d-flex justify-content-between align-items-center">
+                    <!-- Contact Info -->
                     <div class="contact-info small text-muted d-flex">
                         <strong>Email:</strong>
-                        <a href="mailto:vaniizit.work@gmail.com?subject=Yêu%20cầu%20được%20hỗ%20trợ%20từ%20website%20DoctorHub"
-                            class="topbar__mail">vaniizit.work@gmail.com</a>
+                        <a href="mailto:vaniizit.work@gmail.com" class="topbar__mail text-primary">doctorhub.work@gmail.com</a>
                         |
-                        <strong class="ms-1 d-none d-md-flex">Hotline:
-                            <a href="tel:+84 252 032 375"
-                                class="text-decoration-none cart__home--phone text-dark fw-bold">+84 252 032
-                                375</a>
+                        <strong class="ms-1 d-none d-md-flex">
+                            Hotline: <a href="tel:+84252032375" class="text-decoration-none text-dark fw-bold">+84 252 032 375</a>
                         </strong>
                     </div>
+                    
+                    <!-- User Actions -->
                     <div class="user-actions d-flex align-items-center gap-3">
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-                        <a href="./signIn.php" class="topbar__home--login text-dark small d-none d-md-block">Đăng
-                            nhập</a>
-                        <a href="./signUp.php" class="topbar__home--register text-dark small d-none d-md-block">Đăng
-                            ký</a>
-
-                        <div id="user-profile" class="user-profile d-none">
-                            <img id="user-avatar" src="" alt="User Avatar" class="rounded-circle" width="40"
-                                height="40" />
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUser"
-                                    data-bs-toggle="dropdown">
-                                    <span id="user-name">User</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="logout-btn">Đăng xuất</a>
-                                    </li>
-                                </ul>
+                        <?php if (isLoggedIn()): ?>
+                            <?php $user = getCurrentUser(); ?>
+                            <div class="user-profile">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownUser" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-user me-1"></i>
+                                        <span><?php echo htmlspecialchars($user['email']); ?></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/app/views/profile.php">Tài khoản</a></li>
+                                        
+                                        <?php if ($user['role'] === 'doctor'): ?>
+                                            <li><a class="dropdown-item" href="/app/views/doctor_dashboard.php">Bảng điều khiển</a></li>
+                                        <?php elseif ($user['role'] === 'admin'): ?>
+                                            <li><a class="dropdown-item" href="/app/views/admin_dashboard.php">Quản trị</a></li>
+                                        <?php endif; ?>
+                                        
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/controllers/auth/logout.php">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        <?php else: ?>
+                            <a href="./signIn.php" class="topbar__home--login text-dark small d-none d-md-block">Đăng nhập</a>
+                            <a href="./signUp.php" class="topbar__home--register text-dark small d-none d-md-block">Đăng ký</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
 
+            <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand navbar__link d-flex align-items-center" href="../../index.php">
-                    <img data-src="../../assets/images/Logo/DoctorHub.png" alt="Logo" width="30" height="24"
-                        class="d-inline-block align-text-top img-fluid navbar__logo lazyload" />
+                <a class="navbar-brand navbar__link d-flex align-items-center fw-bolder text-primary" href="../../index.php">
+                    <img src="../../assets/images/Logo/DoctorHub.png" alt="Logo" width="40px" height="40px" class="d-inline-block align-text-top me-2" style="border-radius: 50%;">
                     DoctorHub
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: end">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item <?php echo isActiveMenu('index.php'); ?>">
                             <a class="nav-link" href="../../index.php">Trang Chủ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./book.php">Đặt Lịch Khám</a>
+                        <li class="nav-item <?php echo isActiveMenu('book.php'); ?>">
+                            <a class="nav-link" href="./appointment_form.php">Đặt Lịch Khám</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./consultation.php">Tư Vấn Sức Khỏe</a>
+                        <li class="nav-item <?php echo isActiveMenu('consultation.php'); ?>">
+                            <a class="nav-link" href="./consultation.php
+                            ">Tư Vấn Sức Khỏe</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./services.php">Dịch Vụ Y Tế</a>
+                        <li class="nav-item <?php echo isActiveMenu('services.php'); ?>">
+                            <a class="nav-link" href="./app/views/services.php">Bài Test</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php echo isActiveMenu('contact.php'); ?>">
                             <a class="nav-link" href="./contact.php">Liên Hệ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./blog.php">Blog</a>
+                        <li class="nav-item <?php echo isActiveMenu('blog.php'); ?>">
+                            <a class="nav-link" href="./blog.php">Tin Tức</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./shop.php">Shop</a>
+                        <li class="nav-item <?php echo isActiveMenu('shop.php'); ?>">
+                            <a class="nav-link" href="./shop.php">Cửa Hàng</a>
                         </li>
-                        <!-- Search Form -->
-                        <form class="d-flex ms-md-3 ms-0" role="search">
-                            <div class="me-2">
-                                <input class="form-control me-2 w-100" type="search" placeholder="Search"
-                                    aria-label="Search" />
-                            </div>
-                            <button class="btn btn-outline-success" type="submit">
-                                Search
-                            </button>
-                        </form>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
-
+    <div class="contact-sidebar">
+  <a href="./appointment_form.php" class="contact-btn text-decoration-none" title="Đặt lịch" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Đặt lịch">
+   <i class="fa-solid fa-calendar-check"></i>
+  </a>
+  <a href="tel:0352032375" class="contact-btn text-decoration-none" title="Gọi điện" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Gọi điện">
+   <i class="fa-solid fa-phone"></i>
+  </a>
+  <a href="tel:0352032375" class="contact-btn text-decoration-none" title="Chat" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Chat với bác sĩ">
+   <i class="fa-solid fa-comments"></i>
+  </a>
+  <a href="mailto:vaniizit@gmail.com" class="contact-btn text-decoration-none" title="Email" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Gửi email">
+   <i class="fa-solid fa-envelope"></i>
+  </a>
+  <button id="scrollTopBtn" class="contact-btn d-none" data-bs-toggle="tooltip" data-bs-placement="left"
+   title="Lên đầu trang" onclick="scrollToTop()">
+   <i class="fa-solid fa-chevron-up"></i>
+  </button>
+ </div>
     <!-- ** -->
     <footer class="bg-light pt-5 pb-3 border-top">
         <div class="container">

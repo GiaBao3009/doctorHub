@@ -1,0 +1,56 @@
+[21:35:24][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=3
+[21:35:24][request] GET params: {"appointment_id":"3"}
+[21:35:24][request] Raw POST data: 
+[21:35:24][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[21:35:24][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 3
+[21:35:24][info] SQL query: SELECT a.* , u.fullname as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.doctor_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[21:35:24][error] Lỗi khi lấy chi tiết lịch hẹn: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.fullname' in 'field list'
+[21:45:28][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=3
+[21:45:28][request] GET params: {"appointment_id":"3"}
+[21:45:28][request] Raw POST data: 
+[21:45:28][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[21:45:28][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 3
+[21:45:28][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.doctor_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[21:45:28][error] Lỗi khi lấy chi tiết lịch hẹn: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.doctor_id' in 'on clause'
+[21:49:20][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=3
+[21:49:20][request] GET params: {"appointment_id":"3"}
+[21:49:20][request] Raw POST data: 
+[21:49:20][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[21:49:20][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 3
+[21:49:20][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.user_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[21:49:20][info] Lấy dữ liệu lịch hẹn thành công: {"id":3,"user_id":7,"service_id":1,"doctor_user_id":5,"appointment_date":"2023-04-08 13:30:00","status":"confirmed","note":"B\u00e1c s\u0129: Nguy\u1ec5n \u0110\u1ee9c Gia B\u1ea3o (ID: 5)\nT\u00ean: Nguy\u1ec5n Gia B\u1ea3o\nGi\u1edbi t\u00ednh: Nam\n\u0110i\u1ec7n tho\u1ea1i: 0834571574\nEmail: ssimalamini@outlook.com.vn\nN\u0103m sinh: 2004\n\u0110\u1ecba ch\u1ec9: U ghe street, Qu\u1eadn 7, TP. H\u1ed3 Ch\u00ed Minh\nL\u00fd do kh\u00e1m: C\u1eb7c too\n","patient_name":"Nguy\u1ec5n Gia B\u1ea3o","created_at":"2025-04-26 03:51:56","doctor_name":"ssimalamini","service_name":"Kh\u00e1m t\u1ed5ng qu\u00e1t","price":"500000.00","formatted_date":"08\/04\/2023"}
+[21:49:26][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=3
+[21:49:26][request] GET params: {"appointment_id":"3"}
+[21:49:26][request] Raw POST data: 
+[21:49:26][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[21:49:26][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 3
+[21:49:26][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.user_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[21:49:27][info] Lấy dữ liệu lịch hẹn thành công: {"id":3,"user_id":7,"service_id":1,"doctor_user_id":5,"appointment_date":"2023-04-08 13:30:00","status":"confirmed","note":"B\u00e1c s\u0129: Nguy\u1ec5n \u0110\u1ee9c Gia B\u1ea3o (ID: 5)\nT\u00ean: Nguy\u1ec5n Gia B\u1ea3o\nGi\u1edbi t\u00ednh: Nam\n\u0110i\u1ec7n tho\u1ea1i: 0834571574\nEmail: ssimalamini@outlook.com.vn\nN\u0103m sinh: 2004\n\u0110\u1ecba ch\u1ec9: U ghe street, Qu\u1eadn 7, TP. H\u1ed3 Ch\u00ed Minh\nL\u00fd do kh\u00e1m: C\u1eb7c too\n","patient_name":"Nguy\u1ec5n Gia B\u1ea3o","created_at":"2025-04-26 03:51:56","doctor_name":"ssimalamini","service_name":"Kh\u00e1m t\u1ed5ng qu\u00e1t","price":"500000.00","formatted_date":"08\/04\/2023"}
+[22:02:50][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=4
+[22:02:50][request] GET params: {"appointment_id":"4"}
+[22:02:50][request] Raw POST data: 
+[22:02:50][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[22:02:50][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 4
+[22:02:50][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.user_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[22:02:50][info] Lấy dữ liệu lịch hẹn thành công: {"id":4,"user_id":7,"service_id":1,"doctor_user_id":5,"appointment_date":"2023-04-08 13:30:00","status":"canceled","note":"B\u00e1c s\u0129: Nguy\u1ec5n \u0110\u1ee9c Gia B\u1ea3o (ID: 5)\nT\u00ean: Nguy\u1ec5n Gia B\u1ea3o\nGi\u1edbi t\u00ednh: Nam\n\u0110i\u1ec7n tho\u1ea1i: 0834571574\nEmail: ssimalamini@outlook.com.vn\nN\u0103m sinh: 2004\n\u0110\u1ecba ch\u1ec9: U ghe street, Qu\u1eadn 7, TP. H\u1ed3 Ch\u00ed Minh\nL\u00fd do kh\u00e1m: C\u1eb7c too\n","patient_name":"Nguy\u1ec5n Gia B\u1ea3o","created_at":"2025-04-26 03:51:56","doctor_name":"ssimalamini","service_name":"Kh\u00e1m t\u1ed5ng qu\u00e1t","price":"500000.00","formatted_date":"08\/04\/2023"}
+[22:02:53][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=3
+[22:02:53][request] GET params: {"appointment_id":"3"}
+[22:02:53][request] Raw POST data: 
+[22:02:53][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[22:02:53][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 3
+[22:02:53][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.user_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[22:02:53][info] Lấy dữ liệu lịch hẹn thành công: {"id":3,"user_id":7,"service_id":1,"doctor_user_id":5,"appointment_date":"2023-04-08 13:30:00","status":"confirmed","note":"B\u00e1c s\u0129: Nguy\u1ec5n \u0110\u1ee9c Gia B\u1ea3o (ID: 5)\nT\u00ean: Nguy\u1ec5n Gia B\u1ea3o\nGi\u1edbi t\u00ednh: Nam\n\u0110i\u1ec7n tho\u1ea1i: 0834571574\nEmail: ssimalamini@outlook.com.vn\nN\u0103m sinh: 2004\n\u0110\u1ecba ch\u1ec9: U ghe street, Qu\u1eadn 7, TP. H\u1ed3 Ch\u00ed Minh\nL\u00fd do kh\u00e1m: C\u1eb7c too\n","patient_name":"Nguy\u1ec5n Gia B\u1ea3o","created_at":"2025-04-26 03:51:56","doctor_name":"ssimalamini","service_name":"Kh\u00e1m t\u1ed5ng qu\u00e1t","price":"500000.00","formatted_date":"08\/04\/2023"}
+[22:12:45][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=3
+[22:12:45][request] GET params: {"appointment_id":"3"}
+[22:12:45][request] Raw POST data: 
+[22:12:45][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[22:12:45][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 3
+[22:12:45][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.user_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[22:12:45][info] Lấy dữ liệu lịch hẹn thành công: {"id":3,"user_id":7,"service_id":1,"doctor_user_id":5,"appointment_date":"2023-04-08 13:30:00","status":"confirmed","note":"B\u00e1c s\u0129: Nguy\u1ec5n \u0110\u1ee9c Gia B\u1ea3o (ID: 5)\nT\u00ean: Nguy\u1ec5n Gia B\u1ea3o\nGi\u1edbi t\u00ednh: Nam\n\u0110i\u1ec7n tho\u1ea1i: 0834571574\nEmail: ssimalamini@outlook.com.vn\nN\u0103m sinh: 2004\n\u0110\u1ecba ch\u1ec9: U ghe street, Qu\u1eadn 7, TP. H\u1ed3 Ch\u00ed Minh\nL\u00fd do kh\u00e1m: C\u1eb7c too\n","patient_name":"Nguy\u1ec5n Gia B\u1ea3o","created_at":"2025-04-26 03:51:56","doctor_name":"ssimalamini","service_name":"Kh\u00e1m t\u1ed5ng qu\u00e1t","price":"500000.00","formatted_date":"08\/04\/2023"}
+[22:12:53][request] Request: GET /controllers/appointment/appointment_actions.php?appointment_id=5
+[22:12:53][request] GET params: {"appointment_id":"5"}
+[22:12:53][request] Raw POST data: 
+[22:12:53][info] Cấu trúc bảng appointments: {"id":"int","user_id":"int","service_id":"int","doctor_user_id":"int","appointment_date":"datetime","status":"enum('pending','confirmed','completed','canceled')","note":"text","patient_name":"varchar(100)","created_at":"timestamp"}
+[22:12:53][info] Xử lý yêu cầu lấy chi tiết lịch hẹn ID: 5
+[22:12:53][info] SQL query: SELECT a.* , u.name as doctor_name , s.name as service_name, s.price  FROM appointments a  LEFT JOIN users u ON a.user_id = u.id  LEFT JOIN services s ON a.service_id = s.id  WHERE a.id = :appointment_id LIMIT 1
+[22:12:53][info] Lấy dữ liệu lịch hẹn thành công: {"id":5,"user_id":6,"service_id":1,"doctor_user_id":5,"appointment_date":"2023-04-08 09:30:00","status":"pending","note":"B\u00e1c s\u0129: Nguy\u1ec5n \u0110\u1ee9c Gia B\u1ea3o (ID: 5)\nT\u00ean: Nguy\u1ec5n th\u1ecb gay\nGi\u1edbi t\u00ednh: Nam\n\u0110i\u1ec7n tho\u1ea1i: 0834571574\nEmail: baoldz39@gmail.com\nN\u0103m sinh: 2000\n\u0110\u1ecba ch\u1ec9: nh\u00e0 th\u1eb1ng b\u1ed1 m\u00e0y, Qu\u1eadn 2, TP. H\u1ed3 Ch\u00ed Minh\nL\u00fd do kh\u00e1m: B\u1ecb gay\n","patient_name":"Nguy\u1ec5n th\u1ecb gay","created_at":"2025-04-30 05:12:20","doctor_name":"baoldz39","service_name":"Kh\u00e1m t\u1ed5ng qu\u00e1t","price":"500000.00","formatted_date":"08\/04\/2023"}

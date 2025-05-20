@@ -1,0 +1,27 @@
+[21:49:47][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:49:47][request] POST data: {"appointment_id":"4","status":"cancelled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:49:47][error] Lỗi: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[21:52:27][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:52:27][request] POST data: {"appointment_id":"4","status":"canceled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:52:33][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:52:33][request] POST data: {"appointment_id":"4","status":"cancelled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:52:33][error] Lỗi: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[21:52:39][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:52:39][request] POST data: {"appointment_id":"4","status":"canceled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:56:07][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:56:07][request] POST data: {"appointment_id":"4","status":"canceled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:58:13][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:58:13][request] POST data: {"appointment_id":"4","status":"cancelled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:58:13][error] Lỗi: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+[22:01:24][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[22:01:24][request] POST data: {"appointment_id":"4","status":"canceled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[22:01:24][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 4
+[22:02:43][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[22:02:43][request] POST data: {"appointment_id":"4","status":"canceled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[22:02:43][warning] Không tìm thấy lịch hẹn ID: 4
+[22:13:02][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[22:13:02][request] POST data: {"appointment_id":"5","status":"confirmed","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[22:13:02][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 5
+[22:13:16][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[22:13:16][request] POST data: {"appointment_id":"3","status":"completed","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[22:13:16][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 3

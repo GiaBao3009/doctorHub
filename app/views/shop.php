@@ -1,3 +1,10 @@
+<?php
+    // Include the initialization file
+    require_once '../../config/init.php';
+?>
+
+
+<!-- $image_base_path = "assets/images/Shop/Medical/"; -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,8 +49,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" />
 
     <!-- *Stylesheets* -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
     <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
     <link rel="stylesheet" href="../../assets/css/responsive.css" />
     <link rel="stylesheet" href="../../assets/css/animation.css" />
     <!-- *Mobile Optimization* -->
@@ -52,92 +59,86 @@
 </head>
 
 <body>
-    <!-- *Navbar* -->
-    <header class="header">
+
+<header class="header">
         <div class="container">
+            <!-- Top Bar -->
             <div class="topbar py-3 border-bottom bg-white">
                 <div class="container d-flex justify-content-between align-items-center">
+                    <!-- Contact Info -->
                     <div class="contact-info small text-muted d-flex">
                         <strong>Email:</strong>
-                        <a href="mailto:vaniizit.work@gmail.com?subject=Yêu%20cầu%20được%20hỗ%20trợ%20từ%20website%20DoctorHub"
-                            class="topbar__mail">vaniizit.work@gmail.com</a>
+                        <a href="mailto:vaniizit.work@gmail.com" class="topbar__mail text-primary">doctorhub.work@gmail.com</a>
                         |
-                        <strong class="ms-1 d-none d-md-flex">Hotline:
-                            <a href="tel:+84 252 032 375"
-                                class="text-decoration-none cart__home--phone text-dark fw-bold">+84 252 032
-                                375</a>
+                        <strong class="ms-1 d-none d-md-flex">
+                            Hotline: <a href="tel:+84252032375" class="text-decoration-none text-dark fw-bold">+84 252 032 375</a>
                         </strong>
                     </div>
+
+                    <!-- User Actions -->
                     <div class="user-actions d-flex align-items-center gap-3">
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <?php if (isLoggedIn()): ?>
+<?php $user = getCurrentUser(); ?>
+                            <div class="user-profile">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownUser" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-user me-1"></i>
+                                        <span><?php echo htmlspecialchars($user['email']); ?></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/app/views/profile.php">Tài khoản</a></li>
 
-                        <a href="./signIn.php" class="topbar__home--login text-dark small d-none d-md-block">Đăng
-                            nhập</a>
-                        <a href="./signUp.php" class="topbar__home--register text-dark small d-none d-md-block">Đăng
-                            ký</a>
+                                        <?php if ($user['role'] === 'doctor'): ?>
+                                            <li><a class="dropdown-item" href="/app/views/doctor_dashboard.php">Bảng điều khiển</a></li>
+                                        <?php elseif ($user['role'] === 'admin'): ?>
+                                            <li><a class="dropdown-item" href="/app/views/admin_dashboard.php">Quản trị</a></li>
+                                        <?php endif; ?>
 
-                        <div id="user-profile" class="user-profile d-none">
-                            <img id="user-avatar" src="" alt="User Avatar" class="rounded-circle" width="40"
-                                height="40" />
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUser"
-                                    data-bs-toggle="dropdown">
-                                    <span id="user-name">User</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="logout-btn">Đăng xuất</a>
-                                    </li>
-                                </ul>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/controllers/auth/logout.php">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        <?php else: ?>
+                            <a href="./signIn.php" class="topbar__home--login text-dark small d-none d-md-block">Đăng nhập</a>
+                            <a href="./signUp.php" class="topbar__home--register text-dark small d-none d-md-block">Đăng ký</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
 
+            <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand navbar__link d-flex align-items-center" href="../../index.php">
-                    <img data-src="../../assets/images/Logo/DoctorHub.png" alt="Logo" width="30" height="24"
-                        class="d-inline-block align-text-top img-fluid navbar__logo lazyload" />
+                <a class="navbar-brand navbar__link d-flex align-items-center fw-bolder text-primary" href="../../index.php">
+                    <img src="../../assets/images/Logo/DoctorHub.png" alt="Logo" width="40px" height="40px" class="d-inline-block align-text-top me-2" style="border-radius: 50%;">
                     DoctorHub
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: end">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item                                            <?php echo isActiveMenu('index.php'); ?>">
                             <a class="nav-link" href="../../index.php">Trang Chủ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./book.php">Đặt Lịch Khám</a>
+                        <li class="nav-item                                            <?php echo isActiveMenu('book.php'); ?>">
+                            <a class="nav-link" href="./appointment_form.php">Đặt Lịch Khám</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./consultation.php">Tư Vấn Sức Khỏe</a>
+                      
+                        <li class="nav-item                                            <?php echo isActiveMenu('services.php'); ?>">
+                            <a class="nav-link" href="./app/views/services.php">Bài Test</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./services.php">Dịch Vụ Y Tế</a>
-                        </li>
-                        <li class="nav-item">
+                        <li class="nav-item                                            <?php echo isActiveMenu('contact.php'); ?>">
                             <a class="nav-link" href="./contact.php">Liên Hệ</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./blog.php">Blog</a>
+                        <li class="nav-item                                            <?php echo isActiveMenu('blog.php'); ?>">
+                            <a class="nav-link" href="./blog.php">Tin Tức</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./shop.php">Shop</a>
+                        <li class="nav-item                                            <?php echo isActiveMenu('shop.php'); ?>">
+                            <a class="nav-link" href="./shop.php">Cửa Hàng</a>
                         </li>
-                        <!-- Search Form -->
-                        <form class="d-flex ms-md-3 ms-0" role="search">
-                            <div class="me-2">
-                                <input class="form-control me-2 w-100" type="search" placeholder="Search"
-                                    aria-label="Search" />
-                            </div>
-                            <button class="btn btn-outline-success" type="submit">
-                                Search
-                            </button>
-                        </form>
                     </ul>
                 </div>
             </nav>
@@ -145,14 +146,14 @@
     </header>
 
     <!-- *Shop-Banner* -->
-    <section class="container banner-container border-bottom py-5 animate-on-scroll visible">
+    <section class="container visible py-5 banner-container border-bottom animate-on-scroll">
         <div class="row align-items-center">
             <div class="col-md-8 me-0">
                 <div class="splide splide-shop" aria-label="Banner chính">
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
-                                <img data-src="../../assets/images/Banner/bannerShop.avif" alt="Banner 1"
+                                <img data-src="../../assets/images/Banner/bannerShop.avif" alt="Banner 1" style="height: unset;"
                                     class="img-fluid rounded-2 lazyload" />
                             </li>
 
@@ -170,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 d-flex flex-column gap-2 d-none d-md-flex">
+            <div class="gap-2 col-md-4 d-flex flex-column d-none d-md-flex">
                 <img data-src="../../assets/images/Banner/bannerShop-sm-01.avif" alt="Banner nhỏ 1"
                     class="img-fluid static-banner rounded-2 lazyload" />
 
@@ -181,7 +182,7 @@
     </section>
 
     <!-- *Shop-Category* -->
-    <section class="shop-sale py-5 border-bottom animate-on-scroll visible">
+    <section class="visible py-5 shop-sale border-bottom animate-on-scroll">
         <div class="container">
             <div class="row g-4">
                 <div class="col">
@@ -190,16 +191,16 @@
                             <img data-src="../../assets/images/Banner/deal.avif" alt="" class="img-fluid lazyload" />
                             <span class="countdown ms-2 d-none d-md-flex align-items-md-center">
                                 <span class="countdown-box" id="hours">00</span>
-                                <span class="fw-bold text-white">:</span>
+                                <span class="text-white fw-bold">:</span>
                                 <span class="countdown-box" id="minutes">00</span>
-                                <span class="fw-bold text-white">:</span>
+                                <span class="text-white fw-bold">:</span>
                                 <span class="countdown-box" id="seconds">00</span>
                             </span>
                         </div>
                         <a href="#"
-                            class="g-1 align-items-center text-decoration-none text-white me-3 d-none d-md-flex">
-                            <span class="me-1 text-white">Xem thêm</span><i
-                                class="fa-solid fa-arrow-right text-decoration-none text-white"></i></a>
+                            class="text-white g-1 align-items-center text-decoration-none me-3 d-none d-md-flex">
+                            <span class="text-white me-1">Xem thêm</span><i
+                                class="text-white fa-solid fa-arrow-right text-decoration-none"></i></a>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -209,8 +210,8 @@
                                 <ul class="splide__list">
                                     <!-- *Item 01* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical01.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -234,11 +235,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">480.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">480.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">297.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -277,8 +278,8 @@
 
                                     <!-- *Item 02* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical02.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -303,11 +304,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">2.500.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">2.500.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">2.000.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -346,8 +347,8 @@
 
                                     <!-- *Item 03* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical03.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -371,11 +372,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">380.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">380.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">297.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -414,8 +415,8 @@
 
                                     <!-- *Item 04* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical04.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -439,11 +440,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">980.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">980.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">679.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -482,8 +483,8 @@
 
                                     <!-- *Item 05* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical05.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -507,11 +508,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">425.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">425.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">297.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -550,8 +551,8 @@
 
                                     <!-- *Item 06* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical06.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -575,11 +576,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">399.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">399.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">281.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -618,8 +619,8 @@
 
                                     <!-- *Item 07* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical07.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -643,11 +644,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">780.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">780.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">395.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -686,8 +687,8 @@
 
                                     <!-- *Item 08* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical08.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -711,11 +712,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">780.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">780.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">423.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -754,8 +755,8 @@
 
                                     <!-- *Item 09* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical09.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -779,11 +780,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">625.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">625.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">437.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -822,8 +823,8 @@
 
                                     <!-- *Item 10* -->
                                     <li class="splide__slide">
-                                        <div class="card overflow-hidden">
-                                            <div class="card-img position-relative card__img">
+                                        <div class="overflow-hidden card">
+                                            <div class="card-img position-relative card__img w-100">
                                                 <img data-src="../../assets/images/Shop/Medical/medical10.avif" alt=""
                                                     class="img-fluid lazyload w-100" />
                                                 <div class="card__wrap">
@@ -847,11 +848,11 @@
                                                 </h5>
                                                 <p class="card-price d-flex flex-column">
                                                     <span
-                                                        class="card-price--old text-decoration-line-through opacity-50 text-primary">1480.000đ</span>
+                                                        class="opacity-50 card-price--old text-decoration-line-through text-primary">1480.000đ</span>
                                                     <span
                                                         class="card-price--new fw-semibold text-primary">785.000đ</span>
                                                 </p>
-                                                <div class="progress mb-2" role="progressbar"
+                                                <div class="mb-2 progress" role="progressbar"
                                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                     <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -897,12 +898,12 @@
     </section>
 
     <!-- *Shop Deal Online * -->
-    <section class="shop-deals py-5 border-bottom animate-on-scroll visible">
+    <section class="visible py-5 shop-deals border-bottom animate-on-scroll">
         <div class="container">
             <div class="col">
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="mb-3 d-flex align-items-center justify-content-between">
                     <h3 class="">Siêu Deals Online</h3>
-                    <a href="" class="text-decoration-none btn rounded-pill px-4 fw-medium btn-more">Xem thêm</a>
+                    <a href="" class="px-4 text-decoration-none btn rounded-pill fw-medium btn-more">Xem thêm</a>
                 </div>
             </div>
 
@@ -913,8 +914,8 @@
                             <ul class="splide__list">
                                 <!-- *Item 01* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical11.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -938,10 +939,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">150.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">150.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">120.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -979,8 +980,8 @@
 
                                 <!-- *Item 02* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical12.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1004,10 +1005,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">561.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">561.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">476.850đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1045,8 +1046,8 @@
 
                                 <!-- *Item 03* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical14.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1070,10 +1071,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">1.350.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">1.350.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">1.012.500đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1111,8 +1112,8 @@
 
                                 <!-- *Item 04* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical15.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1136,10 +1137,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">135.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">135.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">60.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1177,8 +1178,8 @@
 
                                 <!-- *Item 05* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical16.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1202,10 +1203,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">62.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">62.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">49.600đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1242,8 +1243,8 @@
 
                                 <!-- *Item 06* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical18.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1267,10 +1268,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">1.599.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">1.599.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">1.119.300đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1308,8 +1309,8 @@
 
                                 <!-- *Item 07* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical07.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1333,10 +1334,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">780.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">780.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">395.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1374,8 +1375,8 @@
 
                                 <!-- *Item 08* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical08.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1399,10 +1400,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">780.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">780.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">423.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1440,8 +1441,8 @@
 
                                 <!-- *Item 09* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical09.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1465,10 +1466,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">625.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">625.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">437.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1506,8 +1507,8 @@
 
                                 <!-- *Item 10* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical10.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1531,10 +1532,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">1480.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">1480.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">785.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1578,12 +1579,12 @@
     </section>
 
     <!-- *Shop Family* -->
-    <section class="shop-family py-5 border-bottom animate-on-scroll visible">
+    <section class="visible py-5 shop-family border-bottom animate-on-scroll">
         <div class="container">
             <div class="col">
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="mb-3 d-flex align-items-center justify-content-between">
                     <h3 class="">Tủ thuốc gia đình - Giao nhanh 2H</h3>
-                    <a href="" class="text-decoration-none btn rounded-pill px-4 fw-medium btn-more">Xem thêm</a>
+                    <a href="" class="px-4 text-decoration-none btn rounded-pill fw-medium btn-more">Xem thêm</a>
                 </div>
             </div>
 
@@ -1594,8 +1595,8 @@
                             <ul class="splide__list">
                                 <!-- *Item 01* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical19.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1619,10 +1620,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">230.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">230.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">184.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1660,8 +1661,8 @@
 
                                 <!-- *Item 02* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical20.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1685,10 +1686,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">231.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">231.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">130.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1726,8 +1727,8 @@
 
                                 <!-- *Item 03* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical21.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1751,10 +1752,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">350.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">350.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">212.500đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1792,8 +1793,8 @@
 
                                 <!-- *Item 04* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical22.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1817,10 +1818,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">120.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">120.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">67.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1858,8 +1859,8 @@
 
                                 <!-- *Item 05* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical23.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1883,10 +1884,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">220.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">220.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">167.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1924,8 +1925,8 @@
 
                                 <!-- *Item 06* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical24.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -1949,10 +1950,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">305.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">305.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">205.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -1990,8 +1991,8 @@
 
                                 <!-- *Item 07* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical25.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2015,10 +2016,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">78.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">78.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">35.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2056,8 +2057,8 @@
 
                                 <!-- *Item 08* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical27.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2081,10 +2082,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">58.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">58.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">48.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2121,8 +2122,8 @@
 
                                 <!-- *Item 09* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical09.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2146,10 +2147,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">625.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">625.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">437.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2187,8 +2188,8 @@
 
                                 <!-- *Item 10* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical10.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2212,10 +2213,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">1480.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">1480.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">785.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2259,37 +2260,37 @@
     </section>
 
     <!-- *Banner-Shop* -->
-    <section class="py-5 border-bottom animate-on-scroll visible">
+    <section class="visible py-5 border-bottom animate-on-scroll">
         <div class="container">
             <div class="col">
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="mb-3 d-flex align-items-center justify-content-between">
                     <h3 class="">Tủ thuốc gia đình - Giao nhanh 2H</h3>
-                    <a href="" class="text-decoration-none btn rounded-pill px-4 fw-medium btn-more">Xem thêm</a>
+                    <a href="" class="px-4 text-decoration-none btn rounded-pill fw-medium btn-more">Xem thêm</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
                     <div class="">
                         <img src="../../assets/images/Banner/bannerMedicines01.avif" alt=""
-                            class="img-fluid rounded-2 shadow w-100" />
+                            class="shadow img-fluid rounded-2 w-100" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="">
                         <img src="../../assets/images/Banner/bannerMedicines02.avif" alt=""
-                            class="img-fluid rounded-2 shadow w-100" />
+                            class="shadow img-fluid rounded-2 w-100" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="">
                         <img src="../../assets/images/Banner/bannerMedicines03.avif" alt=""
-                            class="img-fluid rounded-2 shadow w-100" />
+                            class="shadow img-fluid rounded-2 w-100" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="">
                         <img src="../../assets/images/Banner/bannerMedicines04.avif" alt=""
-                            class="img-fluid rounded-2 shadow w-100" />
+                            class="shadow img-fluid rounded-2 w-100" />
                     </div>
                 </div>
             </div>
@@ -2297,12 +2298,12 @@
     </section>
 
     <!-- *New Medicines* -->
-    <section class="shop-family py-5 border-bottom animate-on-scroll visible">
+    <section class="visible py-5 shop-family border-bottom animate-on-scroll">
         <div class="container">
             <div class="col">
-                <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="mb-3 d-flex align-items-center justify-content-between">
                     <h3 class="">Sản phẩm mới tại DoctorHub</h3>
-                    <a href="" class="text-decoration-none btn rounded-pill px-4 fw-medium btn-more">Xem thêm</a>
+                    <a href="" class="px-4 text-decoration-none btn rounded-pill fw-medium btn-more">Xem thêm</a>
                 </div>
             </div>
 
@@ -2313,8 +2314,8 @@
                             <ul class="splide__list">
                                 <!-- *Item 01* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical19.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2338,10 +2339,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">230.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">230.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">184.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2379,8 +2380,8 @@
 
                                 <!-- *Item 02* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical20.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2404,10 +2405,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">231.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">231.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">130.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2445,8 +2446,8 @@
 
                                 <!-- *Item 03* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical21.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2470,10 +2471,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">350.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">350.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">212.500đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2511,8 +2512,8 @@
 
                                 <!-- *Item 04* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical22.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2536,10 +2537,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">120.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">120.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">67.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2577,8 +2578,8 @@
 
                                 <!-- *Item 05* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical23.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2602,10 +2603,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">220.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">220.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">167.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2643,8 +2644,8 @@
 
                                 <!-- *Item 06* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical24.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2668,10 +2669,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">305.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">305.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">205.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2709,8 +2710,8 @@
 
                                 <!-- *Item 07* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical25.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2734,10 +2735,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">78.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">78.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">35.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2775,8 +2776,8 @@
 
                                 <!-- *Item 08* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical27.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2800,10 +2801,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">58.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">58.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">48.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2840,8 +2841,8 @@
 
                                 <!-- *Item 09* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical09.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2865,10 +2866,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">625.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">625.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">437.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2906,8 +2907,8 @@
 
                                 <!-- *Item 10* -->
                                 <li class="splide__slide">
-                                    <div class="card overflow-hidden">
-                                        <div class="card-img position-relative card__img">
+                                    <div class="overflow-hidden card">
+                                        <div class="card-img position-relative card__img w-100">
                                             <img data-src="../../assets/images/Shop/Medical/medical10.avif" alt=""
                                                 class="img-fluid lazyload w-100" />
                                             <div class="card__wrap">
@@ -2931,10 +2932,10 @@
                                             </h5>
                                             <p class="card-price d-flex flex-column">
                                                 <span
-                                                    class="card-price--old text-decoration-line-through opacity-50 text-primary">1480.000đ</span>
+                                                    class="opacity-50 card-price--old text-decoration-line-through text-primary">1480.000đ</span>
                                                 <span class="card-price--new fw-semibold text-primary">785.000đ</span>
                                             </p>
-                                            <div class="progress mb-2" role="progressbar"
+                                            <div class="mb-2 progress" role="progressbar"
                                                 aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                 aria-valuemax="100">
                                                 <div class="progress-bar bg-danger fw-bolder" style="width: 95%">
@@ -2978,15 +2979,36 @@
     </section>
 
     <!-- *Sidebar* -->
-    <?php include_once __DIR__ . '/../../partials/sidebar.php'; ?>
+    <div class="contact-sidebar">
+  <a href="./appointment_form.php" class="contact-btn text-decoration-none" title="Đặt lịch" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Đặt lịch">
+   <i class="fa-solid fa-calendar-check"></i>
+  </a>
+  <a href="tel:0352032375" class="contact-btn text-decoration-none" title="Gọi điện" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Gọi điện">
+   <i class="fa-solid fa-phone"></i>
+  </a>
+  <a href="tel:0352032375" class="contact-btn text-decoration-none" title="Chat" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Chat với bác sĩ">
+   <i class="fa-solid fa-comments"></i>
+  </a>
+  <a href="mailto:vaniizit@gmail.com" class="contact-btn text-decoration-none" title="Email" data-bs-toggle="tooltip"
+   data-bs-placement="left" title="Gửi email">
+   <i class="fa-solid fa-envelope"></i>
+  </a>
+  <button id="scrollTopBtn" class="contact-btn d-none" data-bs-toggle="tooltip" data-bs-placement="left"
+   title="Lên đầu trang" onclick="scrollToTop()">
+   <i class="fa-solid fa-chevron-up"></i>
+  </button>
+ </div>
 
     <!-- *Footer* -->
 
-    <footer class="bg-light pt-5 pb-3 border-top">
+    <footer class="pt-5 pb-3 bg-light border-top">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="fw-bold mb-3">LIÊN KẾT WEB</h5>
+                <div class="mb-4 col-md-3 col-sm-6">
+                    <h5 class="mb-3 fw-bold">LIÊN KẾT WEB</h5>
                     <ul class="list-unstyled text-muted">
                         <li class="text-decoration-none footer__item">
                             <a href="" class="text-decoration-none text-secondary">Bộ y tế</a>
@@ -3009,8 +3031,8 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="fw-bold mb-3">HỎI BÁC SĨ</h5>
+                <div class="mb-4 col-md-3 col-sm-6">
+                    <h5 class="mb-3 fw-bold">HỎI BÁC SĨ</h5>
                     <ul class="list-unstyled text-muted">
                         <li class="text-decoration-none footer__item">
                             <a href="" class="text-decoration-none text-secondary">Chuyên mục Hỏi bác sĩ</a>
@@ -3033,8 +3055,8 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="fw-bold mb-3">MEDICAL CARE</h5>
+                <div class="mb-4 col-md-3 col-sm-6">
+                    <h5 class="mb-3 fw-bold">MEDICAL CARE</h5>
                     <ul class="list-unstyled text-muted">
                         <li class="text-decoration-none footer__item">
                             <a href="" class="text-decoration-none text-secondary">Về chúng tôi</a>
@@ -3054,8 +3076,8 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="fw-bold mb-3">THEO DÕI CHÚNG TÔI TRÊN</h5>
+                <div class="mb-4 col-md-3 col-sm-6">
+                    <h5 class="mb-3 fw-bold">THEO DÕI CHÚNG TÔI TRÊN</h5>
                     <ul class="list-unstyled">
                         <li class="text-decoration-none footer__item">
                             <i class="fab fa-facebook-square me-2 text-primary"></i>
@@ -3068,36 +3090,36 @@
                             <i class="fab fa-telegram-plane me-2 text-primary"></i> Zalo
                         </li>
                     </ul>
-                    <h5 class="fw-bold mt-4 mb-3">CHỨNG NHẬN BỞI</h5>
+                    <h5 class="mt-4 mb-3 fw-bold">CHỨNG NHẬN BỞI</h5>
                     <div class="d-flex align-items-center">
                         <img data-src="../../assets/images/Icon/20240706162441-0-BCT.png" alt="Chứng nhận 1"
                             class="me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162441-0-DMCA.png" alt="Chứng nhận 2"
                             style="height: 30px" class="lazyload" />
                     </div>
-                    <h5 class="fw-bold mt-4 mb-3">HỖ TRỢ THANH TOÁN</h5>
-                    <div class="d-flex flex-wrap">
+                    <h5 class="mt-4 mb-3 fw-bold">HỖ TRỢ THANH TOÁN</h5>
+                    <div class="flex-wrap d-flex">
                         <img data-src="../../assets/images/Icon/20240706162440-0-COD.png" alt="COD"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162441-0-Visa.png" alt="VISA"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162441-0-MasterCard.png" alt="Mastercard"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162441-0-JCB.png" alt="JCB"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162441-0-Momo.png" alt="MoMo"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162729-0-ZaloPay.png" alt="ZaloPay"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20241122062454-0-napas.png" alt="Napas"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                         <img data-src="../../assets/images/Icon/20240706162729-0-ZaloPay.png" alt="Apple Pay"
-                            class="me-2 mb-2 lazyload" style="height: 30px" />
+                            class="mb-2 me-2 lazyload" style="height: 30px" />
                     </div>
                 </div>
             </div>
 
-            <div class="text-center border-top pt-3 mt-3 small text-muted">
+            <div class="pt-3 mt-3 text-center border-top small text-muted">
                 © Bản quyền thuộc về <strong>DoctorHub</strong> | Cung cấp bởi
                 <a href="https://www.instagram.com/viinhneee/" class="fw-semibold text-decoration-none"
                     style="color: var(--primary-color)">VaniizIT</a>
@@ -3120,6 +3142,7 @@
 <script src="../../services/handleCountDown.js" type="module"></script>
 <script src="../../assets/javascript/main.js" type="module"></script>
 <script src="../../services/handleModal.js"></script>
+<script src="../../services/handleSlider.js"></script>
 <!-- *Lazysizes* -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js" async=""></script>
 <!-- *Splide JS* -->

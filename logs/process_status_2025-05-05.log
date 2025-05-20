@@ -1,0 +1,9 @@
+[21:38:28][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:38:28][request] POST data: {"appointment_id":"3","status":"confirmed","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:38:28][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 3
+[21:38:34][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:38:34][request] POST data: {"appointment_id":"3","status":"completed","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:38:34][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 3
+[21:38:37][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[21:38:37][request] POST data: {"appointment_id":"4","status":"canceled","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[21:38:37][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 4

@@ -128,6 +128,7 @@
                     </a>
                 </div>
             </div>
+            
 
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card h-100 text-center">
@@ -343,9 +344,9 @@
                 <div class="card h-100 text-center">
                     <img alt="Illustration of acupuncture" class="card-img-top lazyload"
                         data-src="../../assets/images/Icon/tieu-duong.png" />
-                    <div class="card-body">
+                    <a href="./tieuduong.php" class="card-body" style="text-decoration: none;">
                         <h5 class="card-title">Tiểu đường - Nội tiết</h5>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -381,8 +382,8 @@
 
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card h-100 text-center">
-                    <img alt="Illustration of acupuncture" class="card-img-top"
-                        data-src="../../assets/images/Icon/noi-soi-tieu-hoa.png lazyload" />
+                    <img alt="Illustration of acupuncture" class="card-img-top lazyload"
+                        data-src="../../assets/images/Icon/noi-soi-tieu-hoa.png" />
                     <div class="card-body">
                         <h5 class="card-title">Nội soi tiêu hóa</h5>
                     </div>

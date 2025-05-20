@@ -139,9 +139,9 @@
     </div>
    </div>
 
-   <div class="text-center border-top pt-3 mt-3 small text-muted">
-    © Bản quyền thuộc về <strong>DoctorHub</strong> | Cung cấp bởi
-    <a href="https://www.instagram.com/viinhneee/" class="fw-semibold text-decoration-none"
+   <div class="text-center border-top pt-3 mt-3 small text-muted d-flex justify-content-center g-2">
+    © Bản quyền thuộc về <strong class="me-2">DoctorHub</strong> | Cung cấp bởi
+    <a href="https://www.instagram.com/viinhneee/" class="fw-semibold text-decoration-none ms-2"
      style="color: var(--primary-color)">VaniizIT</a>
    </div>
   </div>

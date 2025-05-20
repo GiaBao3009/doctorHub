@@ -1,0 +1,3 @@
+[14:25:26][request] Nhận request: POST /controllers/appointment/process_status_update.php
+[14:25:26][request] POST data: {"appointment_id":"4","status":"confirmed","return_url":"http:\/\/localhost:8080\/app\/views\/doctor_dashboard.php"}
+[14:25:26][info] Đã cập nhật trạng thái thành công cho lịch hẹn ID: 4

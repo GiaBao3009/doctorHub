@@ -1,0 +1,169 @@
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.test-container {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.test-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.test-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  background-color: #555;
+  border-radius: 5px;
+  height: 10px;
+  flex-grow: 1;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background-color: #007bff;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #444;
+}
+
+.option input {
+  margin-right: 10px;
+}
+
+.option label {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button {
+  background-color: #6c757d;
+}
+
+.menu-button:hover {
+  background-color: #6c757d;
+}
+
+.prev-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.prev-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.next-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.next-button:hover {
+  background-color: #007bff;
+}
+
+.nav-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+.menu-button {
+  background-color: #6c757d;
+  color: #fff;
+}
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .test-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .test-title {
+    font-size: 1.2rem;
+  }
+
+  .question {
+    font-size: 1rem;
+  }
+
+  .option label {
+    font-size: 0.85rem;
+  }
+
+  .nav-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
