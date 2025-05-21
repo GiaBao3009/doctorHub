@@ -365,7 +365,7 @@ require_once 'config/init.php';
                 </a>
             </div>
             <div class="col-12 col-sm-6 mb-4">
-                <a href="" class="service-card">
+                <a href="./app/views/KhamTuXa.php" class="service-card">
                     <img data-src="./assets/images/Icon/iconkham-tu-xa.png"
                         alt="Icon of a mobile phone with a medical cross" class="lazyload">
                     <span>Khám từ xa</span>
@@ -379,14 +379,14 @@ require_once 'config/init.php';
                 </a>
             </div>
             <div class="col-12 col-sm-6 mb-4">
-                <a href="" class="service-card">
+                <a href="./app/views/XetNghiemYHoc.php" class="service-card">
                     <img data-src="./assets/images/Icon/iconxet-nghiem-y-hoc.png"
                         alt="Icon of a test tube with a drop of liquid" class="lazyload">
                     <span>Xét nghiệm y học</span>
                 </a>
             </div>
             <div class="col-12 col-sm-6 mb-4">
-                <a href="" class="service-card">
+                <a href="./app/views/SucKhoeTinhThan.php" class="service-card">
                     <img data-src="./assets/images/Icon/iconsuc-khoe-tinh-than.png"
                         alt="Icon of a head with a medical cross" class="lazyload">
                     <span>Sức khỏe tinh thần</span>
@@ -400,7 +400,7 @@ require_once 'config/init.php';
                 </a>
             </div>
             <div class="col-12 col-sm-6 mb-4">
-                <a href="" class="service-card">
+                <a href="./app/views/GoiPhauThuat.php" class="service-card">
                     <img data-src="./assets/images/Icon/icongoi-phau-thuat.png" alt="Icon of a microscope"
                         class="lazyload">
                     <span>Gói Phẫu thuật</span>

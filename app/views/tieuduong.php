@@ -389,33 +389,33 @@
     
     <div class="hehe" style="margin-left: 70px;">
     <div class="container py-4 position-relative">
-        <img alt="Background image" class="background-image" src="../../assets/images/Icon/co-xuong-khop.png"/>
+        <img alt="Background image" class="background-image" src="../../assets/images/Icon/tieu-duong.png"/>
         <div class="text-muted mb-2">
             <a class="text-primary" href="./chuyenkhoa.php">Khám chuyên khoa</a> /
-            <span>Cơ xương khớp</span>
+            <span>Tiểu đường - Nội tiết</span>
         </div>
-        <h1 class="h4 font-weight-bold mb-2">Cơ xương khớp</h1>
-        <h2 class="h5 font-weight-semibold mb-2">Bác sĩ Cơ xương khớp giỏi</h2>
-        <p class="mb-4">Danh sách các giáo sư, bác sĩ chuyên khoa Cơ xương khớp giỏi:</p>
+        <h1 class="h4 font-weight-bold mb-2">Tiểu đường - Nội tiết</h1>
+        <h2 class="h5 font-weight-semibold mb-2">Bác sĩ Nội tiết</h2>
+        <p class="mb-4">Danh sách bác sĩ chuyên khoa Nội tiết giỏi:</p>
         <ul class="list-unstyled mb-4">
-            <li class="mb-2">Các chuyên gia có quá trình đào tạo bài bản, nhiều kinh nghiệm</li>
-            <li class="mb-2">Các giáo sư, phó giáo sư đang trực tiếp nghiên cứu và giảng dạy tại Đại học Y khoa Hà Nội</li>
-            <li class="mb-2">Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu Khoa Cơ Xương Khớp - Bệnh viện Bạch Mai, Bệnh viện Hữu nghị Việt Đức,Bệnh Viện E.</li>
+            <li class="mb-2">Các chuyên gia có quá trình đào tạo bài bản, kinh nghiệm </li>
+            <li class="mb-2">Công tác tại các bệnh viện lớn tại Hà Nội như: Bệnh viện Bạch Mai, Bệnh viện Quân Y 103, Bệnh viện Nội tiết Trung ương, Bệnh viện Đại học Y Hà Nội.</li>
+            <li class="mb-2">Được nhà nước công nhận các danh hiệu Thầy thuốc nhân dân, thầy thuốc ưu tú, bác sĩ cao cấp</li>
         </ul>
         <a class="text-primary" href="#">Xem thêm</a>
         <div id="additionalContent" style="display: none;">
-            <h3 class="h5 font-weight-semibold mt-3">Bệnh Cơ Xương Khớp</h3>
+            <h3 class="h5 font-weight-semibold mt-3">Tư vấn, khám và điều trị</h3>
             <ul class="list-unstyled">
-                <li>Gout</li>
-                <li>Thoái hóa khớp: khớp gối, cột sống thắt lưng, cột sống cổ</li>
-                <li>Viêm khớp dạng thấp, Viêm đa khớp, Viêm gân</li>
-                <li>Tràn dịch khớp gối, Tràn dịch khớp háng, Tràn dịch khớp khủy, Tràn dịch khớp vai</li>
-                <li>Loãng xương, đau nhức xương</li>
-                <li>Viêm xương, gai xương</li>
-                <li>Viêm cơ, Teo cơ, chứng đau mỏi cơ</li>
-                <li>Yếu cơ, Loạn dưỡng cơ</li>
-                <li>Các chấn thương về cơ, xương, khớp</li>
-                <li>...</li>
+                <li>Bướu cổ</li>
+                <li>Cường cận giáp</li>
+                <li>Đái tháo đường</li>
+                <li>Suy giáp, Cường giáp</li>
+                <li>Suy tuyến yên,U tuyến yên</li>
+                <li>Tăng đường huyết bệnh tiểu đường</li>
+                <li>Tiền tiểu đường</li>
+                <li>Tiểu đường</li>
+                <li>Tiểu đường tuýp 1, 2</li>
+                <li>Ung thư tuyến giáp</li>
             </ul>
         </div>
 
@@ -433,20 +433,18 @@
             </div>
         </div>
 
-        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="5">
+        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="14">
             <div class="d-flex flex-column flex-md-row">
                 <div class="d-flex flex-1 align-items-start mb-4 mb-md-0">
                     <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="gay.jpg" width="100"/>
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Tiến sĩ, Bác sĩ Nguyễn Đức Gia Bảo</h3>
+                            <h3 class="h6 font-weight-bold">Trương Tuấn Tú</h3>
                         </div>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Trưởng khoa Khám bệnh, Bệnh viện Đa khoa Quốc tế Thu Cúc</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên chủ nhiệm khoa Cơ xương khớp, Bệnh viện Hữu Nghị Việt Xô</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ có 40 năm kinh nghiệm làm việc chuyên  khoa Nội Cơ xương khớp</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 16 tuổi trở lên </p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Hơn 40 năm kinh nghiệm khám và điều trị về Nội tiết - Đái tháo đường - Tuyến giáp</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên Trưởng khoa Nội tiết - Đái tháo đường, Bệnh viện Bạch Mai</p>
                         <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. Đà Lạt</p>
+                            <i class="fas fa-map-marker-alt mr-2"></i>. Hà Nội</p>
                     </div>
                 </div>
                 <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
@@ -481,7 +479,7 @@
                         <div id="promotionDialog" class="promotion-dialog">
                             <div class="promotion-dialog-content">
                                 <span class="close-dialog">&times;</span>
-                                <h4>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</h4>
+                                <h4>Bệnh viện Đa khoa Bảo Sơn 2</h4>
                                 <div class="promotion-details">
                                     <p><strong>Tháng 4 trọn vẹn: Đầu tư cho sức khỏe, nhận ngàn ưu đãi</strong></p>
                                     <ol>
@@ -519,8 +517,8 @@
                                 </div>
                             </div>
                         </div>
-                        <p>Phòng khám bệnh viện 115</p>
-                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
+                        <p>Bệnh viện Đa khoa Bảo Sơn 2</p>
+                        <p>Số 52 Nguyễn Chí Thanh - Đống Đa - Hà Nội</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ KHÁM: 500.000đ</h4>
@@ -531,26 +529,25 @@
                             <table>
                                 <tr>
                                     <td class="service-name">Giá khám</td>
-                                    <td class="price">500.000đ</td>
+                                    <td class="price">300.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Chụp Xquang cột sống cổ thẳng và nghiêng (2 tư thế)</td>
-                                    <td class="price">250.000đ</td>
+                                    <td class="service-name">Xét nghiệm máu 24 chỉ số</td>
+                                    <td class="price">138.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Chụp Xquang cột sống thắt lưng nghiêng (2 tư thế)</td>
-                                    <td class="price">250.000đ</td>
+                                    <td class="service-name">Siêu âm tuyến giáp</td>
+                                    <td class="price">240.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Chụp Xquang khớp vai thẳng</td>
-                                    <td class="price">150.000đ</td>
+                                    <td class="service-name">Định lượng Glucose [Máu]</td>
+                                    <td class="price">81.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Chụp cộng hưởng từ cột sống cổ, ngực, thắt lưng</td>
-                                    <td class="price">1.900.000đ</td>
+                                    <td class="service-name">Định lượng HbA1c [Máu]</td>
+                                    <td class="price">207.000đ</td>
                                 </tr>
-                            </table>
-                            <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
+                            </table>x
                         </div>
                     </div>
                     <div class="text-muted mb-2">
@@ -564,45 +561,6 @@
                                             <p class="note">Áp dụng cho bệnh nhân đăng ký khám chữa bệnh ban đầu tại bệnh viện hoặc có giấy chuyển viện từ đơn vị khác</p>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="service-name" colspan="2">
-                                            <div>Bảo hiểm bảo lãnh</div>
-                                            <p class="note">Đối với các bảo hiểm không bảo lãnh trực tiếp: Bệnh viện hỗ trợ xuất hóa đơn tài chính (hoá đơn đỏ) và hỗ trợ bệnh nhân hoàn thiện hồ sơ</p>
-                                            <p class="note"><a href="#" class="viewPromotionDetails"> Xem danh sách</a></p>
-                                            
-                                            <!-- Thêm dialog mới cho danh sách công ty bảo lãnh -->
-                                            <div id="insuranceCompanyDialog" class="promotion-dialog" style="display: none;">
-                                                <div class="promotion-dialog-content">
-                                                    <span class="close-dialog" id="closeInsuranceCompanyDialog">&times;</span>
-                                                    <h4>DANH SÁCH CÔNG TY BẢO LÃNH</h4>
-                                                    <div class="promotion-details">
-                                                        <ol>
-                                                            <li>Công ty Bảo hiểm Bảo Việt</li>
-                                                            <li>Tổng công ty Cổ phần Bảo Minh</li>
-                                                            <li>Tổng công ty Bảo hiểm Dầu khí Việt Nam (PVI)</li>
-                                                            <li>Bảo hiểm quân đội MIC</li>
-                                                            <li>Công ty TNHH INSMART</li>
-                                                            <li>Bảo hiểm Bưu điện (PTI)</li>
-                                                            <li>Tổng Công ty Bảo hiểm BIDV (Bic)</li>
-                                                            <li>Tổng Công ty Bảo hiểm toàn cầu (GIC)</li>
-                                                            <li>Bảo hiểm viền đóng (VASS)</li>
-                                                            <li>Bảo hiểm Liberty</li>
-                                                            <li>Bảo hiểm PJICO</li>
-                                                            <li>Bảo hiểm Pacific Cross</li>
-                                                            <li>Công ty Bảo hiểm nhân thọ GENERAL!</li>
-                                                            <li>Công ty Bảo hiểm Nhân thọ DaiIchi </li>
-                                                            <li>Bảo hiểm AIA</li>
-                                                            <li>Bảo hiểm BAKCO</li>
-                                                            <li>Bảo hiểm UIC's</li>
-                                                            <li>Công ty Bảo hiểm VBI (ngân hàng Viettinbank)</li>
-                                                            <li>Bảo hiểm JLT</li>
-                                                            <li>Bảo hiểm ATACC </li>
-                                                        </ol>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
                                 </table>
                             </div>
                         </div>
@@ -610,18 +568,18 @@
                 </div>    
         </div>
 
-        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="6">
+        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="16">
             <div class="d-flex flex-column flex-md-row">
                 <div class="d-flex flex-1 align-items-start mb-4 mb-md-0">
                     <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="doctor2.jpg" width="100"/>
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Tiến sĩ, Bác sĩ Nguyễn Đức Thiên</h3>
+                            <h3 class="h6 font-weight-bold">Bệnh Viện 115</h3>
                         </div>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Trưởng khoa Khám bệnh, Bệnh viện Đa khoa Quốc tế Thu Cúc</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên chủ nhiệm khoa Cơ xương khớp, Bệnh viện Hữu Nghị Việt Xô</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ có 40 năm kinh nghiệm làm việc chuyên  khoa Nội Cơ xương khớp</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 16 tuổi trở lên </p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Đội ngũ bác sĩ giàu kinh nghiệm trong khám và điều trị các bệnh lý về Nội tiết</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bệnh viện được trang bị những máy móc khám - điều trị hiện đại</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Giảm thời gian chờ đợi, ưu tiên khám nhanh</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 16 tuổi trở lên</p>
                         <p class="text-muted d-flex align-items-center">
                             <i class="fas fa-map-marker-alt mr-2"></i>. TP HCM</p>
                     </div>
@@ -651,23 +609,43 @@
                         <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ KHÁM: 500.000đ</h4>
-                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails2" style="margin-left: 288px;">Xem chi tiết</a>
+                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading10">GIÁ KHÁM: 500.000đ</h4>
+                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails10" style="margin-left: 288px;">Xem chi tiết</a>
                         
                         <!-- Price details section (hidden by default) -->
-                        <div class="price-details" id="priceDetailsSection2" style="display: none;">
+                        <div class="price-details" id="priceDetailsSection10" style="display: none;">
                             <table>
                                 <tr>
                                     <td class="service-name">Giá khám</td>
-                                    <td class="price">500.000đ</td>
+                                    <td class="price">150.000đ</td>
                                 </tr>
                                 <tr>
                                     <td class="service-name">Hình thức thanh toán: tiền mặt, quẹt thẻ, chuyển khoản</td>
                                 </tr>
                             </table>
                         </div>
-                        
                     </div>
+                    <div class="text-muted">
+                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ DỊCH VỤ LIÊN QUAN</h4>
+                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails2" style="margin-left: 255.5px;">Xem chi tiết</a>
+                        
+                        <!-- Price details section (hidden by default) -->
+                        <div class="price-details" id="priceDetailsSection2" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td class="service-name">Xét nghiệm HbA1c</td>
+                                    <td class="price">150.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td class="servive-name">Xét nghiệm Glucose</td>
+                                    <td class="price">50.000đ</td>
+                                </tr>
+                                <tr>
+                                   <td class="service-name">Siêu âm ổ bụng</td>
+                                   <td class="price">250.000đ</td> 
+                                </tr>
+                            </table>
+                        </div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading3">LOẠI BẢO HIỂM ÁP DỤNG</h4>     
                         <a class="text-primary d-inline-block" href="#" id="viewPriceDetails3" style="display: flex; justify-content: space-between;margin-left: 247px;">Xem chi tiết</a>
@@ -691,6 +669,7 @@
                     </div>
                 </div> 
             </div>
+        </div>
         
 
         <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="8">
@@ -1179,7 +1158,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
     <script>
         document.querySelector('.text-primary[href="#"]').addEventListener('click', function(e) {
             e.preventDefault();
@@ -1254,6 +1232,27 @@
             }
         });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+        // Xử lý cho dịch vụ liên quan
+        const viewDetailsLink2 = document.getElementById('viewPriceDetails2');
+        const priceDetailsSection2 = document.getElementById('priceDetailsSection2');
+        const priceHeading2 = document.getElementById('priceHeading2');
+        
+        viewDetailsLink2.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (priceDetailsSection2.style.display === 'block') {
+                priceDetailsSection2.style.display = 'none';
+                priceHeading2.style.display = 'block';
+                viewDetailsLink2.textContent = 'Xem chi tiết';
+            } else {
+                priceDetailsSection2.style.display = 'block';
+                priceHeading2.style.display = 'none';
+                viewDetailsLink2.textContent = 'Ẩn chi tiết';
+            }
+        });
+        });
+
 
         
         // Xử lý cho phần Bảo hiểm
