@@ -126,7 +126,7 @@ function isActiveMenu($pageName) {
                             <a class="nav-link" href="/index.php">Trang Chủ</a>
                         </li>
                         <li class="nav-item <?php echo isActiveMenu('book.php'); ?>">
-                            <a class="nav-link" href="./app/views/book.php">Đặt Lịch Khám</a>
+                            <a class="nav-link" href="../app//views/chuyenkhoa.php">Đặt Lịch Khám</a>
                         </li>
                         <li class="nav-item <?php echo isActiveMenu('consultation.php'); ?>">
                             <a class="nav-link" href="./app/views/consultation.php">Tư Vấn Sức Khỏe</a>

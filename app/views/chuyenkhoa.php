@@ -334,9 +334,9 @@
                 <div class="card h-100 text-center">
                     <img alt="Illustration of acupuncture" class="card-img-top lazyload"
                         data-src="../../assets/images/Icon/nha-khoa.png" />
-                    <div class="card-body">
+                    <a href="./nhakhoa.php" class="card-body" style="text-decoration: none;">
                         <h5 class="card-title">Nha Khoa</h5>
-                    </div>
+                    </a>
                 </div>
             </div>
 

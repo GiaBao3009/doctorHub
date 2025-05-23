@@ -95,7 +95,7 @@
                             <a class="nav-link" href="/index.php">Trang Chủ</a>
                         </li>
                         <li class="nav-item <?php echo isActiveMenu('book.php'); ?>">
-                            <a class="nav-link" href="./app/views/appointment_form.php">Đặt Lịch Khám</a>
+                            <a class="nav-link" href="../app/views/chuyenkhoa.php">Đặt Lịch Khám</a>
                         </li>
                         
                         <li class="nav-item <?php echo isActiveMenu('services.php'); ?>">

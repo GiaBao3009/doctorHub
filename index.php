@@ -28,10 +28,12 @@ require_once 'config/init.php';
                                         <span><?php echo htmlspecialchars($user['email']); ?></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/app/views/profile.php">Tài khoản</a></li>
+                                        <li><a class="dropdown-item" href="/app/views/profile.php"></a></li>
                                         
                                         <?php if ($user['role'] === 'doctor'): ?>
                                             <li><a class="dropdown-item" href="/app/views/doctor_dashboard.php">Bảng điều khiển</a></li>
+                                        <?php elseif ($user['role'] === 'user'): ?>
+                                            <li><a class="dropdown-item" href="/app/views/user_dashboard.php">Tài Khoản</a></li>
                                         <?php elseif ($user['role'] === 'admin'): ?>
                                             <li><a class="dropdown-item" href="/app/views/admin_dashboard.php">Quản trị</a></li>
                                         <?php endif; ?>
@@ -66,7 +68,7 @@ require_once 'config/init.php';
                             <a class="nav-link" href="index.php">Trang Chủ</a>
                         </li>
                         <li class="nav-item <?php echo isActiveMenu('book.php'); ?>">
-                            <a class="nav-link" href="./app/views/appointment_form.php">Đặt Lịch Khám</a>
+                            <a class="nav-link" href="./app/views/chuyenkhoa.php">Đặt Lịch Khám</a>
                         </li>
                        
                         <li class="nav-item <?php echo isActiveMenu('services.php'); ?>">
@@ -108,7 +110,7 @@ require_once 'config/init.php';
                         bạn chăm sóc sức khỏe một cách dễ dàng và nhanh chóng.
                     </p>
                     <!-- Nút Call-to-Action -->
-                    <a class="text-decoration-none btn cssbuttons-io-button" href="app/views/appointment_form.php">
+                    <a class="text-decoration-none btn cssbuttons-io-button" href="./app/views/chuyenkhoa.php">
                         Đặt Lịch Ngay
                         <div class="icon">
                             <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -393,7 +395,7 @@ require_once 'config/init.php';
                 </a>
             </div>
             <div class="col-12 col-sm-6 mb-4">
-                <a href="" class="service-card">
+                <a href="./app/views/nhakhoa.php" class="service-card">
                     <img data-src="./assets/images/Icon/iconkham-nha-khoa.png"
                         alt="Icon of a tooth with a medical cross" class="lazyload">
                     <span>Khám nha khoa</span>
