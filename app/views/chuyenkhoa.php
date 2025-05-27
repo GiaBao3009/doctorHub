@@ -164,9 +164,9 @@
                 <div class="card h-100 text-center">
                     <img alt="Illustration of an ear, nose, and throat" class="card-img-top lazyload"
                         data-src="../../assets/images/Icon/tai-mui-hong.png" />
-                    <div class="card-body">
+                    <a href="./TaiMuiHong.php" class="card-body" style="text-decoration: none;">
                         <h5 class="card-title">Tai Mũi Họng</h5>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -174,9 +174,9 @@
                 <div class="card h-100 text-center">
                     <img alt="Illustration of a spine" class="card-img-top lazyload"
                         data-src="../../assets/images/Icon/cot-song.png" />
-                    <div class="card-body">
-                        <h5 class="card-title">Cột sống</h5>
-                    </div>
+                    <a href="./CotSong.php" class="card-body" style="text-decoration: none;">
+                        <h5 class="card-title">Cột Sống</h5>
+                    </a>
                 </div>
             </div>
 
@@ -184,9 +184,9 @@
                 <div class="card h-100 text-center">
                     <img alt="Illustration of a hand holding a leaf and a medical cross" class="card-img-top lazyload"
                         data-src="../../assets/images/Icon/y-hoc-co-truyen.png" />
-                    <div class="card-body">
-                        <h5 class="card-title">Y học Cổ truyền</h5>
-                    </div>
+                    <a href="./YHocCoTruyen.php" class="card-body" style="text-decoration: none;">
+                        <h5 class="card-title">Y học Cổ Truyền</h5>
+                    </a>
                 </div>
             </div>
 
@@ -194,9 +194,9 @@
                 <div class="card h-100 text-center">
                     <img alt="Illustration of acupuncture" class="card-img-top lazyload"
                         data-src="../../assets/images/Icon/cham-cuu.png" />
-                    <div class="card-body">
-                        <h5 class="card-title">Châm cứu</h5>
-                    </div>
+                    <a href="./ChamCuu.php" class="card-body" style="text-decoration: none;">
+                        <h5 class="card-title">Châm Cứu</h5>
+                    </a>
                 </div>
             </div>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlyFans||CanhGay</title>
+    <title>Tiêu Hóa</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -651,8 +651,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
+                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ
@@ -749,8 +749,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
+                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading4">GIÁ
@@ -846,8 +846,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
+                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
                     </div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading6">GIÁ
@@ -928,8 +928,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
+                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
                     </div>
 
                     <!-- Phần khuyến mại được thêm vào -->

@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thần Kinh</title>
+    <title>Tai Mũi Họng</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -389,33 +389,34 @@
     
     <div class="hehe" style="margin-left: 70px;">
     <div class="container py-4 position-relative">
-        <img alt="Background image" class="background-image" src="../../assets/images/Icon/than-kinh.png"/>
+        <img alt="Background image" class="background-image" src="../../assets/images/Icon/tai-mui-hong.png"/>
         <div class="text-muted mb-2">
             <a class="text-primary" href="./chuyenkhoa.php">Khám chuyên khoa</a> /
-            <span>Thần Kinh</span>
+            <span>Tai Mũi Họng</span>
         </div>
-        <h1 class="h4 font-weight-bold mb-2">Thần Kinh</h1>
-        <h2 class="h5 font-weight-semibold mb-2">Bác sĩ Thần Kinh giỏi</h2>
-        <p class="mb-4">Danh sách các giáo sư, bác sĩ chuyên khoa Thần Kinh giỏi:</p>
+        <h1 class="h4 font-weight-bold mb-2">Tai Mũi Họng</h1>
+        <h2 class="h5 font-weight-semibold mb-2">Bác sĩ Chuyên khoa Tai Mũi Họng</h2>
+        <p class="mb-4">Danh sách các bác sĩ uy tín đầu ngành tại Việt Nam:</p>
         <ul class="list-unstyled mb-4">
-            <li class="mb-2">Các giáo sư, bác sĩ uy tín đầu ngành chuyên khoa Thần kinh đã và đang công tác tại các bệnh viện lớn như: Bệnh viện Bạch Mai, Bệnh viện Việt Đức, Bệnh viện 108, Bệnh viện Đại học Y Hà Nội, Bệnh viện 103</li>
-            <li class="mb-2">Là thành viên hoặc lãnh đạo các tổ chức chuyên môn như: Hội Thần kinh Việt Nam, Hội Phẫu thuật Thần kinh...</li>
-            <li class="mb-2">Được nhà nước công nhận các danh hiệu Thầy thuốc nhân dân, thầy thuốc ưu tú, bác sĩ cao cấp.</li>
+            <li class="mb-2">Các chuyên gia có quá trình đào tạo bài bản, kinh nghiệm công tác tại các bệnh viện lớn về chuyên ngành Tai Mũi Họng tại Hà Nội</li>
+            <li class="mb-2">Các giáo sư, phó giáo sư là giảng viên Đại học Y khoa Hà Nội</li>
+            <li class="mb-2">Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như Bệnh viện Bạch Mai, Bệnh Viện Tai Mũi Họng Trung ương, Bệnh viện Quân Y 108...</li>
+            <li class="mb-2">Được nhà nước công nhận các danh hiệu Thầy thuốc Nhân dân, Thầy thuốc Ưu tú, Bác sĩ cao cấp,...</li>
         </ul>
         <a class="text-primary" href="#">Xem thêm</a>
         <div id="additionalContent" style="display: none;">
-            <h3 class="h5 font-weight-semibold mt-3">Khám bệnh chuyên khoa Thần kinh</h3>
+            <h3 class="h5 font-weight-semibold mt-3">Các bệnh Tai Mũi Họng</h3>
             <ul class="list-unstyled">
-                <li>Bại Não</li>
-                <li>Đau đầu, chóng mặt, buồn nôn</li>
-                <li>Bệnh Pakison, bệnh tiền đình</li>
-                <li>Bị co cơ, căng dây thần kinh</li>
-                <li>Động kinh, có những cơn vãng ý thức</li>
-                <li>Bị tê bì nửa mặt, chèn dây thần kinh</li>
-                <li>Bồn chồn, lo lắng, hồi hộp, chân tay run</li>
-                <li>Có dấu hiệu tăng động</li>
-                <li>Co rút cổ, đau đầu với mặt, chân tay, vã mồ hôi</li>
-                <li>Chấn thương đầu, dây thần kinh</li>
+                <li>Ù tai, đau tai, chảy máu tai</li>
+                <li>Thủng màng nhĩ, điếc đột ngột</li>
+                <li>Viêm tai giữa</li>
+                <li>Amidan, V.A</li>
+                <li>Viêm xoang</li>
+                <li>Nghẹt mũi</li>
+                <li>Hay bị chảy máu cam</li>
+                <li>Đau cổ họng, khó nuốt</li>
+                <li>Ho kéo dài</li>
+                <li>Ngủ ngáy</li>
                 <li>...</li>
             </ul>
         </div>
@@ -440,11 +441,12 @@
                     <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="gay.jpg" width="100"/>
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Tiến sĩ, Bác sĩ Nguyễn Văn Doanh</h3>
+                            <h3 class="h6 font-weight-bold">Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An</h3>
                         </div>
                         <p class="text-muted mb-2" style="font-size: 15px;">Trưởng khoa Khám bệnh, Bệnh viện Đa khoa Quốc tế Thu Cúc</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên chủ nhiệm khoa Thần Kinh, Bệnh viện Hữu Nghị Việt Xô</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ có 40 năm kinh nghiệm làm việc chuyên khoa Nội Thần kinh</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên Trưởng khoa Tai mũi họng trẻ em, Bệnh viện Tai Mũi Họng Trung ương</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Gần 40 năm kinh nghiệm khám và điều trị các bệnh lý Tai Mũi Họng người lớn và trẻ em</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Giám đốc bệnh viện Đa khoa An Việt</p>
                         <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 16 tuổi trở lên </p>
                         <p class="text-muted d-flex align-items-center">
                             <i class="fas fa-map-marker-alt mr-2"></i>. Hà Nội</p>
@@ -452,7 +454,7 @@
                 </div>
                 <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 10/5</h4>
+                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 26/5</h4>
                     </div>
                     <div class="d-flex align-items-center mb-4">
                         <i class="fas fa-calendar-alt text-muted mr-2"></i>
@@ -472,85 +474,61 @@
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
                         
-                        <div class="text-muted mb-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="text-primary font-weight-semibold mb-0" id="promotionHeading">CHƯƠNG TRÌNH KHUYẾN MẠI</h4>
-                                <a class="text-primary" href="#" id="viewPromotionDetails" style="position: relative; top: 9.45px;">Xem chi tiết</a>
-                            </div>
-                        </div>
-                        <!-- Dialog modal -->
-                        <div id="promotionDialog" class="promotion-dialog">
-                            <div class="promotion-dialog-content">
-                                <span class="close-dialog">&times;</span>
-                                <h4>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</h4>
-                                <div class="promotion-details">
-                                    <p><strong>Tháng 4 trọn vẹn: Đầu tư cho sức khỏe, nhận ngàn ưu đãi</strong></p>
-                                    <ol>
-                                        <li><strong>Khám chuyên khoa Nội</strong>
-                                            <ul>
-                                                <li>Giảm 30% chụp cộng hưởng từ sọ não/cộng hưởng từ não-mạch não.</li>
-                                                <li>Giảm 30% chụp cắt lớp vi tính não</li>
-                                                <li>Giảm 30% siêu âm tim, siêu âm mạch máu</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Khám và nội soi tiêu hóa</strong>
-                                            <ul>
-                                                <li>Miễn phí phát thuốc làm sạch đại tràng tại nhà đối với các khách hàng trong bán kính 15km tính từ các cơ sở của TCI</li>
-                                                <li>Giảm 35% cộng nội soi dạ dày/đại tràng/dạ dày và đại tràng các công nghệ thường, công nghệ NBI, công nghệ MCU, công nghệ siêu âm nội soi cho khách hàng (không bao gồm các dịch vụ cần làm sàng phát sinh và vật tư tiêu hao)</li>
-                                                <li>Tặng 30% cộng dịch vụ do áp lực và nhu động thực quản; 30% dịch vụ do PH trở kháng thực quản 24h.</li>
-                                                <li>Giảm 50% tiền giường cho khách hàng thực hiện dịch vụ do PH trở kháng thực quản 24h</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Dịch vụ Tai Mũi Họng:</strong> Giảm 30% dịch vụ nội soi tai mũi họng ống mềm</li>
-                                        <li><strong>Dịch vụ khám dinh dưỡng</strong>
-                                            <ul>
-                                                <li>Giảm 50% khám ban đầu dinh dưỡng, giảm 20% các dịch vụ cần làm sàng phát sinh (không áp dụng với dịch vụ Virus test nhanh [Adeno/Rota Virus], Adenovirus Real-time PCR và các xét nghiệm Covid-19)</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Dịch vụ mắt</strong>
-                                            <ul>
-                                                <li>Giảm 25% cộng mổ Phaco và 20% các dịch vụ cần làm sàng trong mổ Phaco</li>
-                                                <li>Miễn phí dịch vụ thử kính Ortho K và giảm 10% chi phí kính mắt Ortho K</li>
-                                                <li>Khám phát hiện đục thủy tinh thể được miễn phí khám làm sàng mắt trị giá 200.000 VNĐ (Áp dụng cho khách trên 60 tuổi)</li>
-                                                <li>Khách hàng mua kính được miễn phí (Miễn phí Khám mắt/Khám lại từ 3-7 ngày [Khám mắt]: 200.000/ 100.000 VNĐ và Miễn phí Thử kính: 100.000 VNĐ)</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Gói khám</strong> các sức khỏe và tầm soát ung thư giảm 35%.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</p>
-                        <p>286 Thụy Khuê, quận Tây Hồ, Hà Nội</p>
+
+                        <p>Bệnh viện Đa khoa An Việt</p>
+                        <p>Số 1E Trường Chinh - Thanh Xuân - Hà Nội</p>
                     </div>
                     <div class="text-muted">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ KHÁM: 150.000đ</h4>
+                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ KHÁM: 400.000đ</h4>
                         <a class="text-primary d-inline-block" href="#" id="viewPriceDetails1" style="margin-left: 288px;">Xem chi tiết</a>
                         
                         <!-- Price details section (hidden by default) -->
                         <div class="price-details" id="priceDetailsSection1" style="display: none;">
                             <table>
+                                <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ DỊCH VỤ LIÊN QUAN:</h4>
                                 <tr>
-                                    <td class="service-name">Giá khám</td>
-                                    <td class="price">150.000đ</td>
+                                    <td class="service-name">Khám & Nội soi Tai Mũi họng</td>
+                                    <td class="price">400.000đ</td>
                                 </tr>
-                                <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ DỊCH VỤ LIÊN QUAN</h4>
+                                
                                 <tr>
                                     
-                                    <td class="service-name">Tổng phân tích tế bào máu ngoại vi</td>
-                                    <td class="price">156.000đ</td>
+                                    <td class="service-name">Đo nhĩ lượng</td>
+                                    <td class="price">150.000đ</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td class="service-name">Chụp cắt lớp vi tính động mạch não</td>
+                                    <td class="service-name">Đo thính lực</td>
                                     <td class="price">
-                                    3.636.000đ</td>
+                                    150.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Điện não đồ thường quy</td>
-                                    <td class="price">360.000đ</td>
+                                    <td class="service-name">Làm thuốc tai, mũi, thanh quản</td>
+                                    <td class="price">200.000đ</td>
                                 </tr>
-                                
+                                <tr>
+                                    <td class="service-name"></td>
+                                    <td class="price"></td>
+                                </tr>
+                                <tr>
+                                    <td class="service-name">Lấy dị vật tai</td>
+                                    <td class="price">400.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td class="service-name">Khí dung mũi họng (bao gồm thuốc)</td>
+                                    <td class="price">
+                                    60.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td class="service-name">Tổng phân tích tế bào máu ngoại vi (bằng máy đếm laser)
+                                    </td>
+                                    <td class="price">
+                                    100.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td class="service-name">Thời gian máu chảy phương pháp Duke</td>
+                                    <td class="price">30.000đ</td>
+                                </tr>
                             </table>
                            
                         </div>
@@ -618,18 +596,18 @@
                     <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="doctor2.jpg" width="100"/>
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">TPGS. TS. BSCKII. TTUT Vũ Văn Hòe</h3>
+                            <h3 class="h6 font-weight-bold">Khám Tai Mũi Họng tại Bệnh viện Đa Khoa Hồng Đức III</h3>
                         </div>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ có 35 năm kinh nghiệm về vực Cột sống, thần kinh, cơ xương khớp</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Phó chủ tịch hội Phẫu thuật cột sống Việt Nam </p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ nhận khám từ 7 tuổi trở lên </p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Đội ngũ bác sĩ giàu kinh nghiệm trong khám và điều trị các bệnh lý về Tai Mũi Họng</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bệnh viện được trang bị những máy móc khám - điều trị hiện đại</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Giảm thời gian chờ đợi, ưu tiên khám nhanh</p>
                         <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. Hà Nội</p>
+                            <i class="fas fa-map-marker-alt mr-2"></i>. TPHCM</p>
                     </div>
                 </div>
                 <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 8/4</h4>
+                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 26/5</h4>
                     </div>
                     <div class="d-flex align-items-center mb-4">
                         <i class="fas fa-calendar-alt text-muted mr-2"></i>
@@ -648,90 +626,49 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám bệnh viện 115</p>
-                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
+                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
+                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
                     </div>
                     <div class="text-muted">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ KHÁM: 500.000đ</h4>
+                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ KHÁM: 120.000đ</h4>
                         <a class="text-primary d-inline-block" href="#" id="viewPriceDetails2" style="margin-left: 288px;">Xem chi tiết</a>
                         
                         <!-- Price details section (hidden by default) -->
                         <div class="price-details" id="priceDetailsSection2" style="display: none;">
                             <table>
-                                <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ DỊCH VỤ LIÊN QUAN</h4>
+                                
                                 <tr>
                                     <td class="service-name">Giá khám</td>
-                                    <td class="price">500.000đ</td>
+                                    <td class="price">120.000đ</td>
                                 </tr>
-                                <tr>
-                                    <td class="service-name">Chụp Xquang cột sống cổ thẳng và nghiêng (2 tư thế)</td>
-                                    <td class="price">
-                                    250.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">Chụp Xquang cột sống thắt lưng thẳng nghiêng (2 tư thế)</td>
-                                    <td class="price">
-                                    250.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">Chụp Xquang khớp vai thẳng</td>
-                                    <td class="price">
-                                    150.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">Chụp cộng hưởng từ cột sống cổ, ngực, thắt lưng
-                                    </td>
-                                    <td class="price">
-                                    1.900.000đ</td>
-                                </tr>
+                               
                             </table>
                         </div>
                         
                     </div>
-                    <div class="text-muted mb-2">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading3">LOẠI BẢO HIỂM ÁP DỤNG</h4>     
-                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails3" style="display: flex; justify-content: space-between;margin-left: 247px;">Xem chi tiết</a>
-                            <div class="price-details" id="priceDetailsSection3" style="display: none;">
-                                <table>
-                                    <tr>
-                                        <td class="service-name" colspan="2">
-                                            <div>Bảo hiểm y tế nhà nước</div>
-                                            <p class="note">Phòng khám chưa áp dụng bảo hiểm nhà nước</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="service-name" colspan="2">
-                                            <div>Bảo hiểm bảo lãnh</div>
-                                            <p class="note">Phòng khám chưa áp dụng bảo hiểm bảo lãnh. Phòng khám có xuất hóa đơn điện tử (tùy thuộc từng loại bảo hiểm áp dụng)</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                 </div> 
             </div>
         
 
-        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="8">
+        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="21">
             <div class="d-flex flex-column flex-md-row">
                 <div class="d-flex flex-1 align-items-start mb-4 mb-md-0">
                     <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="/gay.jpg" width="100"/>
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">BSCKII Dương Minh Trí</h3>
+                            <h3 class="h6 font-weight-bold">Bác sĩ chuyên khoa I Nguyễn Thị Lan Anh</h3>
                         </div>
-                        <p class="text-muted mb-2">Gần 30 năm kinh nghiệm lĩnh vực Cơ xương khớp</p>
-                        <p class="text-muted mb-2">Từng công tác tại Bệnh viện Xanh Pôn, Bệnh viện</p>
-                        <p class="text-muted mb-2">Phục hồi chức năng Hà Nội</p>
-                        <p class="text-muted mb-2">Bác sĩ nhận khám tất cả các độ tuổi</p>
+                        <p class="text-muted mb-2">Bác sĩ đang công tác tại Bệnh viện Thanh Nhàn và Phòng khám Vietlife</p>
+                        <p class="text-muted mb-2">Nhiều năm kinh nghiệm trong khám và điều trị bệnh lý Tai Mũi Họng</p>
+                        <p class="text-muted mb-2">Bác sĩ nhận khám mọi độ tuổi</p>
                         <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. TP HCM</p>
+                            <i class="fas fa-map-marker-alt mr-2"></i>. Hà Nội</p>
                     </div>
                 </div>
                 <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 8/4</h4>
+                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 4/6</h4>
                     </div>
                     <div class="d-flex align-items-center mb-4">
                         <i class="fas fa-calendar-alt text-muted mr-2"></i>
@@ -750,12 +687,11 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám Bệnh viện Đại học Y Dược 1</p>
-                        <p>20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM</p>
-                        
+                        <p>Phòng khám Vietlife MRI Trần Bình Trọng </p>
+                        <p>14 Trần Bình Trọng, Hoàn Kiếm Hà Nội </p>
                     </div>
                     <div class="text-muted">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading4">GIÁ KHÁM: 500.000đ</h4>
+                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading4">GIÁ KHÁM: 300.000đ</h4>
                         <a class="text-primary d-inline-block" href="#" id="viewPriceDetails4" style="margin-left: 288px;">Xem chi tiết</a>
                         
                         <!-- Price details section (hidden by default) -->
@@ -763,225 +699,16 @@
                             <table>
                                 <tr>
                                     <td class="service-name">Giá khám</td>
-                                    <td class="price">500.000đ</td>
+                                    <td class="price">300.000đ</td>
                                 </tr>
-                                <tr>
-                                    <td class="service-name">Hình thức thanh toán: tiền mặt, quẹt thẻ, chuyển khoản</td>
-                                </tr>
+                               <p class="note">Giá khám đã bao gồm Nội soi Tai mũi họng</p>
                             </table>
                         </div>
                     </div>
-                    <div class="text-muted mb-2">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading5">LOẠI BẢO HIỂM ÁP DỤNG</h4>     
-                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails5" style="display: flex; justify-content: space-between;margin-left: 247px;">Xem chi tiết</a>
-                            <div class="price-details" id="priceDetailsSection5" style="display: none;">
-                                <table>
-                                    <tr>
-                                        <td class="service-name" colspan="5">
-                                            <div>Bảo hiểm y tế nhà nước</div>
-                                            <p class="note">Phòng khám chưa áp dụng bảo hiểm nhà nước</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="service-name" colspan="5">
-                                            <div>Bảo hiểm bảo lãnh</div>
-                                            <p class="note">Phòng khám chưa áp dụng bảo hiểm bảo lãnh. Phòng khám có xuất hóa đơn điện tử (tùy thuộc từng loại bảo hiểm áp dụng)</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                
                     </div>
                 </div> 
             </div>
-    
-        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="9">
-            <div class="d-flex flex-column flex-md-row">
-                <div class="d-flex flex-1 align-items-start mb-4 mb-md-0">
-                    <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="/gay.jpg" width="100"/>
-                    <div class="flex-1" style="margin-left: 10px;">
-                        <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Bác sĩ Chuyên khoa II Trần Trọng Thắng</h3>
-                        </div>
-                        <p class="text-muted mb-2">Trưởng khoa Nội Cơ Xương Khớp, Bệnh viện</p>
-                        <p class="text-muted mb-2">Nhân dân Gia Định</p>
-                        <p class="text-muted mb-2">Từng công tác tại Bệnh viện Xanh Pôn,</p>
-                        <p class="text-muted mb-2">Bệnh viện Phục hồi chức năng Hà Nội</p>
-                        <p class="text-muted mb-2">Bác sĩ nhận khám tất cả các độ tuổi</p>
-                        <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. TP HCM</p>
-                    </div>
-                </div>
-                <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 8/4</h4>
-                    </div>
-                    <div class="d-flex align-items-center mb-4">
-                        <i class="fas fa-calendar-alt text-muted mr-2"></i>
-                        <span class="text-muted" style="margin-left: 5px;">LỊCH KHÁM</span>
-                    </div>
-                    <div class="d-flex flex-wrap mb-4">
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="07:30 - 08:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">07:30 - 08:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="08:30 - 09:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">08:30 - 09:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="09:30 - 10:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">09:30 - 10:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="10:30 - 11:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">10:30 - 11:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="13:30 - 14:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">13:30 - 14:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="14:30 - 15:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">14:30 - 15:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:00 - 15:30" data-doctor-id="9" style="height: 40px; width: 126.06px;">15:00 - 15:30</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:30 - 16:00" data-doctor-id="9" style="height: 40px; width: 126.06px;">15:30 - 16:00</button>
-                    </div>
-                    <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
-                    <div class="text-muted mb-2">
-                        <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám Bệnh viện Đại học Y Dược 1</p>
-                        <p>20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM</p>
-                    </div>
-                    <div class="text-muted mb-2">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading6">GIÁ KHÁM: 300.000đ - 400.000đ</h4>
-                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails6" style="margin-left: 198px;">Xem chi tiết</a>
-                        <div class="price-details" id="priceDetailsSection6" style="display: none;">
-                            <table>
-                                <tr>
-                                    <td class="service-name" colspan="2"><strong>Giá khám</strong></td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">
-                                        <div>Giá khám cho người Việt</div>
-                                        <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
-                                    </td>
-                                    <td class="price">300.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">
-                                        <div>Giá khám cho người nước ngoài</div>
-                                        <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
-                                    </td>
-                                    <td class="price">400.000đ</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-
-        <div class="bg-white shadow rounded-lg mt-4 p-4" data-doctor-id="10">
-            <div class="d-flex flex-column flex-md-row">
-                <div class="d-flex flex-1 align-items-start mb-4 mb-md-0">
-                    <img alt="Doctor's image" class="rounded-circle mr-4" height="100" src="/gay.jpg" width="100"/>
-                    <div class="flex-1" style="margin-left: 10px;">
-                        <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Tiến sĩ, Bác sĩ chuyên khoa II Lê Quốc Việt</h3>
-                        </div>
-                        <p class="text-muted mb-2">Hơn 30 năm kinh nghiệm khám và điều trị các bệnh nội cơ xương khớp và</p>
-                        <p class="text-muted mb-2">40 năm kinh nghiệm khám Nội tổng quá</p>
-                        <p class="text-muted mb-2">Nguyên Phó Giám đốc Bệnh viện E</p>
-                        <p class="text-muted mb-2">Bác sĩ nhận khám bệnh nhân từ 4 tuổi trở lên</p>
-                        <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. TP HCM</p>
-                    </div>
-                </div>
-                <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 8/4</h4>
-                    </div>
-                    <div class="d-flex align-items-center mb-4">
-                        <i class="fas fa-calendar-alt text-muted mr-2"></i>
-                        <span class="text-muted" style="margin-left: 5px;">LỊCH KHÁM</span>
-                    </div>
-                    <div class="d-flex flex-wrap mb-4">
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="07:30 - 08:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">07:30 - 08:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="08:30 - 09:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">08:30 - 09:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="09:30 - 10:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">09:30 - 10:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="10:30 - 11:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">10:30 - 11:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="13:30 - 14:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">13:30 - 14:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="14:30 - 15:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">14:30 - 15:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:00 - 15:30" data-doctor-id="10" style="height: 40px; width: 126.06px;">15:00 - 15:30</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:30 - 16:00" data-doctor-id="10" style="height: 40px; width: 126.06px;">15:30 - 16:00</button>
-                    </div>
-                    <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
-                    <div class="text-muted mb-2">
-                        <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám Bệnh viện Đại học Y Dược 1</p>
-                        <p>20-22 Dương Quang Trung, Phường 12, Quận 10, Tp. HCM</p>
-                    </div>
-                    
-                    <!-- Phần khuyến mại được thêm vào -->
-                    <div class="text-muted mb-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="text-primary font-weight-semibold mb-0" id="promotionHeading">CHƯƠNG TRÌNH KHUYẾN MẠI</h4>
-                            <a class="text-primary" href="#" id="viewPromotionDetails" style="position: relative; top: 9.45px;">Xem chi tiết</a>
-                        </div>
-                    </div>
-                    <!-- Dialog modal -->
-                    <div id="promotionDialog" class="promotion-dialog">
-                        <div class="promotion-dialog-content">
-                            <span class="close-dialog">&times;</span>
-                            <h4>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</h4>
-                            <div class="promotion-details">
-                                <p><strong>Tháng 4 trọn vẹn: Đầu tư cho sức khỏe, nhận ngàn ưu đãi</strong></p>
-                                <ol>
-                                    <li><strong>Khám chuyên khoa Nội</strong>
-                                        <ul>
-                                            <li>Giảm 30% chụp cộng hưởng từ sọ não/cộng hưởng từ não-mạch não.</li>
-                                            <li>Giảm 30% chụp cắt lớp vi tính não</li>
-                                            <li>Giảm 30% siêu âm tim, siêu âm mạch máu</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Khám và nội soi tiêu hóa</strong>
-                                        <ul>
-                                            <li>Miễn phí phát thuốc làm sạch đại tràng tại nhà đối với các khách hàng trong bán kính 15km tính từ các cơ sở của TCI</li>
-                                            <li>Giảm 35% cộng nội soi dạ dày/đại tràng/dạ dày và đại tràng các công nghệ thường, công nghệ NBI, công nghệ MCU, công nghệ siêu âm nội soi cho khách hàng (không bao gồm các dịch vụ cần làm sàng phát sinh và vật tư tiêu hao)</li>
-                                            <li>Tặng 30% cộng dịch vụ do áp lực và nhu động thực quản; 30% dịch vụ do PH trở kháng thực quản 24h.</li>
-                                            <li>Giảm 50% tiền giường cho khách hàng thực hiện dịch vụ do PH trở kháng thực quản 24h</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Dịch vụ Tai Mũi Họng:</strong> Giảm 30% dịch vụ nội soi tai mũi họng ống mềm</li>
-                                    <li><strong>Dịch vụ khám dinh dưỡng</strong>
-                                        <ul>
-                                            <li>Giảm 50% khám ban đầu dinh dưỡng, giảm 20% các dịch vụ cần làm sàng phát sinh (không áp dụng với dịch vụ Virus test nhanh [Adeno/Rota Virus], Adenovirus Real-time PCR và các xét nghiệm Covid-19)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Dịch vụ mắt</strong>
-                                        <ul>
-                                            <li>Giảm 25% cộng mổ Phaco và 20% các dịch vụ cần làm sàng trong mổ Phaco</li>
-                                            <li>Miễn phí dịch vụ thử kính Ortho K và giảm 10% chi phí kính mắt Ortho K</li>
-                                            <li>Khám phát hiện đục thủy tinh thể được miễn phí khám làm sàng mắt trị giá 200.000 VNĐ (Áp dụng cho khách trên 60 tuổi)</li>
-                                            <li>Khách hàng mua kính được miễn phí (Miễn phí Khám mắt/Khám lại từ 3-7 ngày [Khám mắt]: 200.000/ 100.000 VNĐ và Miễn phí Thử kính: 100.000 VNĐ)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Gói khám</strong> các sức khỏe và tầm soát ung thư giảm 35%.</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-muted mb-2">
-                        <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading7">GIÁ KHÁM: 300.000đ - 400.000đ</h4>
-                        <a class="text-primary d-inline-block" href="#" id="viewPriceDetails7" style="margin-left: 198px;">Xem chi tiết</a>
-                        <div class="price-details" id="priceDetailsSection7" style="display: none;">
-                            <table>
-                                <tr>
-                                    <td class="service-name" colspan="7"><strong>Giá khám</strong></td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">
-                                        <div>Giá khám cho người Việt</div>
-                                        <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
-                                    </td>
-                                    <td class="price">300.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">
-                                        <div>Giá khám cho người nước ngoài</div>
-                                        <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
-                                    </td>
-                                    <td class="price">400.000đ</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div> 
             </div>
         </div>
     </div>
