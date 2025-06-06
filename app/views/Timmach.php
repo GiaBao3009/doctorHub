@@ -383,36 +383,34 @@
     </style>
 
 <body>
-<div class="menu">
+    <div class="menu">
         <ul class="menu-content" style="padding-left: 0rem;">
-            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">DashBoard</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">explore</span><span style="color: black;">Explore</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">analytics</span><span style="color: black;">Analytics</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Settings</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">person</span><span style="color: black;">Account</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">report</span><span style="color: black;">Report</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">email</span><span style="color: black;">Contact</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Logout</span></a></li>
+            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Trang chủ</span></a></li>
+            <li><a href="/app/views/user_dashboard.php"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">Bảng điều khiển</span></a></li>
+            <li><a href="/app/views/Blog/blog-detail.php"><span class="material-symbols-outlined">explore</span><span style="color: black;">Blog</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Cài đặt</span></a></li>
+            <li><a href="/app/views/user_profile.php"><span class="material-symbols-outlined">person</span><span style="color: black;">Tài khoản</span></a></li>
+            <li><a href="/app/views/contact.php"><span class="material-symbols-outlined">email</span><span style="color: black;">Liên hệ</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Đăng xuất</span></a></li>
         </ul>
     </div>
-    
-    
-    <div class="hehe" style="margin-left: 70px;">
+
+
+
     <div class="container py-4 position-relative">
-        <img alt="Background image" class="background-image" src="/assets/images/Icon/tim-mach.png" />
+        <img alt="Background image" class="background-image" src="/img/icons/tim-mach.png" />
         <div class="text-muted mb-2">
             <a class="text-primary" href="./chuyenkhoa.php">Khám chuyên khoa</a> / <span>Tim Mạch</span>
         </div>
         <h1 class="h4 font-weight-bold mb-2">Tim Mạch</h1>
-        <h2 class="h5 font-weight-semibold mb-2">Bác sĩ tim mạch giỏi</h2>
-        <p class="mb-4">Danh sách các bác sĩ tim mạch uy tín đầu ngành tại Việt Nam:</p>
+        <h2 class="h5 font-weight-semibold mb-2">Bác sĩ Chuyên khoa Tim Mạch</h2>
+        <p class="mb-4">Danh sách các bác sĩ Tim Mạch uy tín đầu ngành tại Việt Nam:</p>
         <ul class="list-unstyled mb-4">
-            <li>Các chuyên gia được đào tạo bài bản về chuyên ngành Tim mạch tại các trường đại học trong nước và quốc tế.</li>
-            <li>Các giáo sư, phó giáo sư nghiên cứu và giảng dạy tại Đại học Y Hà Nội</li>
-            <li>Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như Viện Tim Mạch Quốc Gia, Bệnh viện Bạch Mai, Bệnh viện Việt Đức, Bệnh Viện E, Bệnh Viện Tim Hà Nội</li>
-            <li>Là thành viên hoặc lãnh đạo các tổ chức chuyên môn như: Hiệp hội Tim Mạch Việt Nam</li>
-            <li>Đạt danh hiệu Thầy thuốc Nhân dân, Thầy thuốc Ưu tú, Bác sĩ Cao cấp,...</li>
+            <li class="mb-2">Các chuyên gia có quá trình đào tạo bài bản, kinh nghiệm công tác tại các bệnh viện lớn về
+                chuyên ngành Tiêu hóa tại Hà Nội</li>
+            <li class="mb-2">Các giáo sư, phó giáo sư là giảng viên Đại học Y khoa Hà Nội</li>
+            <li class="mb-2">Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như Bệnh viện Bạch Mai, Bệnh Viện
+                Việt Đức, Bệnh Viện Nhi Trung ương, Bệnh viện Y học Cổ truyền Việt</li>
         </ul>
         <a class="text-primary" href="#">Xem thêm</a>
         <div id="additionalContent" style="display: none;">
@@ -450,13 +448,18 @@
                         data-src="../../assets/images/Doctors/032958-bac-si-da-lieu-hoang-hong-manh.jpg" width="100" />
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Thạc sĩ, Bác sĩ Bùi Thị Xuân Nga</h3>
+                            <h3 class="h6 font-weight-bold">Tiến sĩ, Bác sĩ Nguyễn Văn Doanh</h3>
                         </div>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Hơn 20 năm kinh nghiệm khám và điều trị các bệnh lý về Nội Tim mạch</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Từng công tác tại khoa Nội Tim mạch, Bệnh viện Đại học Y Dược TP.HCM</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Trưởng khoa Khám bệnh, Bệnh viện Đa khoa
+                            Quốc tế Thu Cúc</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên chủ nhiệm khoa thần kinh, Bệnh viện
+                            Hữu Nghị Việt Xô</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ có 40 năm kinh nghiệm làm việc chuyên
+                            khoa Nội Thần kinh</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 16 tuổi trở
                             lên </p>
                         <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. TP HCM
+                            <i class="fas fa-map-marker-alt mr-2"></i>. Đà Lạt
                         </p>
                     </div>
                 </div>
@@ -502,66 +505,89 @@
                         <div id="promotionDialog" class="promotion-dialog">
                             <div class="promotion-dialog-content">
                                 <span class="close-dialog">&times;</span>
-                                <h4>Bệnh viện Quốc tế City
-                                </h4>
+                                <h4>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</h4>
                                 <div class="promotion-details">
-                                    <p><strong>Ưu đãi hấp dẫn:</strong>Giảm giá dịch vụ Chẩn đoán hình ảnh và nội soi tại CIH</p>
+                                    <p><strong>Tháng 4 trọn vẹn: Đầu tư cho sức khỏe, nhận ngàn ưu đãi</strong></p>
                                     <ol>
-                                        <li><strong>Ưu đãi GIẢM 20% dịch vụ Chẩn đoán hình ảnh (X-quang, Siêu âm, CT scan, MRI...) cho khách hàng khi đặt lịch trước qua DoctorHub.</strong>
-                                            
-                                        </li>
-                                        <li><strong>Giảm 20% phí nội soi tiêu hóa buổi chiều</strong>
+                                        <li><strong>Khám chuyên khoa Nội</strong>
                                             <ul>
-                                                <li>Thời gian áp dụng: từ 1/4/2025 đến 30/6/2025</li>
-                                                <li>Đối tượng: Khách hàng Việt Nam đăng ký và sử dụng dịch vụ trong thời gian diễn ra chương trình.</li>
+                                                <li>Giảm 30% chụp cộng hưởng từ sọ não/cộng hưởng từ não-mạch não.</li>
+                                                <li>Giảm 30% chụp cắt lớp vi tính não</li>
+                                                <li>Giảm 30% siêu âm tim, siêu âm mạch máu</li>
                                             </ul>
                                         </li>
+                                        <li><strong>Khám và nội soi tiêu hóa</strong>
+                                            <ul>
+                                                <li>Miễn phí phát thuốc làm sạch đại tràng tại nhà đối với các khách
+                                                    hàng trong bán kính 15km tính từ các cơ sở của TCI</li>
+                                                <li>Giảm 35% cộng nội soi dạ dày/đại tràng/dạ dày và đại tràng các công
+                                                    nghệ thường, công nghệ NBI, công nghệ MCU, công nghệ siêu âm nội soi
+                                                    cho khách hàng (không bao gồm các dịch vụ cần làm sàng phát sinh và
+                                                    vật tư tiêu hao)</li>
+                                                <li>Tặng 30% cộng dịch vụ do áp lực và nhu động thực quản; 30% dịch vụ
+                                                    do PH trở kháng thực quản 24h.</li>
+                                                <li>Giảm 50% tiền giường cho khách hàng thực hiện dịch vụ do PH trở
+                                                    kháng thực quản 24h</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Dịch vụ Tai Mũi Họng:</strong> Giảm 30% dịch vụ nội soi tai mũi họng
+                                            ống mềm</li>
+                                        <li><strong>Dịch vụ khám dinh dưỡng</strong>
+                                            <ul>
+                                                <li>Giảm 50% khám ban đầu dinh dưỡng, giảm 20% các dịch vụ cần làm sàng
+                                                    phát sinh (không áp dụng với dịch vụ Virus test nhanh [Adeno/Rota
+                                                    Virus], Adenovirus Real-time PCR và các xét nghiệm Covid-19)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Dịch vụ mắt</strong>
+                                            <ul>
+                                                <li>Giảm 25% cộng mổ Phaco và 20% các dịch vụ cần làm sàng trong mổ
+                                                    Phaco</li>
+                                                <li>Miễn phí dịch vụ thử kính Ortho K và giảm 10% chi phí kính mắt Ortho
+                                                    K</li>
+                                                <li>Khám phát hiện đục thủy tinh thể được miễn phí khám làm sàng mắt trị
+                                                    giá 200.000 VNĐ (Áp dụng cho khách trên 60 tuổi)</li>
+                                                <li>Khách hàng mua kính được miễn phí (Miễn phí Khám mắt/Khám lại từ 3-7
+                                                    ngày [Khám mắt]: 200.000/ 100.000 VNĐ và Miễn phí Thử kính: 100.000
+                                                    VNĐ)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Gói khám</strong> các sức khỏe và tầm soát ung thư giảm 35%.</li>
                                     </ol>
                                 </div>
                             </div>
                         </div>
-                        <p>Bệnh viện Quốc tế City</p>
-                        <p>3 Đường Số 17A, Bình Trị Đông B, Bình Tân, Thành phố Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ
-                            KHÁM: 400.000đ</h4>
+                            KHÁM: 500.000đ</h4>
                         <a class="text-primary d-inline-block" href="#" id="viewPriceDetails1"
                             style="margin-left: 288px;">Xem chi tiết</a>
 
                         <!-- Price details section (hidden by default) -->
                         <div class="price-details" id="priceDetailsSection1" style="display: none;">
                             <table>
-                            <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ DỊCH VỤ LIÊN QUAN</h4>
                                 <tr>
                                     <td class="service-name">Giá khám</td>
-                                    <td class="price">400.000đ</td>
+                                    <td class="price">500.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Siêu âm tim</td>
-                                    <td class="price">800.000đ</td>
+                                    <td class="service-name">Chụp Xquang cột sống cổ thẳng và nghiêng (2 tư thế)</td>
+                                    <td class="price">250.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Điện tâm đồ</td>
+                                    <td class="service-name">Chụp Xquang cột sống thắt lưng nghiêng (2 tư thế)</td>
+                                    <td class="price">250.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td class="service-name">Chụp Xquang khớp vai thẳng</td>
                                     <td class="price">150.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Tổng phân tích tế bào máu bằng máy đếm laser</td>
-                                    <td class="price">221.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">X-quang hình phổi (1 thế)</td>
-                                    <td class="price">210.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">Xét nghiệm đường huyết
-                                    </td>
-                                    <td class="price">69.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">Xét nghiệm cholesterol toàn phần
-                                    </td>
-                                    <td class="price">69.000đ</td>
+                                    <td class="service-name">Chụp cộng hưởng từ cột sống cổ, ngực, thắt lưng</td>
+                                    <td class="price">1.900.000đ</td>
                                 </tr>
                             </table>
                             <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
@@ -577,7 +603,8 @@
                                 <tr>
                                     <td class="service-name" colspan="2">
                                         <div>Bảo hiểm y tế nhà nước</div>
-                                        <p class="note">Áp dụng cho bệnh nhân đăng ký KCB ban đầu tại bệnh viện hoặc có giấy chuyển viện từ đơn vị khác.</p>
+                                        <p class="note">Áp dụng cho bệnh nhân đăng ký khám chữa bệnh ban đầu tại bệnh
+                                            viện hoặc có giấy chuyển viện từ đơn vị khác</p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -677,8 +704,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ
@@ -775,8 +802,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading4">GIÁ
@@ -872,8 +899,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading6">GIÁ
@@ -954,8 +981,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám CỦA BỐ MÀY</p>
-                        <p>MY FUCKKING HOME</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
 
                     <!-- Phần khuyến mại được thêm vào -->
@@ -1054,7 +1081,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 

@@ -374,15 +374,13 @@
 <body>
     <div class="menu">
         <ul class="menu-content" style="padding-left: 0rem;">
-            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">DashBoard</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">explore</span><span style="color: black;">Explore</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">analytics</span><span style="color: black;">Analytics</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Settings</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">person</span><span style="color: black;">Account</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">report</span><span style="color: black;">Report</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">email</span><span style="color: black;">Contact</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Logout</span></a></li>
+            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Trang chủ</span></a></li>
+            <li><a href="/app/views/user_dashboard.php"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">Bảng điều khiển</span></a></li>
+            <li><a href="/app/views/Blog/blog-detail.php"><span class="material-symbols-outlined">explore</span><span style="color: black;">Blog</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Cài đặt</span></a></li>
+            <li><a href="/app/views/user_profile.php"><span class="material-symbols-outlined">person</span><span style="color: black;">Tài khoản</span></a></li>
+            <li><a href="/app/views/contact.php"><span class="material-symbols-outlined">email</span><span style="color: black;">Liên hệ</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Đăng xuất</span></a></li>
         </ul>
     </div>
     

@@ -1,0 +1,35 @@
+{
+  "appointments": [
+    {
+      "id": "4",
+      "user_id": 8,
+      "doctor_id": 5,
+      "patient_name": "vinh",
+      "appointment_date": "2025-5-10 09:30:00",
+      "status": "pending",
+      "note": "Bác sĩ: xaolin (ID: 5)\nTên: vinh\nGiới tính: Nam\nĐiện thoại: 0352032375\nEmail: vinhnam04012004@gmail.com\nNăm sinh: 2004\nĐịa chỉ: TP.HCM ,Vietnamese, Quận 1, TP. Hồ Chí Minh\nLý do khám: Dau\n",
+      "service_id": 1
+    },
+    {
+      "id": "5",
+      "user_id": 8,
+      "doctor_id": 5,
+      "patient_name": "Hoang An Tesst",
+      "appointment_date": "2025-5-10 08:30:00",
+      "status": "pending",
+      "note": "Bác sĩ: xaolin (ID: 5)\nTên: Hoang An Tesst\nGiới tính: Nam\nĐiện thoại: 0352032375\nEmail: vinhnam04012004@gmail.com\nNăm sinh: 2011\nĐịa chỉ: TP.HCM ,Vietnamese, Ba Đình, Hà Nội\nLý do khám: Tesst\n",
+      "service_id": 1
+    },
+    {
+      "id": "6",
+      "user_id": 8,
+      "doctor_id": 5,
+      "patient_name": "Demo Email",
+      "appointment_date": "2025-5-10 15:30:00",
+      "status": "pending",
+      "note": "Bác sĩ: xaolin (ID: 5)\nTên: Demo Email\nGiới tính: Nữ\nĐiện thoại: 0352032375\nEmail: vinhnam04012004@gmail.com\nNăm sinh: 2011\nĐịa chỉ: TP.HCM ,Vietnamese, Đức Trọng, Đà Lạt\nLý do khám: Demo Email\n",
+      "service_id": 1
+    }
+  ],
+  "prescriptions": []
+}

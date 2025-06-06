@@ -372,17 +372,15 @@
         }
     </style>
 <body>
-    <div class="menu">
+<div class="menu">
         <ul class="menu-content" style="padding-left: 0rem;">
-            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">DashBoard</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">explore</span><span style="color: black;">Explore</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">analytics</span><span style="color: black;">Analytics</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Settings</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">person</span><span style="color: black;">Account</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">report</span><span style="color: black;">Report</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">email</span><span style="color: black;">Contact</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Logout</span></a></li>
+            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Trang chủ</span></a></li>
+            <li><a href="/app/views/user_dashboard.php"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">Bảng điều khiển</span></a></li>
+            <li><a href="/app/views/Blog/blog-detail.php"><span class="material-symbols-outlined">explore</span><span style="color: black;">Blog</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Cài đặt</span></a></li>
+            <li><a href="/app/views/user_profile.php"><span class="material-symbols-outlined">person</span><span style="color: black;">Tài khoản</span></a></li>
+            <li><a href="/app/views/contact.php"><span class="material-symbols-outlined">email</span><span style="color: black;">Liên hệ</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Đăng xuất</span></a></li>
         </ul>
     </div>
     
@@ -450,23 +448,23 @@
                             <i class="fas fa-map-marker-alt mr-2"></i>. Hà Nội</p>
                     </div>
                 </div>
-                <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;">
+                <div class="flex-1 mt-4 mt-md-0 ml-md-4" style="margin-left: 10px;" data-doctor-id="30">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 10/5</h4>
+                        <h4 class="text-primary font-weight-semibold" style="margin-top: 0rem;">Hôm nay - 7/6</h4>
                     </div>
                     <div class="d-flex align-items-center mb-4">
                         <i class="fas fa-calendar-alt text-muted mr-2"></i>
                         <span class="text-muted" style="margin-left: 5px;">LỊCH KHÁM</span>
                     </div>
                     <div class="d-flex flex-wrap mb-4">
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="07:30 - 08:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">07:30 - 08:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="08:30 - 09:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">08:30 - 09:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="09:30 - 10:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">09:30 - 10:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="10:30 - 11:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">10:30 - 11:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="13:30 - 14:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">13:30 - 14:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="14:30 - 15:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">14:30 - 15:00</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:00 - 15:30" data-doctor-id="5" style="height: 40px; width: 126.06px;">15:00 - 15:30</button>
-                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:30 - 16:00" data-doctor-id="5" style="height: 40px; width: 126.06px;">15:30 - 16:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="07:30 - 08:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">07:30 - 08:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="08:30 - 09:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">08:30 - 09:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="09:30 - 10:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">09:30 - 10:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="10:30 - 11:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">10:30 - 11:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="13:30 - 14:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">13:30 - 14:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="14:30 - 15:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">14:30 - 15:00</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:00 - 15:30" data-doctor-id="30" style="height: 40px; width: 126.06px;">15:00 - 15:30</button>
+                        <button class="btn btn-secondary mb-2 time-slot" data-time="15:30 - 16:00" data-doctor-id="30" style="height: 40px; width: 126.06px;">15:30 - 16:00</button>
                     </div>
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">

@@ -60,9 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_user'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('sssss', $name, $email, $password, $role, $status);
     if ($stmt->execute()) {
+        $new_user_id = $conn->insert_id;
         $log_sql = "INSERT INTO admin_logs (admin_id, action, user_id, timestamp) VALUES (?, 'Thêm tài khoản mới', ?, NOW())";
         $log_stmt = $conn->prepare($log_sql);
-        $log_stmt->bind_param('ii', $_SESSION['user_id'], $conn->insert_id);
+        $log_stmt->bind_param('ii', $_SESSION['user_id'], $new_user_id);
         $log_stmt->execute();
         $log_stmt->close();
     }
@@ -150,17 +151,20 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $stmt->fetch();
     $stmt->close();
     if ($del_role !== 'admin') {
+        // Ghi log trước khi xóa
+        $log_sql = "INSERT INTO admin_logs (admin_id, action, user_id, timestamp) VALUES (?, 'Xóa tài khoản', ?, NOW())";
+        $log_stmt = $conn->prepare($log_sql);
+        $log_stmt->bind_param('ii', $_SESSION['user_id'], $delete_id);
+        $log_stmt->execute();
+        $log_stmt->close();
+
+        // Sau đó mới xóa user
         $sql = "DELETE FROM users WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $delete_id);
-        if ($stmt->execute()) {
-            $log_sql = "INSERT INTO admin_logs (admin_id, action, user_id, timestamp) VALUES (?, 'Xóa tài khoản', ?, NOW())";
-            $log_stmt = $conn->prepare($log_sql);
-            $log_stmt->bind_param('ii', $_SESSION['user_id'], $delete_id);
-            $log_stmt->execute();
-            $log_stmt->close();
-        }
+        $stmt->execute();
         $stmt->close();
+
         header('Location: admin_dashboard.php');
         exit;
     }

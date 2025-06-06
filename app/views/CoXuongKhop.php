@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cơ Xương Khớp</title>
+    <title>Cơ xương khớp</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -374,15 +374,13 @@
 <body>
     <div class="menu">
         <ul class="menu-content" style="padding-left: 0rem;">
-            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">DashBoard</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">explore</span><span style="color: black;">Explore</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">analytics</span><span style="color: black;">Analytics</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Settings</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">person</span><span style="color: black;">Account</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">report</span><span style="color: black;">Report</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">email</span><span style="color: black;">Contact</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Logout</span></a></li>
+            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Trang chủ</span></a></li>
+            <li><a href="/app/views/user_dashboard.php"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">Bảng điều khiển</span></a></li>
+            <li><a href="/app/views/Blog/blog-detail.php"><span class="material-symbols-outlined">explore</span><span style="color: black;">Blog</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Cài đặt</span></a></li>
+            <li><a href="/app/views/user_profile.php"><span class="material-symbols-outlined">person</span><span style="color: black;">Tài khoản</span></a></li>
+            <li><a href="/app/views/contact.php"><span class="material-symbols-outlined">email</span><span style="color: black;">Liên hệ</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Đăng xuất</span></a></li>
         </ul>
     </div>
     
@@ -730,8 +728,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Phòng khám Cơ Xương Khớp Bác sĩ Dương Minh Trí</p>
-                        <p>182b Lê Văn Sỹ, Phường 10, Quận Phú Nhuận, Thành phố Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading4">GIÁ KHÁM: 500.000đ</h4>
@@ -812,8 +810,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Quốc tế City</p>
-                        <p>3 Đường Số 17A, Bình Trị Đông B, Bình Tân, Thành phố Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading6">GIÁ KHÁM: 300.000đ - 400.000đ</h4>
@@ -881,8 +879,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Quốc tế City</p>
-                        <p>3 Đường Số 17A, Bình Trị Đông B, Bình Tân, Thành phố Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     
                     <!-- Phần khuyến mại được thêm vào -->
@@ -896,7 +894,7 @@
                     <div id="promotionDialog" class="promotion-dialog">
                         <div class="promotion-dialog-content">
                             <span class="close-dialog">&times;</span>
-                            <h4>Hệ thống Bệnh viện Quốc tế City</h4>
+                            <h4>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</h4>
                             <div class="promotion-details">
                                 <p><strong>Tháng 4 trọn vẹn: Đầu tư cho sức khỏe, nhận ngàn ưu đãi</strong></p>
                                 <ol>

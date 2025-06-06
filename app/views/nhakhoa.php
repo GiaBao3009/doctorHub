@@ -374,7 +374,7 @@
 <body>
     <div class="menu">
         <ul class="menu-content" style="padding-left: 0rem;">
-            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Home</span></a></li>
+            <li><a href=""><span class="material-symbols-outlined">Trang Chủ</span><span style="color: black;">Home</span></a></li>
             <li><a href="#"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">DashBoard</span></a></li>
             <li><a href="#"><span class="material-symbols-outlined">explore</span><span style="color: black;">Explore</span></a></li>
             <li><a href="#"><span class="material-symbols-outlined">analytics</span><span style="color: black;">Analytics</span></a></li>

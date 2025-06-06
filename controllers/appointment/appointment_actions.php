@@ -182,16 +182,6 @@ try {
                 exit;
             }
             
-            // Kiểm tra phân quyền: chỉ cho phép bác sĩ xem lịch hẹn của mình
-            if (isset($_SESSION['role']) && $_SESSION['role'] === 'doctor') {
-                $doctor_id = $_SESSION['user_id'];
-                if (!isset($appointment['doctor_user_id']) || $appointment['doctor_user_id'] != $doctor_id) {
-                    writeLog("Bác sĩ không có quyền xem lịch hẹn này", 'warning');
-                    echo json_encode(['success' => false, 'message' => 'Bạn không có quyền xem lịch hẹn này!']);
-                    exit;
-                }
-            }
-            
             // Xử lý và định dạng dữ liệu
             if (isset($appointment['appointment_date'])) {
                 $date = new DateTime($appointment['appointment_date']);

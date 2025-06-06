@@ -7,7 +7,7 @@ $blogData = [
     [
         'id' => 1,
         'title' => "TOP 7 địa chỉ bắn laser tàn nhang uy tín tại TP.HCM",
-        'image' => "https://blog.mintpear.com/wp-content/uploads/2022/09/cavitacion-2894851_1920-1536x1024.jpg",
+        'image' => "https://www.10faq.com/assets/img/causes-of-itchy-ears-02.jpg",
         'date' => "30/10/2022",
         'category' => "dalieu",
         'link' => "blog-detail.php", 
@@ -31,7 +31,7 @@ $blogData = [
     [
         'id' => 3,
         'title' => "6 địa chỉ khám sức khỏe tổng quát toàn diện uy tín tại TP.HCM",
-        'image' => "https://www.drsamrobbins.com/wp-content/uploads/2016/12/blood-pressure-patient.jpg",
+        'image' => "https://www.10faq.com/assets/img/causes-of-itchy-ears-02.jpg",
         'date' => "01/11/2022",
         'category' => "khamtongquat",
         'link' => "blog-detail3.php", 

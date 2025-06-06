@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiêu Hóa</title>
+    <title>OnlyFans||CanhGay</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -385,20 +385,18 @@
 <body>
 <div class="menu">
         <ul class="menu-content" style="padding-left: 0rem;">
-            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Home</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">DashBoard</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">explore</span><span style="color: black;">Explore</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">analytics</span><span style="color: black;">Analytics</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Settings</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">person</span><span style="color: black;">Account</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">report</span><span style="color: black;">Report</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">email</span><span style="color: black;">Contact</span></a></li>
-            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Logout</span></a></li>
+            <li><a href="/index.php"><span class="material-symbols-outlined">home</span><span style="color: black;">Trang chủ</span></a></li>
+            <li><a href="/app/views/user_dashboard.php"><span class="material-symbols-outlined">dashboard</span><span style="color: black;">Bảng điều khiển</span></a></li>
+            <li><a href="/app/views/Blog/blog-detail.php"><span class="material-symbols-outlined">explore</span><span style="color: black;">Blog</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">settings</span><span style="color: black;">Cài đặt</span></a></li>
+            <li><a href="/app/views/user_profile.php"><span class="material-symbols-outlined">person</span><span style="color: black;">Tài khoản</span></a></li>
+            <li><a href="/app/views/contact.php"><span class="material-symbols-outlined">email</span><span style="color: black;">Liên hệ</span></a></li>
+            <li><a href="#"><span class="material-symbols-outlined">logout</span><span style="color: black;">Đăng xuất</span></a></li>
         </ul>
     </div>
-    
-    
-    <div class="hehe" style="margin-left: 70px;">
+
+
+
     <div class="container py-4 position-relative">
         <img alt="Background image" class="background-image lazyload"
             data-src="../../assets/images/Icon/tieu-hoa.png" />
@@ -418,18 +416,16 @@
         </ul>
         <a class="text-primary" href="#">Xem thêm</a>
         <div id="additionalContent" style="display: none;">
-            <h3 class="h5 font-weight-semibold mt-3">Tư vấn, khám và điều trị các Bệnh Tiêu hóa</h3>
+            <h3 class="h5 font-weight-semibold mt-3">Khám tư vấn tim mạch</h3>
             <ul class="list-unstyled">
-                <li>Ăn uống kém, không ngon</li>
-                <li>Rối loạn tiêu hóa, táo bón, trĩ</li>
-                <li>Nhiễm vi khuẩn HP (Helicobacter pylori)</li>
-                <li>Nội soi dạ dày, đại tràng, tiêu hóa</li>
-                <li>Buồn nôn, chướng bụng, đầy bụng ợ chua, đầy hơi</li>
-                <li>Co thắt thực quản, Hội chứng ruột kích thích</li>
-                <li>Đau bụng, dạ dày, đại tràng, thượng vị</li>
-                <li>Viêm đại tràng, dạ dày, tá tràng</li>
-                <li>Ung thư dạ dày, U nang tuyến tụy</li>
-                <li>Bệnh lý về gan, mật</li>
+                <li>Khó thở, Đau ngực, đau tim</li>
+                <li>Tăng huyết áp, hạ huyết áp</li>
+                <li>Rối loạn mỡ máu, cao huyết áp, chóng mặt</li>
+                <li>Bệnh van tim (Hẹp hở van tim), Hẹp động mạch chủ</li>
+                <li>Cảm giác hồi hộp, tim đập nhanh</li>
+                <li>Tim bẩm sinh, có tiền sử bệnh tim to, tiền sử tai biến</li>
+                <li>Đã đặt stent tim, nong động mạch vành</li>
+                <li>Giãn tĩnh mạch chân</li>
                 <li>...</li>
             </ul>
         </div>
@@ -438,7 +434,7 @@
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
-                    Toàn quốc 
+                    Toàn quốc
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Đà Lạt</a>
@@ -454,14 +450,18 @@
                         data-src="../../assets/images/Doctors/avatar-truong-trong-tuan.png" width="100" />
                     <div class="flex-1" style="margin-left: 10px;">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="h6 font-weight-bold">Giáo sư, Tiến sĩ Hà Văn Quyết</h3>
+                            <h3 class="h6 font-weight-bold">Tiến sĩ, Bác sĩ Nguyễn Văn Doanh</h3>
                         </div>
-                        <p class="text-muted mb-2" style="font-size: 15px;"> Giáo sư, Tiến sĩ Hà Văn Quyết Chuyên gia trên 35 năm kinh nghiệm trong lĩnh vực bệnh lý Tiêu hóa </p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Chuyên gia đầu ngành trong lĩnh vực bệnh lý Tiêu hóa</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên Giám đốc Bệnh viện Đại học Y Hà Nội</p>
-                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 3 tuổi trở lên</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Trưởng khoa Khám bệnh, Bệnh viện Đa khoa
+                            Quốc tế Thu Cúc</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Nguyên chủ nhiệm khoa thần kinh, Bệnh viện
+                            Hữu Nghị Việt Xô</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ có 40 năm kinh nghiệm làm việc chuyên
+                            khoa Nội Thần kinh</p>
+                        <p class="text-muted mb-2" style="font-size: 15px;">Bác sĩ khám cho người bệnh từ 16 tuổi trở
+                            lên </p>
                         <p class="text-muted d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt mr-2"></i>. Hà Nội
+                            <i class="fas fa-map-marker-alt mr-2"></i>. Đà Lạt
                         </p>
                     </div>
                 </div>
@@ -494,8 +494,73 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Ung bướu Hưng Việt</p>
-                        <p>34 Đại Cồ Việt, Hai Bà Trưng, Hà Nội</p>
+
+                        <div class="text-muted mb-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="text-primary font-weight-semibold mb-0" id="promotionHeading">CHƯƠNG TRÌNH
+                                    KHUYẾN MẠI</h4>
+                                <a class="text-primary" href="#" id="viewPromotionDetails"
+                                    style="position: relative; top: 9.45px;">Xem chi tiết</a>
+                            </div>
+                        </div>
+                        <!-- Dialog modal -->
+                        <div id="promotionDialog" class="promotion-dialog">
+                            <div class="promotion-dialog-content">
+                                <span class="close-dialog">&times;</span>
+                                <h4>Hệ thống Y tế Thu Cúc cơ sở Thụy Khuê</h4>
+                                <div class="promotion-details">
+                                    <p><strong>Tháng 4 trọn vẹn: Đầu tư cho sức khỏe, nhận ngàn ưu đãi</strong></p>
+                                    <ol>
+                                        <li><strong>Khám chuyên khoa Nội</strong>
+                                            <ul>
+                                                <li>Giảm 30% chụp cộng hưởng từ sọ não/cộng hưởng từ não-mạch não.</li>
+                                                <li>Giảm 30% chụp cắt lớp vi tính não</li>
+                                                <li>Giảm 30% siêu âm tim, siêu âm mạch máu</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Khám và nội soi tiêu hóa</strong>
+                                            <ul>
+                                                <li>Miễn phí phát thuốc làm sạch đại tràng tại nhà đối với các khách
+                                                    hàng trong bán kính 15km tính từ các cơ sở của TCI</li>
+                                                <li>Giảm 35% cộng nội soi dạ dày/đại tràng/dạ dày và đại tràng các công
+                                                    nghệ thường, công nghệ NBI, công nghệ MCU, công nghệ siêu âm nội soi
+                                                    cho khách hàng (không bao gồm các dịch vụ cần làm sàng phát sinh và
+                                                    vật tư tiêu hao)</li>
+                                                <li>Tặng 30% cộng dịch vụ do áp lực và nhu động thực quản; 30% dịch vụ
+                                                    do PH trở kháng thực quản 24h.</li>
+                                                <li>Giảm 50% tiền giường cho khách hàng thực hiện dịch vụ do PH trở
+                                                    kháng thực quản 24h</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Dịch vụ Tai Mũi Họng:</strong> Giảm 30% dịch vụ nội soi tai mũi họng
+                                            ống mềm</li>
+                                        <li><strong>Dịch vụ khám dinh dưỡng</strong>
+                                            <ul>
+                                                <li>Giảm 50% khám ban đầu dinh dưỡng, giảm 20% các dịch vụ cần làm sàng
+                                                    phát sinh (không áp dụng với dịch vụ Virus test nhanh [Adeno/Rota
+                                                    Virus], Adenovirus Real-time PCR và các xét nghiệm Covid-19)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Dịch vụ mắt</strong>
+                                            <ul>
+                                                <li>Giảm 25% cộng mổ Phaco và 20% các dịch vụ cần làm sàng trong mổ
+                                                    Phaco</li>
+                                                <li>Miễn phí dịch vụ thử kính Ortho K và giảm 10% chi phí kính mắt Ortho
+                                                    K</li>
+                                                <li>Khám phát hiện đục thủy tinh thể được miễn phí khám làm sàng mắt trị
+                                                    giá 200.000 VNĐ (Áp dụng cho khách trên 60 tuổi)</li>
+                                                <li>Khách hàng mua kính được miễn phí (Miễn phí Khám mắt/Khám lại từ 3-7
+                                                    ngày [Khám mắt]: 200.000/ 100.000 VNĐ và Miễn phí Thử kính: 100.000
+                                                    VNĐ)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Gói khám</strong> các sức khỏe và tầm soát ung thư giảm 35%.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading1">GIÁ
@@ -511,31 +576,20 @@
                                     <td class="price">500.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Nội soi dạ dày gây mê</td>
-                                    <td class="price">2.030.000đ - 2.600.000đ</td>
+                                    <td class="service-name">Chụp Xquang cột sống cổ thẳng và nghiêng (2 tư thế)</td>
+                                    <td class="price">250.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Nội soi dạ dày không gây mê</td>
-                                    <td class="price">1.050.000đ - 1.600.000đ</td>
+                                    <td class="service-name">Chụp Xquang cột sống thắt lưng nghiêng (2 tư thế)</td>
+                                    <td class="price">250.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Nội soi đại tràng gây mê</td>
-                                    <td class="price">2.370.000đ - 2.800.000đ</td>
+                                    <td class="service-name">Chụp Xquang khớp vai thẳng</td>
+                                    <td class="price">150.000đ</td>
                                 </tr>
                                 <tr>
-                                    <td class="service-name">Nội soi đại tràng không gây mê
-                                    </td>
-                                    <td class="price">1.320.000đ - 2.000.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name"> Nội soi thực quản gây mê
-                                    </td>
-                                    <td class="price">2.030.000đ - 2.400.000đ</td>
-                                </tr>
-                                <tr>
-                                    <td class="service-name">Nội soi thực quản không gây mê
-                                    </td>
-                                    <td class="price">1.050.000đ - 1.600.000đ</td>
+                                    <td class="service-name">Chụp cộng hưởng từ cột sống cổ, ngực, thắt lưng</td>
+                                    <td class="price">1.900.000đ</td>
                                 </tr>
                             </table>
                             <p class="note">Giá khám chưa bao gồm chi phí chụp chiếu, xét nghiệm</p>
@@ -651,8 +705,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
-                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading2">GIÁ
@@ -749,8 +803,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
-                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading4">GIÁ
@@ -846,8 +900,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
-                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold d-inline-block mb-0 mr-2" id="priceHeading6">GIÁ
@@ -928,8 +982,8 @@
                     <div class="text-muted mb-4">Chọn và đặt (Phí đặt lịch 0đ)</div>
                     <div class="text-muted mb-2">
                         <h4 class="text-primary font-weight-semibold">ĐỊA CHỈ KHÁM</h4>
-                        <p>Bệnh viện Đa khoa Hồng Đức III</p>
-                        <p>32/2 Thống Nhất, Phường 10, Q. Gò Vấp, Tp Hồ Chí Minh</p>
+                        <p>Phòng khám bệnh viện 115</p>
+                        <p>527 Sư Vạn Hạnh, Phường 12, Quận 10, TPHCM</p>
                     </div>
 
                     <!-- Phần khuyến mại được thêm vào -->

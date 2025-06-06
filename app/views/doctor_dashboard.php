@@ -54,9 +54,12 @@ try {
     error_log('Lỗi kiểm tra/thêm cột: ' . $e->getMessage());
 }
 
-// Lấy thông tin bác sĩ từ bảng users với role = doctor
+// Lấy thông tin bác sĩ từ bảng users và doctors
 $doctor_id = $_SESSION['user_id'];
-$stmt = $db->prepare("SELECT * FROM users WHERE id = ? AND role = 'doctor'");
+$stmt = $db->prepare("
+    SELECT * FROM users
+    WHERE id = ? AND role = 'doctor'
+");
 $stmt->execute([$doctor_id]);
 $doctor = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -64,6 +67,13 @@ if (!$doctor) {
     header('Location: signIn.php');
     exit;
 }
+
+// Gộp thông tin từ bảng doctors vào $doctor
+$doctor['specialty'] = $doctor['doctor_specialty'] ?? $doctor['specialty'] ?? 'Bác sĩ chuyên khoa';
+$doctor['avatar'] = $doctor['doctor_avatar'] ?? $doctor['avatar'] ?? null;
+$doctor['phone'] = $doctor['doctor_phone'] ?? $doctor['phone'] ?? null;
+$doctor['address'] = $doctor['doctor_address'] ?? $doctor['address'] ?? null;
+
 
 // Xử lý các action từ form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -389,6 +399,8 @@ $recent_appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if (isset($_SESSION['success'])) {
     $success_message = $_SESSION['success'];
     unset($_SESSION['success']);
+} else {
+    $success_message = '';
 }
 
 if (isset($_SESSION['error'])) {
@@ -928,7 +940,7 @@ if (isset($_SESSION['error'])) {
                 
                 <div class="sidebar-profile mt-4 mb-3">
                     <div class="text-center">
-                        <img src="<?php echo !empty($doctor['avatar']) ? '../../'.htmlspecialchars($doctor['avatar']) : '../../assets/images/Doctors/gay.jpg'; ?>" alt="Avatar" class="sidebar-avatar mb-2">
+                        <img src="<?php echo !empty($doctor['avatar']) ? '../../'.htmlspecialchars($doctor['avatar']) : '../../assets/images/Doctors/avatar-truong-trong-tuan.png'; ?>" alt="Avatar" class="sidebar-avatar mb-2">
                         <h6 class="sidebar-name mb-1"><?php echo htmlspecialchars($doctor['name'] ?? 'Dr. Nguyễn Văn A'); ?></h6>
                         <span class="sidebar-specialty"><?php echo htmlspecialchars($doctor['specialty'] ?? 'Bác sĩ chuyên khoa'); ?></span>
                     </div>
@@ -1132,7 +1144,7 @@ if (isset($_SESSION['error'])) {
                                                     <tr>
                                                         <td>
                                                             <div class="d-flex align-items-center">
-                                                                <img src="../../assets/images/avatar1.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                                                <img src="../../assets/images/avt/avt01.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
                                                                 <div>
                                                                     <div class="fw-medium">
                                                                         <?php 
@@ -1179,10 +1191,12 @@ if (isset($_SESSION['error'])) {
                                                                 <button class="btn btn-sm btn-success" onclick="updateAppointmentStatus(<?php echo $appointment['id']; ?>, 'confirmed')">
                                                                     <i class="bi bi-check-lg"></i>
                                                                 </button>
-                                                                <?php endif; ?>
-                                                                <?php if ($appointment['status'] != 'canceled' && $appointment['status'] != 'completed'): ?>
                                                                 <button class="btn btn-sm btn-danger" onclick="cancelAppointment(<?php echo $appointment['id']; ?>)">
                                                                     <i class="bi bi-x-lg"></i>
+                                                                </button>
+                                                                <?php elseif ($appointment['status'] == 'confirmed'): ?>
+                                                                <button class="btn btn-sm btn-info" onclick="updateAppointmentStatus(<?php echo $appointment['id']; ?>, 'completed')">
+                                                                    <i class="bi bi-clipboard-check"></i>
                                                                 </button>
                                                                 <?php endif; ?>
                                                             </div>
@@ -1265,7 +1279,7 @@ if (isset($_SESSION['error'])) {
                                                 foreach ($recent_patients as $patient):
                                             ?>
                                                 <div class="list-group-item d-flex align-items-center p-3">
-                                                    <img src="../../assets/images/avatar1.jpg" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
+                                                    <img src="../../assets/images/avt/avt02.jpg" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
                                                     <div>
                                                         <h6 class="mb-0"><?php echo htmlspecialchars($patient['patient_name']); ?></h6>
                                                         <p class="small text-muted mb-0">Khám ngày <?php echo date('d/m/Y', strtotime($patient['last_date'])); ?></p>
@@ -1343,7 +1357,7 @@ if (isset($_SESSION['error'])) {
                                             <tr data-status="<?php echo $appointment['status']; ?>" data-appointment-id="<?php echo $appointment['id']; ?>">
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <img src="../../assets/images/avatar1.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                                        <img src="../../assets/images/avt/avt03.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
                                                         <div>
                                                             <div class="fw-medium">
                                                                 <?php 
@@ -1391,14 +1405,12 @@ if (isset($_SESSION['error'])) {
                                                         <button class="btn btn-sm btn-success" onclick="updateAppointmentStatus(<?php echo $appointment['id']; ?>, 'confirmed')">
                                                             <i class="bi bi-check-lg"></i>
                                                         </button>
+                                                        <button class="btn btn-sm btn-danger" onclick="cancelAppointment(<?php echo $appointment['id']; ?>)">
+                                                            <i class="bi bi-x-lg"></i>
+                                                        </button>
                                                         <?php elseif ($appointment['status'] == 'confirmed'): ?>
                                                         <button class="btn btn-sm btn-info" onclick="updateAppointmentStatus(<?php echo $appointment['id']; ?>, 'completed')">
                                                             <i class="bi bi-clipboard-check"></i>
-                                                        </button>
-                                                        <?php endif; ?>
-                                                        <?php if ($appointment['status'] != 'canceled' && $appointment['status'] != 'completed'): ?>
-                                                        <button class="btn btn-sm btn-danger" onclick="cancelAppointment(<?php echo $appointment['id']; ?>)">
-                                                            <i class="bi bi-x-lg"></i>
                                                         </button>
                                                         <?php endif; ?>
                                                     </div>
@@ -1418,19 +1430,355 @@ if (isset($_SESSION['error'])) {
                         </div>
                     </div>
                     
-                    <!-- Patients Section -->
-                    <div id="patients-section" class="content-section">
-                        <!-- Nội dung phần bệnh nhân sẽ được thêm vào sau -->
-                        <div class="content-header d-flex justify-content-between align-items-center mb-4">
-                            <h4 class="mb-0">Danh sách bệnh nhân</h4>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="text-muted">Nội dung về quản lý bệnh nhân sẽ được cập nhật sau.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
+                   <!-- Patients Section -->
+<div id="patients-section" class="content-section">
+    <div class="content-header d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h4 class="mb-1">Danh sách bệnh nhân</h4>
+            <p class="text-muted mb-0">Quản lý thông tin bệnh nhân</p>
+        </div>
+        <div class="search-box">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control ps-0 border-start-0" id="patient-search" placeholder="Tìm kiếm bệnh nhân...">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="card-title mb-0">Danh sách bệnh nhân</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle" id="patients-table">
+                <thead>
+                    <tr>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Lấy danh sách bệnh nhân từ bảng patients
+                    $stmt = $db->prepare("
+                        SELECT DISTINCT p.*
+                        FROM patients p
+                        JOIN appointments a ON p.name = a.patient_name
+                        WHERE a.doctor_user_id = ?
+                        ORDER BY p.name
+                    ");
+                    $stmt->execute([$doctor_id]);
+                    $patients = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    if (!empty($patients)):
+                        foreach ($patients as $patient):
+                    ?>
+                        <tr data-patient-id="<?php echo $patient['id']; ?>">
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avt/avt04.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                    <div>
+                                        <div class="fw-medium"><?php echo htmlspecialchars($patient['name']); ?></div>
+                                        <div class="small text-muted">Bệnh nhân</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><?php echo htmlspecialchars($patient['email'] ?? 'Không có'); ?></td>
+                            <td><?php echo htmlspecialchars($patient['phone'] ?? 'Không có'); ?></td>
+                            <td><?php echo htmlspecialchars($patient['address'] ?? 'Không có'); ?></td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-sm btn-primary" onclick="viewPatient(<?php echo $patient['id']; ?>)">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php
+                        endforeach;
+                    else:
+                    ?>
+                        <tr>
+                            <td colspan="5" class="text-center py-3">Không có bệnh nhân nào</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+                    <!-- New Medical Records Section -->
+    <div id="medical-records-section" class="content-section">
+        <div class="content-header d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="mb-1">Quản lý bệnh án</h4>
+                <p class="text-muted mb-0">Danh sách bệnh án của bệnh nhân</p>
+            </div>
+            <div class="search-box">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control ps-0 border-start-0" id="medical-record-search" placeholder="Tìm kiếm bệnh án...">
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Danh sách bệnh án</h5>
+                <div>
+                    <button class="btn btn-primary" onclick="showAddMedicalRecord()">
+                        <i class="bi bi-plus-circle me-1"></i> Thêm bệnh án
+                    </button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle" id="medical-records-table">
+                    <thead>
+                        <tr>
+                            <th>Bệnh nhân</th>
+                            <th>Ngày khám</th>
+                            <th>Chẩn đoán</th>
+                            <th>Ghi chú</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // Hard-coded medical records data
+                        $medical_records = [
+                            [
+                                'id' => 1,
+                                'patient_name' => 'Nguyễn Văn A',
+                                'date' => '2025-05-20',
+                                'diagnosis' => 'Cảm cúm thông thường',
+                                'notes' => 'Nghỉ ngơi, uống nhiều nước'
+                            ],
+                            [
+                                'id' => 2,
+                                'patient_name' => 'Trần Thị B',
+                                'date' => '2025-05-18',
+                                'diagnosis' => 'Viêm họng cấp',
+                                'notes' => 'Kê đơn kháng sinh'
+                            ],
+                            [
+                                'id' => 3,
+                                'patient_name' => 'Lê Văn C',
+                                'date' => '2025-05-15',
+                                'diagnosis' => 'Tăng huyết áp',
+                                'notes' => 'Theo dõi huyết áp hàng ngày'
+                            ],
+                            [
+                                'id' => 4,
+                                'patient_name' => 'Phạm Thị D',
+                                'date' => '2025-05-10',
+                                'diagnosis' => 'Đau dạ dày',
+                                'notes' => 'Kê đơn thuốc bảo vệ niêm mạc dạ dày'
+                            ],
+                        ];
+
+                        // Pagination logic
+                        $records_per_page = 3;
+                        $total_records = count($medical_records);
+                        $total_pages = ceil($total_records / $records_per_page);
+                        $current_page = isset($_GET['mr_page']) ? max(1, min($total_pages, (int)$_GET['mr_page'])) : 1;
+                        $start_index = ($current_page - 1) * $records_per_page;
+                        $current_records = array_slice($medical_records, $start_index, $records_per_page);
+
+                        foreach ($current_records as $record):
+                        ?>
+                            <tr data-record-id="<?php echo $record['id']; ?>">
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../../assets/images/avt/avt05.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                        <div>
+                                            <div class="fw-medium"><?php echo htmlspecialchars($record['patient_name']); ?></div>
+                                            <div class="small text-muted">Bệnh nhân</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><?php echo htmlspecialchars($record['date']); ?></td>
+                                <td><?php echo htmlspecialchars($record['diagnosis']); ?></td>
+                                <td><?php echo htmlspecialchars(substr($record['notes'], 0, 30)) . (strlen($record['notes']) > 30 ? '...' : ''); ?></td>
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-primary" onclick="viewMedicalRecord(<?php echo $record['id']; ?>)">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-warning" onclick="editMedicalRecord(<?php echo $record['id']; ?>)">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <?php if (empty($current_records)): ?>
+                            <tr>
+                                <td colspan="5" class="text-center py-3">Không có bệnh án nào</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Medical Records Pagination">
+                <ul class="pagination">
+                    <li class="page-item <?php echo $current_page <= 1 ? 'disabled' : ''; ?>">
+                        <a class="page-link" href="?mr_page=<?php echo $current_page - 1; ?>" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                        <li class="page-item <?php echo $i == $current_page ? 'active' : ''; ?>">
+                            <a class="page-link" href="?mr_page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                    <li class="page-item <?php echo $current_page >= $total_pages ? 'disabled' : ''; ?>">
+                        <a class="page-link" href="?mr_page=<?php echo $current_page + 1; ?>" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- New Prescriptions Section -->
+    <div id="prescriptions-section" class="content-section">
+        <div class="content-header d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="mb-1">Quản lý đơn thuốc</h4>
+                <p class="text-muted mb-0">Danh sách đơn thuốc đã kê</p>
+            </div>
+            <div class="search-box">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control ps-0 border-start-0" id="prescription-search" placeholder="Tìm kiếm đơn thuốc...">
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Danh sách đơn thuốc</h5>
+                <div>
+                    <button class="btn btn-primary" onclick="showAddPrescription()">
+                        <i class="bi bi-plus-circle me-1"></i> Thêm đơn thuốc
+                    </button>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle" id="prescriptions-table">
+                    <thead>
+                        <tr>
+                            <th>Bệnh nhân</th>
+                            <th>Ngày kê đơn</th>
+                            <th>Thuốc</th>
+                            <th>Liều lượng</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // Hard-coded prescriptions data
+                        $prescriptions = [
+                            [
+                                'id' => 1,
+                                'patient_name' => 'Nguyễn Văn A',
+                                'date' => '2025-05-20',
+                                'medication' => 'Paracetamol 500mg',
+                                'dosage' => '2 viên/ngày, 7 ngày'
+                            ],
+                            [
+                                'id' => 2,
+                                'patient_name' => 'Trần Thị B',
+                                'date' => '2025-05-18',
+                                'medication' => 'Amoxicillin 500mg',
+                                'dosage' => '3 viên/ngày, 5 ngày'
+                            ],
+                            [
+                                'id' => 3,
+                                'patient_name' => 'Lê Văn C',
+                                'date' => '2025-05-15',
+                                'medication' => 'Amlodipine 5mg',
+                                'dosage' => '1 viên/ngày, 30 ngày'
+                            ],
+                            [
+                                'id' => 4,
+                                'patient_name' => 'Phạm Thị D',
+                                'date' => '2025-05-10',
+                                'medication' => 'Omeprazole 20mg',
+                                'dosage' => '1 viên/ngày, 14 ngày'
+                            ],
+                        ];
+
+                        // Pagination logic
+                        $prescriptions_per_page = 3;
+                        $total_prescriptions = count($prescriptions);
+                        $total_prescription_pages = ceil($total_prescriptions / $prescriptions_per_page);
+                        $current_prescription_page = isset($_GET['pr_page']) ? max(1, min($total_prescription_pages, (int)$_GET['pr_page'])) : 1;
+                        $start_prescription_index = ($current_prescription_page - 1) * $prescriptions_per_page;
+                        $current_prescriptions = array_slice($prescriptions, $start_prescription_index, $prescriptions_per_page);
+
+                        foreach ($current_prescriptions as $prescription):
+                        ?>
+                            <tr data-prescription-id="<?php echo $prescription['id']; ?>">
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../../assets/images/avt/avt06.jpg" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                        <div>
+                                            <div class="fw-medium"><?php echo htmlspecialchars($prescription['patient_name']); ?></div>
+                                            <div class="small text-muted">Bệnh nhân</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><?php echo htmlspecialchars($prescription['date']); ?></td>
+                                <td><?php echo htmlspecialchars($prescription['medication']); ?></td>
+                                <td><?php echo htmlspecialchars($prescription['dosage']); ?></td>
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-primary" onclick="viewPrescription(<?php echo $prescription['id']; ?>)">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-warning" onclick="editPrescription(<?php echo $prescription['id']; ?>)">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <?php if (empty($current_prescriptions)): ?>
+                            <tr>
+                                <td colspan="5" class="text-center py-3">Không có đơn thuốc nào</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Prescriptions Pagination">
+                <ul class="pagination">
+                    <li class="page-item <?php echo $current_prescription_page <= 1 ? 'disabled' : ''; ?>">
+                        <a class="page-link" href="?pr_page=<?php echo $current_prescription_page - 1; ?>" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <?php for ($i = 1; $i <= $total_prescription_pages; $i++): ?>
+                        <li class="page-item <?php echo $i == $current_prescription_page ? 'active' : ''; ?>">
+                            <a class="page-link" href="?pr_page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+                    <li class="page-item <?php echo $current_prescription_page >= $total_prescription_pages ? 'disabled' : ''; ?>">
+                        <a class="page-link" href="?pr_page=<?php echo $current_prescription_page + 1; ?>" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
                     <!-- Profile Section -->
                     <div id="profile-section" class="content-section">
                         <div class="content-header d-flex justify-content-between align-items-center mb-4">
@@ -1444,7 +1792,7 @@ if (isset($_SESSION['error'])) {
                                 <div class="card mb-4">
                                     <div class="card-body text-center">
                                         <div class="avatar-wrapper mb-3">
-                                            <img id="profile-avatar" src="<?php echo !empty($doctor['avatar']) ? '../../'.htmlspecialchars($doctor['avatar']) : '../../assets/images/Doctors/gay.jpg'; ?>" 
+                                            <img id="profile-avatar" src="<?php echo !empty($doctor['avatar']) ? '../../'.htmlspecialchars($doctor['avatar']) : '../../assets/images/Doctors/045850-bac-si-da-lieu-hoai-thu.jpg'; ?>" 
                                                 alt="Avatar" class="rounded-circle img-fluid" style="width: 150px; height: 150px; object-fit: cover;">
                                             <div class="avatar-edit d-none">
                                                 <label for="avatar-upload" class="btn btn-sm btn-primary position-absolute bottom-0 end-0 rounded-circle">
@@ -2119,15 +2467,13 @@ if (isset($_SESSION['error'])) {
                             <button type="button" class="btn btn-success" onclick="updateAppointmentStatus(${appointment.id}, 'confirmed')">
                                 Xác nhận lịch hẹn
                             </button>
+                            <button type="button" class="btn btn-danger" onclick="cancelAppointment(${appointment.id})">
+                                Hủy lịch hẹn
+                            </button>
                         ` : ''}
                         ${appointment.status === 'confirmed' ? `
                             <button type="button" class="btn btn-info" onclick="updateAppointmentStatus(${appointment.id}, 'completed')">
                                 Hoàn thành khám
-                            </button>
-                        ` : ''}
-                        ${(appointment.status === 'pending' || appointment.status === 'confirmed') ? `
-                            <button type="button" class="btn btn-danger" onclick="cancelAppointment(${appointment.id})">
-                                Hủy lịch hẹn
                             </button>
                         ` : ''}
                     `;
@@ -2265,6 +2611,526 @@ if (isset($_SESSION['error'])) {
             }
         });
     });
+    </script>
+    <script>
+        // Tìm kiếm bệnh nhân
+document.getElementById('patient-search')?.addEventListener('input', function() {
+    const value = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#patients-table tbody tr');
+    
+    rows.forEach(row => {
+        const name = row.querySelector('td:nth-child(1) .fw-medium').textContent.toLowerCase();
+        if (name.includes(value)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
+
+function viewPatient(id) {
+    const modal = document.createElement('div');
+    modal.className = 'modal fade';
+    modal.id = 'viewPatientModal';
+    modal.innerHTML = `
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Chi tiết bệnh nhân</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Đang tải...</span>
+                        </div>
+                        <p class="ms-2">Đang tải thông tin bệnh nhân...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    const modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+
+    fetch(`/controllers/patient/get_patient.php?patient_id=${id}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.data) {
+                const patient = data.data;
+                modal.querySelector('.modal-body').innerHTML = `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-primary mb-3">Thông tin cá nhân</h6>
+                            <div class="mb-2"><strong>Họ tên:</strong> ${patient.name || 'Không có'}</div>
+                            <div class="mb-2"><strong>Email:</strong> ${patient.email || 'Không có'}</div>
+                            <div class="mb-2"><strong>Điện thoại:</strong> ${patient.phone || 'Không có'}</div>
+                            <div class="mb-2"><strong>Địa chỉ:</strong> ${patient.address || 'Không có'}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-primary mb-3">Lịch sử khám</h6>
+                            <ul>
+                                ${patient.appointments ? patient.appointments.map(app => `
+                                    <li>${app.appointment_date} - ${app.status}</li>
+                                `).join('') : '<li>Không có lịch sử khám</li>'}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                const modalFooter = document.createElement('div');
+                modalFooter.className = 'modal-footer';
+                modalFooter.innerHTML = `
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                `;
+                modal.querySelector('.modal-content').appendChild(modalFooter);
+            } else {
+                modal.querySelector('.modal-body').innerHTML = `
+                    <div class="alert alert-danger">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        Không thể tải thông tin bệnh nhân.
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            modal.querySelector('.modal-body').innerHTML = `
+                <div class="alert alert-danger">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    Đã xảy ra lỗi: ${error.message}
+                </div>
+            `;
+        });
+
+    modal.addEventListener('hidden.bs.modal', function () {
+        document.body.removeChild(modal);
+    });
+}// Add to existing <script> block
+
+// Helper function to create modal
+function createModal(id, title, content, footer) {
+    const modal = document.createElement('div');
+    modal.className = 'modal fade';
+    modal.id = id;
+    modal.innerHTML = `
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">${title}</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    ${content}
+                </div>
+                ${footer ? `<div class="modal-footer">${footer}</div>` : ''}
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    const modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+    modal.addEventListener('hidden.bs.modal', () => document.body.removeChild(modal));
+    return modal;
+}
+
+// Medical Records Search
+document.getElementById('medical-record-search')?.addEventListener('input', function() {
+    const value = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#medical-records-table tbody tr');
+    
+    rows.forEach(row => {
+        const name = row.querySelector('td:nth-child(1) .fw-medium').textContent.toLowerCase();
+        const diagnosis = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+        if (name.includes(value) || diagnosis.includes(value)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
+
+// Prescriptions Search
+document.getElementById('prescription-search')?.addEventListener('input', function() {
+    const value = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#prescriptions-table tbody tr');
+    
+    rows.forEach(row => {
+        const name = row.querySelector('td:nth-child(1) .fw-medium').textContent.toLowerCase();
+        const medication = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+        if (name.includes(value) || medication.includes(value)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
+
+// View Medical Record
+function viewMedicalRecord(id) {
+    // Hard-coded data for demo (replace with actual API call in production)
+    const records = [
+        { id: 1, patient_name: 'Nguyễn Văn A', date: '2025-05-20', diagnosis: 'Cảm cúm thông thường', notes: 'Nghỉ ngơi, uống nhiều nước' },
+        { id: 2, patient_name: 'Trần Thị B', date: '2025-05-18', diagnosis: 'Viêm họng cấp', notes: 'Kê đơn kháng sinh' },
+        { id: 3, patient_name: 'Lê Văn C', date: '2025-05-15', diagnosis: 'Tăng huyết áp', notes: 'Theo dõi huyết áp hàng ngày' },
+        { id: 4, patient_name: 'Phạm Thị D', date: '2025-05-10', diagnosis: 'Đau dạ dày', notes: 'Kê đơn thuốc bảo vệ niêm mạc dạ dày' }
+    ];
+    const record = records.find(r => r.id === id);
+
+    if (!record) {
+        alert('Không tìm thấy bệnh án!');
+        return;
+    }
+
+    const content = `
+        <div class="row">
+            <div class="col-md-6">
+                <h6 class="text-primary mb-3">Thông tin bệnh nhân</h6>
+                <div class="mb-2"><strong>Họ tên:</strong> ${record.patient_name}</div>
+                <div class="mb-2"><strong>Ngày khám:</strong> ${record.date}</div>
+            </div>
+            <div class="col-md-6">
+                <h6 class="text-primary mb-3">Chi tiết bệnh án</h6>
+                <div class="mb-2"><strong>Chẩn đoán:</strong> ${record.diagnosis}</div>
+                <div class="mb-2"><strong>Ghi chú:</strong> ${record.notes}</div>
+            </div>
+        </div>
+    `;
+    const footer = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+    `;
+    createModal('viewMedicalRecordModal', 'Chi tiết bệnh án', content, footer);
+}
+
+// View Prescription
+function viewPrescription(id) {
+    // Hard-coded data for demo (replace with actual API call in production)
+    const prescriptions = [
+        { id: 1, patient_name: 'Nguyễn Văn A', date: '2025-05-20', medication: 'Paracetamol 500mg', dosage: '2 viên/ngày, 7 ngày' },
+        { id: 2, patient_name: 'Trần Thị B', date: '2025-05-18', medication: 'Amoxicillin 500mg', dosage: '3 viên/ngày, 5 ngày' },
+        { id: 3, patient_name: 'Lê Văn C', date: '2025-05-15', medication: 'Amlodipine 5mg', dosage: '1 viên/ngày, 30 ngày' },
+        { id: 4, patient_name: 'Phạm Thị D', date: '2025-05-10', medication: 'Omeprazole 20mg', dosage: '1 viên/ngày, 14 ngày' }
+    ];
+    const prescription = prescriptions.find(p => p.id === id);
+
+    if (!prescription) {
+        alert('Không tìm thấy đơn thuốc!');
+        return;
+    }
+
+    const content = `
+        <div class="row">
+            <div class="col-md-6">
+                <h6 class="text-primary mb-3">Thông tin bệnh nhân</h6>
+                <div class="mb-2"><strong>Họ tên:</strong> ${prescription.patient_name}</div>
+                <div class="mb-2"><strong>Ngày kê đơn:</strong> ${prescription.date}</div>
+            </div>
+            <div class="col-md-6">
+                <h6 class="text-primary mb-3">Chi tiết đơn thuốc</h6>
+                <div class="mb-2"><strong>Thuốc:</strong> ${prescription.medication}</div>
+                <div class="mb-2"><strong>Liều lượng:</strong> ${prescription.dosage}</div>
+            </div>
+        </div>
+    `;
+    const footer = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+    `;
+    createModal('viewPrescriptionModal', 'Chi tiết đơn thuốc', content, footer);
+}
+
+// Add Medical Record
+function showAddMedicalRecord() {
+    const content = `
+        <form id="addMedicalRecordForm">
+            <input type="hidden" name="action" value="add_medical_record">
+            <div class="mb-3">
+                <label class="form-label">Bệnh nhân</label>
+                <select class="form-select" name="patient_id" required>
+                    <option value="">Chọn bệnh nhân...</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ngày khám</label>
+                <input type="date" class="form-control" name="date" required max="${new Date().toISOString().split('T')[0]}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Chẩn đoán</label>
+                <input type="text" class="form-control" name="diagnosis" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ghi chú</label>
+                <textarea class="form-control" name="notes" rows="3"></textarea>
+            </div>
+        </form>
+    `;
+    const footer = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="submitMedicalRecord()">Thêm bệnh án</button>
+    `;
+    const modal = createModal('addMedicalRecordModal', 'Thêm bệnh án mới', content, footer);
+
+    // Fetch patients list
+    fetch('../../controllers/user/get_patients.php')
+        .then(response => response.json())
+        .then(data => {
+            const select = modal.querySelector('select[name="patient_id"]');
+            data.forEach(patient => {
+                const option = document.createElement('option');
+                option.value = patient.id;
+                option.textContent = patient.name;
+                select.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// Submit Medical Record
+function submitMedicalRecord() {
+    const form = document.getElementById('addMedicalRecordForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // For demo, just show alert and reload
+    alert('Thêm bệnh án thành công!'); // Replace with actual API call
+    bootstrap.Modal.getInstance(document.getElementById('addMedicalRecordModal')).hide();
+    location.reload();
+}
+
+// Add Prescription
+function showAddPrescription() {
+    const content = `
+        <form id="addPrescriptionForm">
+            <input type="hidden" name="action" value="add_prescription">
+            <div class="mb-3">
+                <label class="form-label">Bệnh nhân</label>
+                <select class="form-select" name="patient_id" required>
+                    <option value="">Chọn bệnh nhân...</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ngày kê đơn</label>
+                <input type="date" class="form-control" name="date" required max="${new Date().toISOString().split('T')[0]}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Thuốc</label>
+                <input type="text" class="form-control" name="medication" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Liều lượng</label>
+                <input type="text" class="form-control" name="dosage" required>
+            </div>
+        </form>
+    `;
+    const footer = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="submitPrescription()">Thêm đơn thuốc</button>
+    `;
+    const modal = createModal('addPrescriptionModal', 'Thêm đơn thuốc mới', content, footer);
+
+    // Fetch patients list
+    fetch('../../controllers/user/get_patients.php')
+        .then(response => response.json())
+        .then(data => {
+            const select = modal.querySelector('select[name="patient_id"]');
+            data.forEach(patient => {
+                const option = document.createElement('option');
+                option.value = patient.id;
+                option.textContent = patient.name;
+                select.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// Submit Prescription
+function submitPrescription() {
+    const form = document.getElementById('addPrescriptionForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // For demo, just show alert and reload
+    alert('Thêm đơn thuốc thành công!'); // Replace with actual API call
+    bootstrap.Modal.getInstance(document.getElementById('addPrescriptionModal')).hide();
+    location.reload();
+}
+
+// Edit Medical Record
+function editMedicalRecord(id) {
+    // Hard-coded data for demo
+    const records = [
+        { id: 1, patient_name: 'Nguyễn Văn A', date: '2025-05-20', diagnosis: 'Cảm cúm thông thường', notes: 'Nghỉ ngơi, uống nhiều nước' },
+        { id: 2, patient_name: 'Trần Thị B', date: '2025-05-18', diagnosis: 'Viêm họng cấp', notes: 'Kê đơn kháng sinh' },
+        { id: 3, patient_name: 'Lê Văn C', date: '2025-05-15', diagnosis: 'Tăng huyết áp', notes: 'Theo dõi huyết áp hàng ngày' },
+        { id: 4, patient_name: 'Phạm Thị D', date: '2025-05-10', diagnosis: 'Đau dạ dày', notes: 'Kê đơn thuốc bảo vệ niêm mạc dạ dày' }
+    ];
+    const record = records.find(r => r.id === id);
+
+    if (!record) {
+        alert('Không tìm thấy bệnh án!');
+        return;
+    }
+
+    const content = `
+        <form id="editMedicalRecordForm">
+            <input type="hidden" name="action" value="edit_medical_record">
+            <input type="hidden" name="record_id" value="${id}">
+            <div class="mb-3">
+                <label class="form-label">Bệnh nhân</label>
+                <input type="text" class="form-control" value="${record.patient_name}" readonly>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ngày khám</label>
+                <input type="date" class="form-control" name="date" value="${record.date}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Chẩn đoán</label>
+                <input type="text" class="form-control" name="diagnosis" value="${record.diagnosis}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ghi chú</label>
+                <textarea class="form-control" name="notes" rows="3">${record.notes}</textarea>
+            </div>
+        </form>
+    `;
+    const footer = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="submitEditMedicalRecord()">Cập nhật</button>
+    `;
+    createModal('editMedicalRecordModal', 'Chỉnh sửa bệnh án', content, footer);
+}
+
+// Submit Edit Medical Record
+function submitEditMedicalRecord() {
+    const form = document.getElementById('editMedicalRecordForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // For demo, just show alert and reload
+    alert('Cập nhật bệnh án thành công!'); // Replace with actual API call
+    bootstrap.Modal.getInstance(document.getElementById('editMedicalRecordModal')).hide();
+    location.reload();
+}
+
+// Edit Prescription
+function editPrescription(id) {
+    // Hard-coded data for demo
+    const prescriptions = [
+        { id: 1, patient_name: 'Nguyễn Văn A', date: '2025-05-20', medication: 'Paracetamol 500mg', dosage: '2 viên/ngày, 7 ngày' },
+        { id: 2, patient_name: 'Trần Thị B', date: '2025-05-18', medication: 'Amoxicillin 500mg', dosage: '3 viên/ngày, 5 ngày' },
+        { id: 3, patient_name: 'Lê Văn C', date: '2025-05-15', medication: 'Amlodipine 5mg', dosage: '1 viên/ngày, 30 ngày' },
+        { id: 4, patient_name: 'Phạm Thị D', date: '2025-05-10', medication: 'Omeprazole 20mg', dosage: '1 viên/ngày, 14 ngày' }
+    ];
+    const prescription = prescriptions.find(p => p.id === id);
+
+    if (!prescription) {
+        alert('Không tìm thấy đơn thuốc!');
+        return;
+    }
+
+    const content = `
+        <form id="editPrescriptionForm">
+            <input type="hidden" name="action" value="edit_prescription">
+            <input type="hidden" name="prescription_id" value="${id}">
+            <div class="mb-3">
+                <label class="form-label">Bệnh nhân</label>
+                <input type="text" class="form-control" value="${prescription.patient_name}" readonly>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ngày kê đơn</label>
+                <input type="date" class="form-control" name="date" value="${prescription.date}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Thuốc</label>
+                <input type="text" class="form-control" name="medication" value="${prescription.medication}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Liều lượng</label>
+                <input type="text" class="form-control" name="dosage" value="${prescription.dosage}" required>
+            </div>
+        </form>
+    `;
+    const footer = `
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" onclick="submitEditPrescription()">Cập nhật</button>
+    `;
+    createModal('editPrescriptionModal', 'Chỉnh sửa đơn thuốc', content, footer);
+}
+
+// Submit Edit Prescription
+function submitEditPrescription() {
+    const form = document.getElementById('editPrescriptionForm');
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    // For demo, just show alert and reload
+    alert('Cập nhật đơn thuốc thành công!'); // Replace with actual API call
+    bootstrap.Modal.getInstance(document.getElementById('editPrescriptionModal')).hide();
+    location.reload();
+}
+
+// Modify showSection to handle new sections
+function showSection(sectionId) {
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+    
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    let sectionMap = {
+        'dashboard-section': 'dashboard',
+        'appointments-section': 'appointments',
+        'patients-section': 'patients',
+        'medical-records-section': 'medical-records',
+        'prescriptions-section': 'prescriptions',
+        'profile-section': 'profile'
+    };
+    
+    let menuItem = document.querySelector(`.sidebar-item[data-page="${sectionMap[sectionId]}"]`);
+    if (menuItem) {
+        menuItem.classList.add('active');
+    }
+}
+
+// Modify sidebar item click handler
+document.querySelectorAll('.sidebar-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const page = this.dataset.page;
+        
+        switch(page) {
+            case 'dashboard':
+                showSection('dashboard-section');
+                break;
+            case 'appointments':
+                showSection('appointments-section');
+                break;
+            case 'patients':
+                showSection('patients-section');
+                break;
+            case 'medical-records':
+                showSection('medical-records-section');
+                break;
+            case 'prescriptions':
+                showSection('prescriptions-section');
+                break;
+            case 'profile':
+                showSection('profile-section');
+                break;
+            default:
+                alert('Chức năng này đang được phát triển!');
+        }
+    });
+});
     </script>
 </body>
 </html> 

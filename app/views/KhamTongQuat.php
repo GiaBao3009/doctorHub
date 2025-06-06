@@ -1213,7 +1213,7 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <i class="fas fa-heartbeat"></i>
-                DoctorHub
+                HealthCare
             </a>
             
             <nav class="main-nav">
@@ -1401,7 +1401,7 @@
                 </div>
                 <div class="package-content">
                     <h3 class="package-title">Gói khám sức khỏe tổng quát cơ bản cho nam (PKYD1M)</h3>
-                    <p class="package-hospital"><i class="fas fa-hospital"></i>Bệnh viện Đại học Y dược 1</p>
+                    <p class="package-hospital"><i class="fas fa-hospital"></i> Bệnh viện Việt Đức</p>
                     <div class="package-features">
                         <div class="feature-item">
                             <i class="fas fa-check-circle feature-icon"></i>
@@ -1430,52 +1430,44 @@
                     </div>
                     <div class="package-footer">
                         <div class="package-price">
-                            2.000.000đ <span class="price-old">3.200.000đ</span>
+                            950.000đ <span class="price-old">1.200.000đ</span>
                         </div>
-                        <a class="book-btn" href="../../app/views/goi-kham-suc-khoe-co-ban-cho-nam.php" style="text-decoration: none; color: #fff;">Đặt lịch</a>
+                        <button class="book-btn">Đặt lịch</button>
                     </div>
                 </div>
             </div>
             
             <div class="package-card">
                 <div class="package-image">
-                    <img src="../../assets/images/Icon/goi-kham-suc-khoe-co-ban.png" alt="Gói khám VIP">
-                    <span class="package-tag">Phổ biến</span>
+                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b9876?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gói khám VIP">
+                    <span class="package-tag">VIP</span>
                 </div>
                 <div class="package-content">
-                    <h3 class="package-title">Gói khám sức khỏe tổng quát cơ bản cho nữ (PKYD1F)</h3>
-                    <p class="package-hospital"><i class="fas fa-hospital"></i>Bệnh viện Đại học Y dược 1</p>
+                    <h3 class="package-title">Gói khám tổng quát VIP 1</h3>
+                    <p class="package-hospital"><i class="fas fa-hospital"></i> Bệnh viện Vinmec</p>
                     <div class="package-features">
                         <div class="feature-item">
                             <i class="fas fa-check-circle feature-icon"></i>
-                            <span>Gói khám bao gồm: Khám lâm sàng</span>
+                            <span>Khám chuyên khoa toàn diện</span>
                         </div>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Xét nghiệm máu</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Xét nghiệm chức năng gan,thận,chức năng chuyển hóa</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Chụp Xquang, siêu âm ổ bụng, điện tim</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Gói khám tại Phòng khám Bệnh viện Đại học Y dược 1</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Gói khám dành cho đối tượng trên 15 tuổi.</span>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Xét nghiệm máu, nước tiểu chi tiết</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Siêu âm 4D ổ bụng</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Chụp CT Scan ngực</span>
+                        </div>
                     </div>
                     <div class="package-footer">
                         <div class="package-price">
-                            2.000.000đ <span class="price-old">3.500.000đ</span>
+                            3.500.000đ <span class="price-old">4.200.000đ</span>
                         </div>
-                        <a class="book-btn" href="../../app/views/goi-kham-suc-khoe-co-ban-cho-nu.php" style="text-decoration: none; color: #fff;">Đặt lịch</a>
+                        <button class="book-btn">Đặt lịch</button>
                     </div>
                 </div>
             </div>
@@ -1483,43 +1475,34 @@
             <div class="package-card">
                 <div class="package-image">
                     <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gói khám gia đình">
-                    <span class="package-tag">VIP</span>
+                    <span class="package-tag">Gia đình</span>
                 </div>
                 <div class="package-content">
-                    <h3 class="package-title">Gói khám NINGEN DOCK BERNARD Gold dành cho Nữ</h3>
-                    <p class="package-hospital"><i class="fas fa-hospital"></i>Bệnh viện Đại học Y dược 1</p>
+                    <h3 class="package-title">Gói khám sức khỏe gia đình</h3>
+                    <p class="package-hospital"><i class="fas fa-hospital"></i> Bệnh viện Quốc tế Hồng Ngọc</p>
                     <div class="package-features">
                         <div class="feature-item">
                             <i class="fas fa-check-circle feature-icon"></i>
-                            <span>Gói khám chuyên sâu về tầm soát ung thư</span>
+                            <span>Khám 4 người (2 người lớn, 2 trẻ em)</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Xét nghiệm cơ bản cho cả gia đình</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Tư vấn dinh dưỡng gia đình</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Miễn phí tái khám trong vòng 1 tháng</span>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Kiểm tra chức năng theo mô hình của Nhật Bản</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Sử dụng các thiết bị tiên tiến hiện đại giúp chẩn đoán hiệu quả</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Kết quả khám, xét nghiệm được hội chẩn đoán các</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>bác sĩ, chuyên gia hàng đầu đến từ các bệnh viện lớn.</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <span>Gói khám tại Y khoa Chuyên sâu Quốc tế Bernard</span>
-                    </div>
-                    
                     <div class="package-footer">
                         <div class="package-price">
-                            25.000.000đ 
+                            5.200.000đ <span class="price-old">6.500.000đ</span>
                         </div>
-                        <a class="book-btn" href="../../app/views/goi-kham-suc-khoe-co-ban-cho-nam.php" style="text-decoration: none; color: #fff;">Đặt lịch</a>
+                        <button class="book-btn">Đặt lịch</button>
                     </div>
                 </div>
             </div>

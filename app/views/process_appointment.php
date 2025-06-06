@@ -1,77 +1,127 @@
 <?php
-session_start();
-require_once '../../config/database.php';
 header('Content-Type: application/json');
+session_start();
 
-// Kiểm tra đăng nhập
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'user') {
-    echo json_encode(['success' => false, 'message' => 'Vui lòng đăng nhập để đặt lịch!']);
+require_once '../../config/database.php';
+
+$database = new Database();
+$db = $database->getConnection();
+
+$response = ['success' => false, 'message' => '', 'data' => null];
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    $response['message'] = 'Phương thức không hợp lệ';
+    echo json_encode($response);
+    exit;
+}
+
+$patient_id = $_POST['patient_id'] ?? null;
+$doctor_id = $_POST['doctor_id'] ?? null;
+$appointment_date = $_POST['appointment_date'] ?? null;
+$notes = $_POST['notes'] ?? '';
+
+if (!$patient_id || !$doctor_id || !$appointment_date) {
+    $response['message'] = 'Thiếu thông tin bắt buộc';
+    echo json_encode($response);
     exit;
 }
 
 try {
-    // Kết nối database
-    $database = new Database();
-    $db = $database->getConnection();
-    
-    // Lấy thông tin từ form
-    $date = $_POST['appointment_date'] ?? '';
-    $time = $_POST['appointment_time'] ?? '';
-    $name = $_POST['info_name'] ?? '';
-    $gender = $_POST['info_gender'] ?? '';
-    $phone = $_POST['info_phone'] ?? '';
-    $email = $_POST['info_email'] ?? '';
-    $reason = $_POST['info_reason'] ?? '';
-    
-    // Xử lý ngày giờ
-    $date_parts = explode('/', $date);
-    $time_parts = explode(' - ', $time);
-    $start_time = trim($time_parts[0]);
-    
-    // Định dạng: YYYY-MM-DD HH:MM:SS
-    $appointment_datetime = "2023-" . $date_parts[1] . "-" . $date_parts[0] . " " . $start_time . ":00";
-    
-    // Tìm ID của bác sĩ Nguyễn Đức Gia Bảo
-    $stmt = $db->prepare("SELECT id FROM users WHERE name LIKE ? AND role = 'doctor'");
-    $stmt->execute(['%Nguyễn Đức Gia Bảo%']);
-    $doctor = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    if (!$doctor) {
-        // Nếu không tìm thấy bác sĩ trong database, báo lỗi
-        echo json_encode(['success' => false, 'message' => 'Không tìm thấy thông tin bác sĩ!']);
+    // Kiểm tra thông tin bệnh nhân và bác sĩ
+    $stmt = $db->prepare("
+        SELECT p.name as patient_name, p.email, u.name as doctor_name
+        FROM patients p
+        JOIN users u ON u.id = ?
+        WHERE p.id = ?
+    ");
+    $stmt->execute([$doctor_id, $patient_id]);
+    $info = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$info) {
+        $response['message'] = 'Bệnh nhân hoặc bác sĩ không tồn tại';
+        echo json_encode($response);
         exit;
     }
-    
-    $doctor_id = $doctor['id'];
-    $user_id = $_SESSION['user_id'];
-    
-    // Tạo ghi chú chi tiết
-    $note = "Tên: $name\n";
-    $note .= "Giới tính: $gender\n";
-    $note .= "Điện thoại: $phone\n";
-    $note .= "Email: $email\n";
-    $note .= "Lý do khám: $reason\n";
-    
-    // Kiểm tra xem đã có cột patient_name chưa
-    $has_patient_name = false;
-    $columns_check = $db->query("SHOW COLUMNS FROM appointments LIKE 'patient_name'");
-    $has_patient_name = $columns_check->rowCount() > 0;
-    
-    if ($has_patient_name) {
-        // Nếu có cột patient_name, sử dụng nó
-        $stmt = $db->prepare("INSERT INTO appointments (user_id, service_id, appointment_date, status, note, patient_name) 
-                             VALUES (?, ?, ?, 'pending', ?, ?)");
-        $stmt->execute([$doctor_id, $user_id, $appointment_datetime, $note, $name]);
-    } else {
-        // Nếu không có cột patient_name, lưu tất cả thông tin vào note
-        $stmt = $db->prepare("INSERT INTO appointments (user_id, service_id, appointment_date, status, note) 
-                             VALUES (?, ?, ?, 'pending', ?)");
-        $stmt->execute([$doctor_id, $user_id, $appointment_datetime, $note]);
-    }
-    
-    echo json_encode(['success' => true, 'message' => 'Đặt lịch thành công!']);
-    
+
+    // Lưu lịch khám
+    $stmt = $db->prepare("
+        INSERT INTO appointments (patient_id, doctor_id, appointment_date, notes, status)
+        VALUES (?, ?, ?, ?, 'scheduled')
+    ");
+    $stmt->execute([$patient_id, $doctor_id, $appointment_date, $notes]);
+    $appointment_id = $db->lastInsertId();
+
+    // Trả về thông tin để gửi email
+    $response['success'] = true;
+    $response['message'] = 'Đặt lịch thành công';
+    $response['data'] = [
+        'appointment_id' => $appointment_id,
+        'patient_name' => $info['patient_name'],
+        'doctor_name' => $info['doctor_name'],
+        'appointment_date' => date('d/m/Y H:i', strtotime($appointment_date)),
+        'email' => $info['email'],
+        'notes' => $notes
+    ];
 } catch (PDOException $e) {
-    echo json_encode(['success' => false, 'message' => 'Lỗi: ' . $e->getMessage()]);
+    $response['message'] = 'Lỗi database: ' . $e->getMessage();
 }
-?> 
+
+echo json_encode($response);
+?><!DOCTYPE html>
+<html>
+<head>
+    <title>Đặt lịch khám</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <form id="appointmentForm">
+        <input type="number" name="patient_id" placeholder="ID bệnh nhân" required>
+        <input type="number" name="doctor_id" placeholder="ID bác sĩ" required>
+        <input type="datetime-local" name="appointment_date" required>
+        <textarea name="notes" placeholder="Ghi chú"></textarea>
+        <button type="submit">Đặt lịch</button>
+    </form>
+
+    <script>
+        // Khởi tạo EmailJS với public key
+        emailjs.init("C5QzUOmYFxqS06nXo"); // Thay bằng User ID từ EmailJS
+
+        document.getElementById('appointmentForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            try {
+                // Gửi yêu cầu đến API lưu lịch khám
+                const response = await fetch('/path/to/process_appointment.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    // Gửi email xác nhận bằng EmailJS
+                    const emailParams = {
+                        patient_name: result.data.patient_name,
+                        doctor_name: result.data.doctor_name,
+                        appointment_date: result.data.appointment_date,
+                        notes: result.data.notes || 'Không có'
+                    };
+
+                    await emailjs.send('service_eied1q8', 'template_nc4abtv', emailParams)
+                        .then(() => {
+                            alert('Đặt lịch thành công! Email xác nhận đã được gửi.');
+                        }, (error) => {
+                            console.error('Lỗi gửi email:', error);
+                            alert('Đặt lịch thành công nhưng lỗi khi gửi email xác nhận.');
+                        });
+                } else {
+                    alert('Lỗi: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Lỗi:', error);
+                alert('Có lỗi xảy ra khi đặt lịch.');
+            }
+        });
+    </script>
+</body>
+</html>
